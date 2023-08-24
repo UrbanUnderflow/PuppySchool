@@ -33,7 +33,7 @@ struct ProfileView: View {
                     Spacer()
                     IconImage(.sfSymbol(.settings, color: .secondaryWhite))
                         .onTapGesture {
-                            viewModel.appCoordinator.handleLogout()
+                            viewModel.appCoordinator.showSettingsModal()
                         }
                 }
                 .padding(.bottom, 20)

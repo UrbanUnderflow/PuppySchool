@@ -6,17 +6,17 @@
 //
 import SwiftUI
 import FirebaseCore
-//import RevenueCat
+import RevenueCat
 
 @main
 struct PuppySchoolApp: App {
     @StateObject private var serviceManager = ServiceManager()
 
     init() {
-//        Purchases.configure(withAPIKey: "appl_maHHKNMgjAMzVzOLYXHnimVWEuX")
-//        Purchases.logLevel = .info
+        Purchases.configure(withAPIKey: "appl_dkVuiAvCaUxSvgfcDhIRLdMdEZh")
+        Purchases.logLevel = .info
 //        Purchases.logLevel = .verbose //set to info for production
-      //  Purchases.shared.delegate = serviceManager.purchaseService
+        Purchases.shared.delegate = serviceManager.purchaseService
     }
     
     var body: some Scene {

@@ -82,6 +82,10 @@ struct ContentView: View {
                         RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: appCoordinator))
                     case .calendar(let viewModel):
                         CalendarView(viewModel: viewModel)
+                    case .payWall:
+                        PayWallView(viewModel: PayWallViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
+                    case .settings:
+                        SettingsView(viewModel: SettingsViewModel(appCoordinator: appCoordinator))
                     default:
                         EmptyView()
                     }

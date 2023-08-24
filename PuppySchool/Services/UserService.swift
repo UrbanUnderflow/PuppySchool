@@ -18,6 +18,7 @@ class UserService: ObservableObject {
     
     @Published var user: User? = nil
     @Published var settings = Settings()
+    @Published var isBetaUser: Bool = false
     
     struct Settings {
         // UserDefaults property

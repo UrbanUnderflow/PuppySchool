@@ -1,0 +1,97 @@
+{
+  "identifier" : "24EBA3AA",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "249.0",
+      "familyShareable" : true,
+      "internalID" : "6463251776",
+      "localizations" : [
+        {
+          "description" : "a Lifetime plan for Puppy School Plus",
+          "displayName" : "Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "ps_249_lt2",
+      "referenceName" : "Lifetime",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6463200946",
+    "_compatibilityTimeRate" : {
+      "3" : 6
+    },
+    "_developerTeamID" : "ZG887P86D5",
+    "_lastSynchronizedDate" : 714587752.14466095,
+    "_timeRate" : 1001
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21376398",
+      "localizations" : [
+
+      ],
+      "name" : "PuppySchool Plus",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "79.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6463210232",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "This is an annual subscription for QuickLifts",
+              "displayName" : "PuppySchool Plus",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "ps_7999_1y",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Annual $79.99",
+          "subscriptionGroupID" : "21376398",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "12.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6463235497",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "A monthly subscription for PuppySchool",
+              "displayName" : "Monthly Subscription",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "ps_1299_1m",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly $12.99",
+          "subscriptionGroupID" : "21376398",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

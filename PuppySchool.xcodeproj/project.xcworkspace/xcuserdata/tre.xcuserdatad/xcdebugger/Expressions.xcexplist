@@ -11,6 +11,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "closure #3 in OfferingViewModel.start():OfferingViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "yearlyPackage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in CommandService.updateUserCommand(userCommand:):CommandService.swift">
       </ContextState>
       <ContextState

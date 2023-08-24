@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210B5C4E2A97527900237515 /* SnapScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C4D2A97527900237515 /* SnapScrollView.swift */; };
+		210B5C502A97781A00237515 /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C4F2A97781A00237515 /* BadgeBackground.swift */; };
+		210B5C532A97974000237515 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 210B5C522A97974000237515 /* RevenueCat */; };
+		210B5C572A97989800237515 /* OfferingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C552A97989700237515 /* OfferingViewModel.swift */; };
+		210B5C582A97989800237515 /* PackageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C562A97989800237515 /* PackageViewModel.swift */; };
+		210B5C5B2A97AF3E00237515 /* StoreKitTestCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 210B5C5A2A97AF3E00237515 /* StoreKitTestCertificate.cer */; };
+		210B5C5E2A97C0E400237515 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C5D2A97C0E400237515 /* SettingsView.swift */; };
+		210B5C612A97DD1500237515 /* PreviewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C602A97DD1500237515 /* PreviewCardView.swift */; };
+		210B5C632A97E00100237515 /* PackageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C622A97E00100237515 /* PackageCardView.swift */; };
 		213BD68D2A93C8C800628FED /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD68C2A93C8C800628FED /* ProfileView.swift */; };
 		213BD68F2A93C98000628FED /* ProfileMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD68E2A93C98000628FED /* ProfileMenuItemView.swift */; };
 		213BD6912A93CB3C00628FED /* MasteredSkillBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD6902A93CB3C00628FED /* MasteredSkillBadgeView.swift */; };
@@ -35,7 +44,7 @@
 		219C1E9B2A8FB9EE002A62FF /* NewIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E932A8FB9EE002A62FF /* NewIntroductionView.swift */; };
 		219C1E9C2A8FB9EE002A62FF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E942A8FB9EE002A62FF /* LoginView.swift */; };
 		219C1E9E2A8FB9EE002A62FF /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E962A8FB9EE002A62FF /* IntroView.swift */; };
-		219C1E9F2A8FB9EE002A62FF /* FreeTrialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E972A8FB9EE002A62FF /* FreeTrialView.swift */; };
+		219C1E9F2A8FB9EE002A62FF /* PayWallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E972A8FB9EE002A62FF /* PayWallView.swift */; };
 		219C1EA02A8FB9EE002A62FF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E982A8FB9EE002A62FF /* HomeView.swift */; };
 		219C1EA12A8FB9EE002A62FF /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E992A8FB9EE002A62FF /* RegistrationView.swift */; };
 		219C1EA22A8FB9EE002A62FF /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E9A2A8FB9EE002A62FF /* ChangePasswordView.swift */; };
@@ -117,6 +126,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210B5C4D2A97527900237515 /* SnapScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapScrollView.swift; sourceTree = "<group>"; };
+		210B5C4F2A97781A00237515 /* BadgeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
+		210B5C552A97989700237515 /* OfferingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferingViewModel.swift; sourceTree = "<group>"; };
+		210B5C562A97989800237515 /* PackageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PackageViewModel.swift; sourceTree = "<group>"; };
+		210B5C592A97AD7400237515 /* Puppy.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Puppy.storekit; sourceTree = "<group>"; };
+		210B5C5A2A97AF3E00237515 /* StoreKitTestCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StoreKitTestCertificate.cer; sourceTree = "<group>"; };
+		210B5C5D2A97C0E400237515 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		210B5C602A97DD1500237515 /* PreviewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCardView.swift; sourceTree = "<group>"; };
+		210B5C622A97E00100237515 /* PackageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCardView.swift; sourceTree = "<group>"; };
 		213BD68C2A93C8C800628FED /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		213BD68E2A93C98000628FED /* ProfileMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuItemView.swift; sourceTree = "<group>"; };
 		213BD6902A93CB3C00628FED /* MasteredSkillBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteredSkillBadgeView.swift; sourceTree = "<group>"; };
@@ -148,7 +166,7 @@
 		219C1E932A8FB9EE002A62FF /* NewIntroductionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewIntroductionView.swift; sourceTree = "<group>"; };
 		219C1E942A8FB9EE002A62FF /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		219C1E962A8FB9EE002A62FF /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
-		219C1E972A8FB9EE002A62FF /* FreeTrialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreeTrialView.swift; sourceTree = "<group>"; };
+		219C1E972A8FB9EE002A62FF /* PayWallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayWallView.swift; sourceTree = "<group>"; };
 		219C1E982A8FB9EE002A62FF /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		219C1E992A8FB9EE002A62FF /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		219C1E9A2A8FB9EE002A62FF /* ChangePasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
@@ -210,6 +228,7 @@
 			files = (
 				219C1EAB2A8FBC50002A62FF /* FirebaseCrashlytics in Frameworks */,
 				219C1EA72A8FBC50002A62FF /* FirebaseAnalytics in Frameworks */,
+				210B5C532A97974000237515 /* RevenueCat in Frameworks */,
 				219C1EDA2A8FC18D002A62FF /* Lottie in Frameworks */,
 				219C1EAD2A8FBC50002A62FF /* FirebaseDatabase in Frameworks */,
 				219C1EB32A8FBC50002A62FF /* FirebaseRemoteConfig in Frameworks */,
@@ -237,6 +256,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		210B5C4C2A97526900237515 /* SnapScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				210B5C4D2A97527900237515 /* SnapScrollView.swift */,
+			);
+			path = SnapScrollView;
+			sourceTree = "<group>";
+		};
+		210B5C542A9797DF00237515 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				210B5C552A97989700237515 /* OfferingViewModel.swift */,
+				210B5C562A97989800237515 /* PackageViewModel.swift */,
+				219C1E972A8FB9EE002A62FF /* PayWallView.swift */,
+				210B5C602A97DD1500237515 /* PreviewCardView.swift */,
+				210B5C622A97E00100237515 /* PackageCardView.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		210B5C5C2A97C0D300237515 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				210B5C5D2A97C0E400237515 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		213BD68B2A93C8B200628FED /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,9 +357,12 @@
 				219C1E892A8FB8EE002A62FF /* Services */,
 				219C1E862A8FB6C7002A62FF /* View */,
 				219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */,
+				219C1E872A8FB861002A62FF /* AppCoordinator.swift */,
 				219C1E5E2A8FB69D002A62FF /* ContentView.swift */,
 				219C1E602A8FB69D002A62FF /* Assets.xcassets */,
 				219C1E622A8FB69D002A62FF /* Preview Content */,
+				210B5C592A97AD7400237515 /* Puppy.storekit */,
+				210B5C5A2A97AF3E00237515 /* StoreKitTestCertificate.cer */,
 			);
 			path = PuppySchool;
 			sourceTree = "<group>";
@@ -347,7 +397,6 @@
 			children = (
 				219C1EB92A8FBE2C002A62FF /* Components */,
 				219C1E922A8FB984002A62FF /* Screens */,
-				219C1E872A8FB861002A62FF /* AppCoordinator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,6 +419,8 @@
 		219C1E922A8FB984002A62FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				210B5C5C2A97C0D300237515 /* Settings */,
+				210B5C542A9797DF00237515 /* Subscription */,
 				213BD68B2A93C8B200628FED /* Profile */,
 				21EBE47D2A92C344005BE320 /* Checklist */,
 				21EBE4722A9256CB005BE320 /* Modals */,
@@ -381,7 +432,6 @@
 				219C1EEB2A8FC63D002A62FF /* SplashLoader.swift */,
 				219C1EE42A8FC47F002A62FF /* AboutView.swift */,
 				219C1E9A2A8FB9EE002A62FF /* ChangePasswordView.swift */,
-				219C1E972A8FB9EE002A62FF /* FreeTrialView.swift */,
 				219C1E932A8FB9EE002A62FF /* NewIntroductionView.swift */,
 				219C1E992A8FB9EE002A62FF /* RegistrationView.swift */,
 			);
@@ -424,6 +474,7 @@
 				219C1EBB2A8FBE8B002A62FF /* IconImage.swift */,
 				219C1EBD2A8FBE8B002A62FF /* TextFieldWithIcon.swift */,
 				21EBE4572A9053C5005BE320 /* DottedLine.swift */,
+				210B5C4F2A97781A00237515 /* BadgeBackground.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -431,6 +482,7 @@
 		219C1ECB2A8FBFCF002A62FF /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
+				210B5C4C2A97526900237515 /* SnapScrollView */,
 				21624E542A96A11100059F28 /* Calendar */,
 				213BD69E2A94F2B900628FED /* UploadImage */,
 				213BD6962A94D03400628FED /* MultipleChoice */,
@@ -617,6 +669,7 @@
 				219C1EB22A8FBC50002A62FF /* FirebaseRemoteConfig */,
 				219C1EB42A8FBC50002A62FF /* FirebaseStorage */,
 				219C1ED92A8FC18D002A62FF /* Lottie */,
+				210B5C522A97974000237515 /* RevenueCat */,
 			);
 			productName = PuppySchool;
 			productReference = 219C1E592A8FB69D002A62FF /* PuppySchool.app */;
@@ -693,6 +746,7 @@
 			packageReferences = (
 				219C1EA52A8FBC50002A62FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				219C1ED82A8FC18D002A62FF /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				210B5C512A97974000237515 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 			);
 			productRefGroup = 219C1E5A2A8FB69D002A62FF /* Products */;
 			projectDirPath = "";
@@ -710,6 +764,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210B5C5B2A97AF3E00237515 /* StoreKitTestCertificate.cer in Resources */,
 				219C1E642A8FB69D002A62FF /* Preview Assets.xcassets in Resources */,
 				21EBE45E2A90E5C9005BE320 /* GoogleService-Info.plist in Resources */,
 				21EBE4682A912261005BE320 /* dog.json in Resources */,
@@ -745,14 +800,17 @@
 				213BD68F2A93C98000628FED /* ProfileMenuItemView.swift in Sources */,
 				219C1EF42A8FCA15002A62FF /* PlayerView.swift in Sources */,
 				21EBE4612A910422005BE320 /* Corners.swift in Sources */,
+				210B5C502A97781A00237515 /* BadgeBackground.swift in Sources */,
 				21EBE4632A911079005BE320 /* Fixtures.swift in Sources */,
 				21EBE45A2A90DD76005BE320 /* UserCommand.swift in Sources */,
 				219C1E912A8FB92D002A62FF /* UserService.swift in Sources */,
+				210B5C5E2A97C0E400237515 /* SettingsView.swift in Sources */,
 				21EBE4782A925947005BE320 /* PuppyLog.swift in Sources */,
 				219C1EE52A8FC47F002A62FF /* AboutView.swift in Sources */,
 				219C1ED22A8FC083002A62FF /* Icon.swift in Sources */,
 				219C1F002A9047A0002A62FF /* CommandDetailView.swift in Sources */,
 				219C1E882A8FB861002A62FF /* AppCoordinator.swift in Sources */,
+				210B5C632A97E00100237515 /* PackageCardView.swift in Sources */,
 				21EBE45C2A90E0AD005BE320 /* CommandService.swift in Sources */,
 				21EBE47C2A927DEF005BE320 /* Date+PuppySchool.swift in Sources */,
 				219C1EC82A8FBF48002A62FF /* Color+PuppySchool.swift in Sources */,
@@ -775,6 +833,7 @@
 				219C1E5F2A8FB69D002A62FF /* ContentView.swift in Sources */,
 				219C1EBE2A8FBE8B002A62FF /* IconImage.swift in Sources */,
 				219C1EC42A8FBEC5002A62FF /* CircularProgressBarView.swift in Sources */,
+				210B5C612A97DD1500237515 /* PreviewCardView.swift in Sources */,
 				219C1E9C2A8FB9EE002A62FF /* LoginView.swift in Sources */,
 				219C1EFC2A90065B002A62FF /* PhaseScroll.swift in Sources */,
 				219C1EDD2A8FC28F002A62FF /* CustomTabBarView.swift in Sources */,
@@ -783,10 +842,11 @@
 				219C1EA22A8FB9EE002A62FF /* ChangePasswordView.swift in Sources */,
 				219C1ED72A8FC0E9002A62FF /* LottieView.swift in Sources */,
 				219C1EE02A8FC2D2002A62FF /* CustomModalView.swift in Sources */,
+				210B5C4E2A97527900237515 /* SnapScrollView.swift in Sources */,
 				21EBE4652A911D8E005BE320 /* CommandSummaryView.swift in Sources */,
 				219C1E9B2A8FB9EE002A62FF /* NewIntroductionView.swift in Sources */,
 				219C1E8E2A8FB92D002A62FF /* FirebaseService.swift in Sources */,
-				219C1E9F2A8FB9EE002A62FF /* FreeTrialView.swift in Sources */,
+				219C1E9F2A8FB9EE002A62FF /* PayWallView.swift in Sources */,
 				219C1E8F2A8FB92D002A62FF /* NotificationService.swift in Sources */,
 				21624E5A2A96AC0A00059F28 /* FilteredLogItem.swift in Sources */,
 				21624E562A96A11E00059F28 /* CalendarView.swift in Sources */,
@@ -797,6 +857,7 @@
 				219C1ED02A8FBFF2002A62FF /* CustomTextEditor.swift in Sources */,
 				219C1EFE2A901AB2002A62FF /* Command.swift in Sources */,
 				213BD6932A94165000628FED /* MasteredBadge.swift in Sources */,
+				210B5C572A97989800237515 /* OfferingViewModel.swift in Sources */,
 				219C1E5D2A8FB69D002A62FF /* PuppySchoolApp.swift in Sources */,
 				21EBE4762A925900005BE320 /* LogService.swift in Sources */,
 				219C1EE32A8FC365002A62FF /* ToastView.swift in Sources */,
@@ -804,6 +865,7 @@
 				219C1EEA2A8FC583002A62FF /* BackButton.swift in Sources */,
 				21EBE4832A92C4CC005BE320 /* CheckListService.swift in Sources */,
 				21EBE4812A92C3B4005BE320 /* CheckListItem.swift in Sources */,
+				210B5C582A97989800237515 /* PackageViewModel.swift in Sources */,
 				21EBE46C2A9179F5005BE320 /* LogView.swift in Sources */,
 				219C1EEC2A8FC63D002A62FF /* SplashLoader.swift in Sources */,
 				219C1EC62A8FBEFE002A62FF /* CardBackground.swift in Sources */,
@@ -1142,6 +1204,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		210B5C512A97974000237515 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		219C1EA52A8FBC50002A62FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1161,6 +1231,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		210B5C522A97974000237515 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 210B5C512A97974000237515 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
 		219C1EA62A8FBC50002A62FF /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 219C1EA52A8FBC50002A62FF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

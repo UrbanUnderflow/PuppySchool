@@ -19,19 +19,18 @@ struct TextFieldWithIcon: View {
             Rectangle()
                 .fill(Color.white)
                 .frame(height: 56)
-                .allowsHitTesting(false) // Add this
-
+            
             HStack {
                 Spacer()
                 IconImage(icon)
                     .frame(width: 22, height: 22)
                     .padding(.trailing, 5)
                 
-                CustomTextField(text: text, placeholder: placeholder, placeholderColor: Color.gray, foregroundColor: .secondaryCharcoal, showSecureText: showSecureText, isSecure: isSecure)
+                CustomTextField(text: $text, placeholder: placeholder, placeholderColor: Color.gray, foregroundColor: .secondaryCharcoal, isSecure: isSecure, showSecureText: showSecureText)
                 
                 if isSecure {
                     Button(action: {
-                        showSecureText = false
+                        showSecureText.toggle()
                     }) {
                         Image(systemName: showSecureText ? "eye.slash" : "eye")
                             .foregroundColor(.gray)
@@ -46,6 +45,6 @@ struct TextFieldWithIcon: View {
 
 struct TextFieldWithIcon_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldWithIcon(text: .constant(""), placeholder: "Email address", icon: .sfSymbol(.message, color: .secondaryCharcoal), isSecure: false)
+        TextFieldWithIcon(text: .constant(""), placeholder: "Email address", icon: .sfSymbol(.message, color: .black), isSecure: false)
     }
 }

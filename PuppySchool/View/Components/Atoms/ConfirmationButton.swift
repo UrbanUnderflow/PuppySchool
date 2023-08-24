@@ -73,7 +73,7 @@ struct ConfirmationButton: View {
         case .primaryLargeConfirmation:
             Button(action: action) {
                 Text(title)
-                    .font(.title2)
+                    .font(.title3)
                     .bold()
                     .foregroundColor(.white)
                     .padding()

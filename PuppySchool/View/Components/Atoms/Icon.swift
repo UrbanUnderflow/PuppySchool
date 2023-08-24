@@ -48,6 +48,9 @@ enum SFSymbols: String {
     case camera = "camera"
     case settings = "gearshape.fill"
     case minusCalendar = "calendar.badge.minus"
+    case reload = "arrow.counterclockwise"
+    case privacy = "lock.shield.fill"
+    case doc = "doc"
 }
 
 enum CustomIcons: String {

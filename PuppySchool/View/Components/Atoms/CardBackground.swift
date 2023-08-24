@@ -13,6 +13,11 @@ struct CardBackground: View {
         Rectangle()
             .fill(color)
             .cornerRadius(12)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                        .stroke(Color.gray, lineWidth: 1) // Gray border
+                )
+            
     }
 }
 
@@ -57,7 +62,7 @@ struct CardBackground_Previews: PreviewProvider {
                 Spacer()
             }
         }
-        .background(CardBackground(color: .primaryPurple))
+        .background(CardBackground(color: .secondaryWhite))
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
     }
 }

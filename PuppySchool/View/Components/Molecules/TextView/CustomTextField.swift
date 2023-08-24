@@ -8,44 +8,22 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    @State var text: String
-    let placeholder: String
-    let placeholderColor: Color
-    let foregroundColor: Color
-    let isSecure: Bool
-    @State var showSecureText: Bool
-    @State private var isEditing: Bool
+    @Binding var text: String
+    var placeholder: String
+    var placeholderColor: Color
+    var foregroundColor: Color
+    var isSecure: Bool
+    var showSecureText: Bool
+    @State private var isEditing: Bool = false
 
-    init(text: String, placeholder: String, placeholderColor: Color, foregroundColor: Color, showSecureText: Bool = false, isSecure: Bool = false, isEditing: Bool = false) {
-        self.text = text  // Note the underscore, which is required when initializing @Binding properties
+    // Note that the Binding parameters should be passed in from the parent view
+    init(text: Binding<String>, placeholder: String, placeholderColor: Color, foregroundColor: Color, isSecure: Bool = false, showSecureText: Bool = false) {
+        self._text = text
         self.placeholder = placeholder
         self.placeholderColor = placeholderColor
         self.foregroundColor = foregroundColor
         self.isSecure = isSecure
-        self._showSecureText = State(initialValue: showSecureText)
-        self._isEditing = State(initialValue: isEditing)
-    }
-    
-    var textField: some View {
-        VStack {
-            if isSecure {
-                Group {
-                    if showSecureText == false {
-                        TextField("", text: $text, onEditingChanged: { editing in
-                            self.isEditing = editing
-                        })
-                    } else {
-                        SecureField("", text: $text, onCommit: {
-                            self.isEditing = false
-                        })
-                    }
-                }
-            } else {
-                TextField("", text: $text, onEditingChanged: { editing in
-                    self.isEditing = editing
-                })
-            }
-        }
+        self.showSecureText = showSecureText
     }
 
     var body: some View {
@@ -54,34 +32,28 @@ struct CustomTextField: View {
                 Text(placeholder)
                     .foregroundColor(placeholderColor)
             }
-
-            textField
-                .foregroundColor(foregroundColor)
-                .onTapGesture {
-                    self.isEditing = true
+            Group {
+                if isSecure {
+                    if showSecureText {
+                        TextField("", text: $text)
+                    } else {
+                        SecureField("", text: $text, onCommit: {
+                            self.isEditing = false
+                        })
+                    }
+                } else {
+                    TextField("", text: $text)
                 }
+            }
+            .foregroundColor(foregroundColor)
+            .onTapGesture {
+                self.isEditing = true
+            }
+            .onChange(of: text) { newValue in
+                if newValue.isEmpty {
+                    isEditing = false
+                }
+            }
         }
     }
 }
-
-struct CustomTextField_Previews: PreviewProvider {
-    static var sampleText: String = ""
-
-    static var previews: some View {
-        VStack {
-            CustomTextField(text: sampleText, placeholder: "Email", placeholderColor: .gray, foregroundColor: .black, isSecure: false)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-                .cornerRadius(8)
-                .padding()
-
-            CustomTextField(text: sampleText, placeholder: "Password", placeholderColor: .gray, foregroundColor: .black, showSecureText: false, isSecure: true)
-                .padding()
-                .background(Color(.secondarySystemBackground))
-                .cornerRadius(8)
-                .padding()
-        }
-        .background(Color(.systemBackground))
-    }
-}
-

@@ -142,8 +142,8 @@
             filePath = "PuppySchool/View/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "signIn(email:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -237,6 +237,36 @@
                   endingLineNumber = "79"
                   offsetFromSymbolStart = "276">
                </Location>
+               <Location
+                  uuid = "569904C3-1635-45F0-AC20-E23943D9E7E2 - 94b841d83a6636f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;PuppySchool.User, Swift.Error&gt;) -&gt; () in PuppySchool.AppCoordinator.signIn(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "569904C3-1635-45F0-AC20-E23943D9E7E2 - 94b841d83a6636f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;PuppySchool.User, Swift.Error&gt;) -&gt; () in PuppySchool.AppCoordinator.signIn(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "276">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -250,8 +280,8 @@
             filePath = "PuppySchool/View/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "signUpUser(email:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -315,6 +345,21 @@
                   endingLineNumber = "67"
                   offsetFromSymbolStart = "208">
                </Location>
+               <Location
+                  uuid = "63FA1CD8-B578-4DEF-A499-43FB5E597E73 - 2c4b9500185acf97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;__C.FIRAuthDataResult, Swift.Error&gt;) -&gt; () in PuppySchool.AppCoordinator.signUpUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "208">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -328,8 +373,8 @@
             filePath = "PuppySchool/View/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "handleLoginSuccess()"
             landmarkType = "7">
          </BreakpointContent>
@@ -753,6 +798,66 @@
                   endingLineNumber = "77"
                   offsetFromSymbolStart = "3688">
                </Location>
+               <Location
+                  uuid = "F289CA98-2D98-4F7D-AE7B-0F7C40BCA687 - 7b0532729571e82f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, SwiftUI.EmptyView&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, SwiftUI.EmptyView&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in PuppySchool.ContentView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "4000">
+               </Location>
+               <Location
+                  uuid = "F289CA98-2D98-4F7D-AE7B-0F7C40BCA687 - 7b0532729571e82f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, SwiftUI.EmptyView&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, SwiftUI.EmptyView&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in PuppySchool.ContentView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "3724">
+               </Location>
+               <Location
+                  uuid = "F289CA98-2D98-4F7D-AE7B-0F7C40BCA687 - 9f6aacdcd13468bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, PuppySchool.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, PuppySchool.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in PuppySchool.ContentView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "4328">
+               </Location>
+               <Location
+                  uuid = "F289CA98-2D98-4F7D-AE7B-0F7C40BCA687 - b0c83b7863f6e8b1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PayWallView, PuppySchool.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PayWallView, PuppySchool.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in PuppySchool.ContentView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "4328">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -875,6 +980,66 @@
                   startingLineNumber = "79"
                   endingLineNumber = "79"
                   offsetFromSymbolStart = "3268">
+               </Location>
+               <Location
+                  uuid = "48ABBF63-C8C8-48E6-BE0F-D65175F005BF - 7b0532729571e86d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, SwiftUI.EmptyView&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, SwiftUI.EmptyView&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in PuppySchool.ContentView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "3580">
+               </Location>
+               <Location
+                  uuid = "48ABBF63-C8C8-48E6-BE0F-D65175F005BF - 7b0532729571e86d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, SwiftUI.EmptyView&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, SwiftUI.EmptyView&gt;&gt;&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in PuppySchool.ContentView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "3304">
+               </Location>
+               <Location
+                  uuid = "48ABBF63-C8C8-48E6-BE0F-D65175F005BF - 9f6aacdcd13468ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, PuppySchool.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.FreeTrialView, PuppySchool.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in PuppySchool.ContentView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "3876">
+               </Location>
+               <Location
+                  uuid = "48ABBF63-C8C8-48E6-BE0F-D65175F005BF - b0c83b7863f6e8f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PayWallView, PuppySchool.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt; in closure #2 () -&gt; Swift.Optional&lt;SwiftUI.ZStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.AboutView, PuppySchool.TermsConditionsView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PrivacyPolicyView, SwiftUI._ConditionalContent&lt;PuppySchool.CommandDetailView, PuppySchool.CommandDetailView&gt;&gt;&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;PuppySchool.RegistrationModal, PuppySchool.CalendarView&gt;, SwiftUI._ConditionalContent&lt;PuppySchool.PayWallView, PuppySchool.SettingsView&gt;&gt;&gt;, SwiftUI.EmptyView&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0&gt;, Swift.Optional&lt;&lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0&gt;)&gt;&gt;&gt; in PuppySchool.ContentView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "3876">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1078,8 +1243,8 @@
             filePath = "PuppySchool/Services/ServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "configure()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1126,8 +1291,8 @@
             filePath = "PuppySchool/Services/ServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "configure()"
             landmarkType = "7">
             <Locations>
@@ -1178,6 +1343,38 @@
             endingLineNumber = "129"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "710A495C-5700-4FF0-A28E-D01574BFE348 - c37f5d39e08e47ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of PuppySchool.LogView.emptyState : some&gt;&gt;.0, &lt;&lt;opaque return type of PuppySchool.LogView.filteredLogs : some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of PuppySchool.LogView.unfilteredLogs : some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(PuppySchool.HeaderView, SwiftUI.HStack&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of PuppySchool.LogView.emptyState : some&gt;&gt;.0, &lt;&lt;opaque return type of PuppySchool.LogView.filteredLogs : some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of PuppySchool.LogView.unfilteredLogs : some&gt;&gt;.0&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(PuppySchool.HeaderView, SwiftUI.HStack&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of PuppySchool.LogView.emptyState : some&gt;&gt;.0, &lt;&lt;opaque return type of PuppySchool.LogView.filteredLogs : some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of PuppySchool.LogView.unfilteredLogs : some&gt;&gt;.0&gt;&gt;)&gt;&gt;, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in PuppySchool.LogView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Logs/LogView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "496">
+               </Location>
+               <Location
+                  uuid = "710A495C-5700-4FF0-A28E-D01574BFE348 - c37f5d39e08e47ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of PuppySchool.LogView.emptyState : some&gt;&gt;.0, &lt;&lt;opaque return type of PuppySchool.LogView.filteredLogs : some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of PuppySchool.LogView.unfilteredLogs : some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(PuppySchool.HeaderView, SwiftUI.HStack&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of PuppySchool.LogView.emptyState : some&gt;&gt;.0, &lt;&lt;opaque return type of PuppySchool.LogView.filteredLogs : some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of PuppySchool.LogView.unfilteredLogs : some&gt;&gt;.0&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(PuppySchool.HeaderView, SwiftUI.HStack&lt;&lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0&gt;, SwiftUI.VStack&lt;SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of PuppySchool.LogView.emptyState : some&gt;&gt;.0, &lt;&lt;opaque return type of PuppySchool.LogView.filteredLogs : some&gt;&gt;.0&gt;, &lt;&lt;opaque return type of PuppySchool.LogView.unfilteredLogs : some&gt;&gt;.0&gt;&gt;)&gt;&gt;, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in PuppySchool.LogView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Logs/LogView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "676">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1190,8 +1387,8 @@
             filePath = "PuppySchool/View/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "showLogAnEventModal()"
             landmarkType = "7">
             <Locations>
@@ -1238,6 +1435,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "185"
                   endingLineNumber = "185"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "364B78AB-6586-43E1-8BB2-7308AF35A812 - dee6148c0fc4a15e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in PuppySchool.AppCoordinator.showLogAnEventModal() -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
                   offsetFromSymbolStart = "52">
                </Location>
             </Locations>
@@ -1379,8 +1591,8 @@
             filePath = "PuppySchool/View/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "showProfile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1405,7 +1617,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "90D31861-64D8-4365-81DE-025B63DA09D5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PuppySchool/View/Screens/Home/HomeView.swift"
@@ -1571,6 +1783,38 @@
             endingLineNumber = "92"
             landmarkName = "uploadImage(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B954D39-D27B-4132-AA16-6CC3CD1BF530 - b3bd662d0a3173f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in PuppySchool.UploadImageViewModel.uploadImage(__C.UIImage) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Molecules/UploadImage/UploadImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "1028">
+               </Location>
+               <Location
+                  uuid = "0B954D39-D27B-4132-AA16-6CC3CD1BF530 - b3bd662d0a3173f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in PuppySchool.UploadImageViewModel.uploadImage(__C.UIImage) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Molecules/UploadImage/UploadImageView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "1148">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1795,120 +2039,42 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A759C71E-6B5B-4B77-8CE9-7E8CC88708F1"
+            uuid = "A64F0DE8-599B-4973-B499-EDC792539C86"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PuppySchool/View/Components/Molecules/TextView/CustomTextField.swift"
+            filePath = "PuppySchool/View/Screens/Subscription/OfferingViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "textField"
-            landmarkType = "24">
+            landmarkName = "start()"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A759C71E-6B5B-4B77-8CE9-7E8CC88708F1 - 2725ee37f7900af6"
+                  uuid = "A64F0DE8-599B-4973-B499-EDC792539C86 - c5efd54da31bec50"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TextField&lt;SwiftUI.Text&gt;, SwiftUI.SecureField&lt;SwiftUI.Text&gt;&gt; in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Group&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TextField&lt;SwiftUI.Text&gt;, SwiftUI.SecureField&lt;SwiftUI.Text&gt;&gt;&gt;, SwiftUI.TextField&lt;SwiftUI.Text&gt;&gt; in PuppySchool.CustomTextField.textField.getter : some"
+                  symbolName = "(3) suspend resume partial function for PuppySchool.OfferingViewModel.start() async -&gt; ()"
                   moduleName = "PuppySchool"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Molecules/TextView/CustomTextField.swift"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Subscription/OfferingViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
-                  offsetFromSymbolStart = "400">
+                  offsetFromSymbolStart = "724">
                </Location>
                <Location
-                  uuid = "A759C71E-6B5B-4B77-8CE9-7E8CC88708F1 - 5195776b1e6c06b9"
+                  uuid = "A64F0DE8-599B-4973-B499-EDC792539C86 - 3d6ec63b64c06ee6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TextField&lt;SwiftUI.Text&gt;, SwiftUI.SecureField&lt;SwiftUI.Text&gt;&gt; in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Group&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TextField&lt;SwiftUI.Text&gt;, SwiftUI.SecureField&lt;SwiftUI.Text&gt;&gt;&gt;, SwiftUI.TextField&lt;SwiftUI.Text&gt;&gt; in PuppySchool.CustomTextField.textField.getter : some"
+                  symbolName = "closure #3 (PuppySchool.PackageViewModel) -&gt; Swift.Bool in PuppySchool.OfferingViewModel.start() async -&gt; ()"
                   moduleName = "PuppySchool"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Molecules/TextView/CustomTextField.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "A759C71E-6B5B-4B77-8CE9-7E8CC88708F1 - 2725ee37f7900af6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.TextField&lt;SwiftUI.Text&gt;, SwiftUI.SecureField&lt;SwiftUI.Text&gt;&gt; in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;SwiftUI.Group&lt;SwiftUI._ConditionalContent&lt;SwiftUI.TextField&lt;SwiftUI.Text&gt;, SwiftUI.SecureField&lt;SwiftUI.Text&gt;&gt;&gt;, SwiftUI.TextField&lt;SwiftUI.Text&gt;&gt; in PuppySchool.CustomTextField.textField.getter : some"
-                  moduleName = "PuppySchool"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Molecules/TextView/CustomTextField.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "420">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "025F2730-36C3-4250-90FF-2727E9DDD2B2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PuppySchool/View/Components/Atoms/TextFieldWithIcon.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "025F2730-36C3-4250-90FF-2727E9DDD2B2 - a56d71232443bec8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.CustomTextField, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.allowsHitTesting(Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.CustomTextField, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt;&gt;)&gt; in PuppySchool.TextFieldWithIcon.body.getter : some"
-                  moduleName = "PuppySchool"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Atoms/TextFieldWithIcon.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "196">
-               </Location>
-               <Location
-                  uuid = "025F2730-36C3-4250-90FF-2727E9DDD2B2 - ca5d7906d3431068"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.CustomTextField, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.allowsHitTesting(Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.CustomTextField, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt;&gt;)&gt; in PuppySchool.TextFieldWithIcon.body.getter : some"
-                  moduleName = "PuppySchool"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Atoms/TextFieldWithIcon.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "025F2730-36C3-4250-90FF-2727E9DDD2B2 - a56d71232443bec8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.CustomTextField, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.allowsHitTesting(Swift.Bool) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.CustomTextField, Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0&gt;, SwiftUI.Spacer)&gt;&gt;)&gt;&gt;)&gt; in PuppySchool.TextFieldWithIcon.body.getter : some"
-                  moduleName = "PuppySchool"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Atoms/TextFieldWithIcon.swift"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Subscription/OfferingViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
@@ -1921,17 +2087,285 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0430847D-163B-4F77-8002-866E43691397"
+            uuid = "938B3A45-A358-4C9E-9911-2F6E62A23E1C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PuppySchool/View/Components/Molecules/TextView/CustomTextField.swift"
+            filePath = "PuppySchool/View/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "textField"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "handleLoginSuccess()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "938B3A45-A358-4C9E-9911-2F6E62A23E1C - ce590913d0e3fe5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; () in PuppySchool.AppCoordinator.handleLoginSuccess() -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "938B3A45-A358-4C9E-9911-2F6E62A23E1C - ce590913d0e3fe5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; () in PuppySchool.AppCoordinator.handleLoginSuccess() -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70B3E27E-6899-42F6-BE89-1AB7C71F07E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "signUpUser(email:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "70B3E27E-6899-42F6-BE89-1AB7C71F07E1 - 764a2af712f187d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.AppCoordinator.signUpUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "70B3E27E-6899-42F6-BE89-1AB7C71F07E1 - efad01f41cd0d93e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;__C.FIRAuthDataResult, Swift.Error&gt;) -&gt; () in PuppySchool.AppCoordinator.signUpUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "70B3E27E-6899-42F6-BE89-1AB7C71F07E1 - 764a2af712f187f0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.AppCoordinator.signUpUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "70B3E27E-6899-42F6-BE89-1AB7C71F07E1 - efad01f41cd0d91f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;__C.FIRAuthDataResult, Swift.Error&gt;) -&gt; () in PuppySchool.AppCoordinator.signUpUser(email: Swift.String, password: Swift.String, completion: (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/AppCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F5F6D99-6356-4527-98C4-295EC3470BE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Screens/LoginScreens/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "signUp(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "813D06F3-CE3B-4E2E-A1C5-63622344A4D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Screens/LoginScreens/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "signUp(email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "813D06F3-CE3B-4E2E-A1C5-63622344A4D9 - 4a3300db5de1ec21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.LoginViewModel.signUp(email: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/LoginScreens/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "813D06F3-CE3B-4E2E-A1C5-63622344A4D9 - 67909743b4fcf73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in PuppySchool.LoginViewModel.signUp(email: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/LoginScreens/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77DB8BD8-C9A5-4D82-9FF6-59F060F0BFB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Screens/LoginScreens/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "signUp(email:password:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E2CFD0B-946A-42BB-BE4B-38F6134A8D53"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Screens/Subscription/FreeTrialView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "6E2CFD0B-946A-42BB-BE4B-38F6134A8D53 - fbd766209d821df9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;PuppySchool.PackageCard&gt;, Swift.Optional&lt;PuppySchool.PackageCard&gt;, Swift.Optional&lt;PuppySchool.PackageCard&gt;)&gt; in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.PreviewAppCard, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.PreviewAppCard, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt;&gt; in PuppySchool.FreeTrialView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Subscription/FreeTrialView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "3380">
+               </Location>
+               <Location
+                  uuid = "6E2CFD0B-946A-42BB-BE4B-38F6134A8D53 - fbd766209d821df9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;PuppySchool.PackageCard&gt;, Swift.Optional&lt;PuppySchool.PackageCard&gt;, Swift.Optional&lt;PuppySchool.PackageCard&gt;)&gt; in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.PreviewAppCard, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt; in closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.PreviewAppCard, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt;&gt; in PuppySchool.FreeTrialView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Subscription/FreeTrialView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "4868">
+               </Location>
+               <Location
+                  uuid = "6E2CFD0B-946A-42BB-BE4B-38F6134A8D53 - 3d0578681855c6cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;PuppySchool.PackageCard&gt;, Swift.Optional&lt;PuppySchool.PackageCard&gt;, Swift.Optional&lt;PuppySchool.PackageCard&gt;)&gt; in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.PreviewAppCard, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt; in closure #3 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.PreviewAppCard, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt;&gt; in PuppySchool.PayWallView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Subscription/FreeTrialView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "6E2CFD0B-946A-42BB-BE4B-38F6134A8D53 - 3d0578681855c6cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;PuppySchool.PackageCard&gt;, Swift.Optional&lt;PuppySchool.PackageCard&gt;, Swift.Optional&lt;PuppySchool.PackageCard&gt;)&gt; in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.PreviewAppCard, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt; in closure #3 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.foregroundColor(Swift.Optional&lt;SwiftUI.Color&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, PuppySchool.PreviewAppCard, &lt;&lt;opaque return type of SwiftUI.View.frame(width: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, height: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;)&gt;&gt; in PuppySchool.PayWallView.body.getter : some"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Subscription/FreeTrialView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "1368">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

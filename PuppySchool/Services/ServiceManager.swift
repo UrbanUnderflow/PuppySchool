@@ -16,6 +16,8 @@ class ServiceManager: ObservableObject {
     let firebaseService = FirebaseService.sharedInstance
     let userService = UserService.sharedInstance
     let notificationService = NotificationService.sharedInstance
+    let purchaseService = PurchaseService.sharedInstance
+
     @Published var isConfigured = false
     
     @Published var showTabBar = false

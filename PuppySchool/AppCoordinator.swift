@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import RevenueCat
 
 protocol Screen {
     func makeView(serviceManager: ServiceManager, appCoordinator: AppCoordinator) -> AnyView
@@ -23,12 +24,13 @@ class AppCoordinator: ObservableObject {
         case checklist
         case changePassword
         case profile
-        case freeTrial
         case aboutScreen
         case terms
         case privacyPolicy
+        case settings
         case calendar(viewModel: CalendarViewModel)
         case commandDetail(command: Command)
+        case payWall
     }
     
     enum ToastNotification {
@@ -97,9 +99,35 @@ class AppCoordinator: ObservableObject {
     }
     
     func handleLoginSuccess() {
+        guard let user = UserService.sharedInstance.user else {
+            print("Weird user issue. User is not detected")
+            return
+        }
         // Move to the question screen after successful login
         self.serviceManager.showTabBar = true
-        showHomeScreen()
+        
+        Purchases.shared.logIn(user.id) { (purchaserInfo, error, publicError) in
+            // handle any error.
+            print(error)
+        }
+        
+        Task {
+            await PurchaseService.sharedInstance.offering.start()
+            
+            PurchaseService.sharedInstance.checkSubscriptionStatus { [weak self] (result) in
+                switch result {
+                case .success(let isSubscribed):
+                    if isSubscribed {
+                        self?.showHomeScreen()
+                    } else {
+                        self?.showPayWallModal()
+                    }
+                case .failure(let error):
+                    // Handle the error here
+                    print("Error checking subscription status: \(error)")
+                }
+            }
+        }        
     }
     
     ///This is a setter screen to handle setting the screens and adding transitions
@@ -162,6 +190,10 @@ class AppCoordinator: ObservableObject {
         }
     }
     
+    func showPayWallModal() {
+        modalScreen = .payWall
+    }
+    
     func showCalendarModal(viewModel: CalendarViewModel) {
         modalScreen = .calendar(viewModel: viewModel)
     }
@@ -178,7 +210,15 @@ class AppCoordinator: ObservableObject {
         modalScreen = .registration
     }
     
+    func showSettingsModal() {
+        modalScreen = .settings
+    }
+    
     //notifiationd/
+    
+    func showNotificationModal(viewModel: CustomModalViewModel) {
+        notificationScreen = .notification(viewModel: viewModel)
+    }
     
     func showLogAnEventModal() {
         notificationScreen = .notification(viewModel: CustomModalViewModel(type: .log, title: "Choose an event", message: "What time did this occur?", primaryButtonTitle: "Log", primaryAction: { message in
@@ -233,10 +273,8 @@ extension AppCoordinator.Screen: Screen {
             return AnyView(
                 RegistrationView()
             )
-        case .freeTrial:
-            return AnyView(
-                FreeTrialView()
-            )
+        case .payWall:
+            return AnyView(EmptyView())
         case .aboutScreen:
             return AnyView(EmptyView())
         case .terms:
@@ -259,6 +297,9 @@ extension AppCoordinator.Screen: Screen {
                 ))
             )
         case .calendar(viewModel: let viewModel):
+            return AnyView(EmptyView())
+        
+        case .settings:
             return AnyView(EmptyView())
         }
     }
