@@ -12,6 +12,14 @@ enum UserServiceError: Error {
     case noValidRound
 }
 
+enum SubscriptionType: String {
+    case free
+    case beta
+    case monthly
+    case annual
+    case lifetime
+}
+
 class UserService: ObservableObject {
     static let sharedInstance = UserService()
     private var db: Firestore!
@@ -19,7 +27,8 @@ class UserService: ObservableObject {
     @Published var user: User? = nil
     @Published var settings = Settings()
     @Published var isBetaUser: Bool = false
-    
+    @Published var isSubscribed: Bool = false
+        
     struct Settings {
         // UserDefaults property
         var hasIntroductionModalShown: Bool {

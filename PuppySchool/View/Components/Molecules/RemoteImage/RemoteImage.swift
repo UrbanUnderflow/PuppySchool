@@ -14,16 +14,29 @@ struct RemoteImage: View {
     @State private var imageData: Data? = nil
     @State private var isImageLoading = false
     @State private var loadingError: Error? = nil
+        
+    @State var placeHolderImage: Icon
 
+    @State var width: CGFloat
+    @State var height: CGFloat
+    @State var cornerRadius: CGFloat
+    
     var body: some View {
         Group {
             if let imageData = imageData, let uiImage = UIImage(data: imageData) {
                 Image(uiImage: uiImage)
                     .resizable()
+                    .frame(width: width, height: height)
+                    .cornerRadius(cornerRadius, corners: .all)
             } else if isImageLoading {
                 ProgressView()
             } else {
-                Image(systemName: "photo")
+                ZStack {
+                    Circle()
+                        .fill(Color.secondaryCharcoal)
+                        .frame(width: width, height: height)
+                    IconImage(placeHolderImage, width: 50, height: 50)
+                }
             }
         }
         .onAppear(perform: loadImage)

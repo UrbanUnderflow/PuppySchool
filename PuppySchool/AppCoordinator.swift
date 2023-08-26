@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 import RevenueCat
+import AuthenticationServices
+import Firebase
 
 protocol Screen {
     func makeView(serviceManager: ServiceManager, appCoordinator: AppCoordinator) -> AnyView
@@ -30,6 +32,7 @@ class AppCoordinator: ObservableObject {
         case settings
         case calendar(viewModel: CalendarViewModel)
         case commandDetail(command: Command)
+        case alert(viewModel: NotificationPanelViewModel)
         case payWall
     }
     
@@ -66,7 +69,6 @@ class AppCoordinator: ObservableObject {
             switch result {
             case .success(_):
                 completion(.success("success"))
-                self.serviceManager.showTabBar = true
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -78,11 +80,38 @@ class AppCoordinator: ObservableObject {
             switch result {
             case .success(_):
                 completion(.success("success"))
-                self.serviceManager.showTabBar = true
             case .failure(let error):
                 completion(.failure(error))
             }
         }
+    }
+    
+    func signInWithApple(completion: @escaping (Result<String, Error>) -> Void) {
+        serviceManager.signInWithAppleService.onSignIn = { [weak self] result in
+                switch result {
+                case .success(let idTokenString):
+                    self?.serviceManager.firebaseService.signInWithApple(idTokenString: idTokenString) { result in
+                        switch result {
+                        case .success(_):
+                            completion(.success("success"))
+                        case .failure(let error):
+                            completion(.failure(error))
+                        }
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+            
+            // Start the sign-in operation
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = serviceManager.signInWithAppleService
+            authorizationController.presentationContextProvider = serviceManager.signInWithAppleService
+            authorizationController.performRequests()
+
     }
     
     func handleLogout() {
@@ -99,28 +128,28 @@ class AppCoordinator: ObservableObject {
     }
     
     func handleLoginSuccess() {
-        guard let user = UserService.sharedInstance.user else {
+        guard let user = Auth.auth().currentUser else {
             print("Weird user issue. User is not detected")
             return
         }
-        // Move to the question screen after successful login
-        self.serviceManager.showTabBar = true
         
-        Purchases.shared.logIn(user.id) { (purchaserInfo, error, publicError) in
+        Purchases.shared.logIn(user.uid) { (purchaserInfo, error, publicError) in
             // handle any error.
             print(error)
         }
         
         Task {
             await PurchaseService.sharedInstance.offering.start()
-            
+            self.serviceManager.configureFromSuccessfulAuth()
+
             PurchaseService.sharedInstance.checkSubscriptionStatus { [weak self] (result) in
                 switch result {
                 case .success(let isSubscribed):
                     if isSubscribed {
                         self?.showHomeScreen()
+                        UserService.sharedInstance.isSubscribed = true
                     } else {
-                        self?.showPayWallModal()
+                        self?.showPayWall()
                     }
                 case .failure(let error):
                     // Handle the error here
@@ -159,6 +188,7 @@ class AppCoordinator: ObservableObject {
     
     func showHomeScreen() {
         currentScreen = .home
+        self.serviceManager.showTabBar = true
     }
     
     func showLogScreen() {
@@ -167,6 +197,12 @@ class AppCoordinator: ObservableObject {
     
     func showChecklistScreen() {
         currentScreen = .checklist
+    }
+    
+    func showPayWall() {
+        currentScreen = .payWall
+        self.serviceManager.showTabBar = false
+        modalScreen = nil
     }
     
     func showAppIntro() {
@@ -198,6 +234,18 @@ class AppCoordinator: ObservableObject {
         modalScreen = .calendar(viewModel: viewModel)
     }
     
+    func showAboutScreenModal() {
+        modalScreen = .aboutScreen
+    }
+    
+    func showTermsScreenModal() {
+        modalScreen = .terms
+    }
+    
+    func showPrivacyScreenModal() {
+        modalScreen = .privacyPolicy
+    }
+    
     func hideToast() {
         toast = nil
     }
@@ -208,6 +256,10 @@ class AppCoordinator: ObservableObject {
     
     func showRegisterModal() {
         modalScreen = .registration
+    }
+    
+    func showAlertPanelModal(viewModel: NotificationPanelViewModel) {
+        modalScreen = .alert(viewModel: viewModel)
     }
     
     func showSettingsModal() {
@@ -274,7 +326,9 @@ extension AppCoordinator.Screen: Screen {
                 RegistrationView()
             )
         case .payWall:
-            return AnyView(EmptyView())
+            return AnyView(
+                PayWallView(viewModel: PayWallViewModel(appCoordinator: appCoordinator))
+            )
         case .aboutScreen:
             return AnyView(EmptyView())
         case .terms:
@@ -300,6 +354,8 @@ extension AppCoordinator.Screen: Screen {
             return AnyView(EmptyView())
         
         case .settings:
+            return AnyView(EmptyView())
+        case .alert(viewModel: let viewModel):
             return AnyView(EmptyView())
         }
     }

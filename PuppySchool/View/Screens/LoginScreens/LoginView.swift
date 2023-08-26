@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 class LoginViewModel: ObservableObject {
     @Published var appCoordinator: AppCoordinator
@@ -47,6 +48,18 @@ class LoginViewModel: ObservableObject {
             }
         }
     }
+    
+    func startAppleSignIn() {
+        self.appCoordinator.signInWithApple { result in
+            switch result {
+            case .success(let message):
+                print(message)
+                self.appCoordinator.handleLogin()
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+            }
+        }
+    }
 }
 
 struct LoginView: View {
@@ -61,17 +74,22 @@ struct LoginView: View {
                         .bold()
                         .foregroundColor(.white)
                         .padding()
-                        .padding(.top, 60)
+                        .padding(.top, 40)
 
                 }
                 Spacer()
             }
             VStack {
-                Text(viewModel.isSignUp ? "Sign Up" : "Log In")
-                    .font(.largeTitle)
-                    .bold()
-                    .foregroundColor(.white)
-                    .padding()
+                VStack(spacing: 8) {
+                    Text(viewModel.isSignUp ? "Let's Sign You Up" : "Let's Sign You In")
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(.white)
+                    Text("Enter your \(viewModel.isSignUp ? "sign up" : "login") details")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                }
+                .padding(.bottom, 33)
                
                 TextFieldWithIcon(text: $viewModel.email, placeholder: "Email address", icon: .sfSymbol(.message, color: .secondaryCharcoal), isSecure: false)
                     .keyboardType(.emailAddress)
@@ -98,9 +116,20 @@ struct LoginView: View {
 
                     }
                     .padding(.horizontal, 16)
+                    .padding(.bottom, 10)
+
+                    ConfirmationButton(title: "Sign up with Apple", type: .signInWithApple) {
+                        viewModel.startAppleSignIn()
+                    }
+                    .padding(.horizontal, 16)
                 } else {
-                    ConfirmationButton(title: "Login", type: .secondaryLargeConfirmation) {
+                    ConfirmationButton(title: "Let's Sign You In", type: .secondaryLargeConfirmation) {
                         viewModel.signIn(email: viewModel.email, password: viewModel.password)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 10)
+                    ConfirmationButton(title: "Sign in with Apple", type: .signInWithApple) {
+                        viewModel.startAppleSignIn()
                     }
                     .padding(.horizontal, 16)
                 }
@@ -115,6 +144,7 @@ struct LoginView: View {
                 }
                 .foregroundColor(.white)
                 .padding(.top)
+                
             }
         }
         .padding()

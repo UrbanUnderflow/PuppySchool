@@ -83,6 +83,19 @@ class FirebaseService: NSObject  {
         }
     }
     
+    func signInWithApple(idTokenString: String, completion: @escaping (Result<AuthDataResult, Error>) -> Void) {
+        let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nil)
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let authResult = authResult {
+                completion(.success(authResult))
+            } else {
+                completion(.failure(NSError(domain: "FirebaseService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unknown error occurred"])))
+            }
+        }
+    }
+
     func deleteAccount(completion: @escaping (Result<Bool, Error>) -> Void) {
         guard let user = Auth.auth().currentUser else {
             completion(.failure(FirebaseError.unknownError))

@@ -97,10 +97,9 @@ struct StageSelectionView: View {
                         VStack {
                             HStack {
                                 VStack(alignment: .center, spacing:0) {
-                                    IconImage(.dogStage(option.icon))
-                                        .frame(width: 50, height: 50)
+                                    IconImage(.dogStage(option.icon, color: selectedOption?.stage == option.stage ? Color.secondaryPink : .secondaryWhite), width: 50, height: 50)
                                     Text(option.stage.rawValue.capitalized)
-                                        .foregroundColor(.secondaryCharcoal)
+                                        .foregroundColor(selectedOption?.stage == option.stage ? Color.secondaryPink : .secondaryWhite)
                                         .font(.title3)
                                         .bold()
                                         .padding(.bottom, 5)
@@ -109,7 +108,7 @@ struct StageSelectionView: View {
                                 Text(option.description)
                                     .multilineTextAlignment(.leading)
                                     .font(.subheadline)
-                                    .foregroundColor(Color.secondaryCharcoal)
+                                    .foregroundColor(selectedOption?.stage == option.stage ? Color.secondaryPink : Color.secondaryWhite)
                                     .bold()
                                     .padding()
                                 Spacer()
@@ -121,15 +120,17 @@ struct StageSelectionView: View {
                                     Text(option.ageRange)
                                         .font(.subheadline)
                                         .padding(.trailing, 20)
+                                        .foregroundColor(Color.secondaryPink)
                                 }
                             }
                         }
                     }
                     .padding(.vertical)
+                    .background(Color.darkPurple)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(
-                                selectedOption?.stage == option.stage ? Color.primaryPurple : Color.blueGray,
+                                selectedOption?.stage == option.stage ? Color.secondaryPink : Color.clear,
                                 lineWidth: 2
                             )
                     )
@@ -139,6 +140,11 @@ struct StageSelectionView: View {
             .padding(.horizontal, 26)
         }
         .ignoresSafeArea(.all)
+        .onAppear {
+            if let item = viewModel.options.first {
+                selectedOption = item
+            }
+        }
     }
 }
 

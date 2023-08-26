@@ -13,11 +13,11 @@ struct CheckListItem {
     var imageUrl: String
     var productURL: String
     var description: String
-    var whyItsImportant: String
+    var whyItsImportant: [String]
     var createdAt: Date
     var updatedAt: Date
     
-    init(id: String, title: String, imageUrl: String, productURL: String, description: String, whyItsImportant: String, createdAt: Date, updatedAt: Date) {
+    init(id: String, title: String, imageUrl: String, productURL: String, description: String, whyItsImportant: [String], createdAt: Date, updatedAt: Date) {
         self.id = id
         self.title = title
         self.imageUrl = imageUrl
@@ -29,17 +29,22 @@ struct CheckListItem {
     }
     
     init?(id: String, dictionary: [String: Any]) {
+        guard let title = dictionary["title"] as? String,
+              let imageUrl = dictionary["imageUrl"] as? String,
+              let productURL = dictionary["productURL"] as? String,
+              let description = dictionary["description"] as? String,
+              let whyItsImportantArray = dictionary["whyItsImportant"] as? [String],
+              let createdAtTimestamp = dictionary["createdAt"] as? Double,
+              let updatedAtTimestamp = dictionary["updatedAt"] as? Double else {
+            return nil
+        }
+        
         self.id = id
-        self.title = dictionary["title"] as? String ?? ""
-        self.imageUrl = dictionary["imageUrl"] as? String ?? ""
-        self.productURL = dictionary["productURL"] as? String ?? ""
-        
-        self.description = dictionary["description"] as? String ?? ""
-        self.whyItsImportant = dictionary["whyItsImportant"] as? String ?? ""
-        
-        let createdAtTimestamp = dictionary["createdAt"] as? Double ?? 0
-        let updatedAtTimestamp = dictionary["updatedAt"] as? Double ?? 0
-
+        self.title = title
+        self.imageUrl = imageUrl
+        self.productURL = productURL
+        self.description = description
+        self.whyItsImportant = whyItsImportantArray
         self.createdAt = Date(timeIntervalSince1970: createdAtTimestamp)
         self.updatedAt = Date(timeIntervalSince1970: updatedAtTimestamp)
     }

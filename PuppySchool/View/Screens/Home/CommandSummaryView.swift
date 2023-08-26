@@ -22,35 +22,61 @@ class CommandSummaryViewModel: ObservableObject {
 struct CommandSummaryView: View {
     @ObservedObject var viewModel: CommandSummaryViewModel
     var onDone: () -> Void
+    @State private var isMastered = false
 
     var body: some View {
         VStack {
             Spacer()
-            Text("Good Job")
+            Text(isMastered ? "Hendrix has mastered the sit command!" : "Good Job")
                 .font(.largeTitle)
                 .bold()
-                .foregroundColor(.secondaryWhite)
+                .foregroundColor(isMastered ? .primaryPurple : .secondaryWhite)
             Spacer()
                 .frame(height: 50)
-            LottieView(animationName: "dog", loopMode: .loop)
-                .frame(width: 150, height: 150)
-                .padding()
             
-            Text("Hendrix is on his way to mastery. He has \(viewModel.commandsLeft) \(viewModel.command.name) commands left")
+            if isMastered {
+                ZStack {
+                    Rectangle()
+                        .fill(.teal)
+                        .frame(height: 10)
+                    Circle()
+                        .fill(.teal)
+                        .frame(width: 200, height: 200)
+                    LottieView(animationName: "walking", loopMode: .loop)
+                        .frame(width: 150, height: 150)
+                        .padding()
+                }
+                .padding(.bottom, 20)
+            } else {
+                LottieView(animationName: "dog", loopMode: .loop)
+                    .frame(width: 150, height: 150)
+                    .padding()
+            }
+            
+            Text(isMastered ? "Continue to train to keep \(UserService.sharedInstance.user?.dogName ?? "Hendrix" ) stimulated and playful" : "Hendrix is on his way to mastery. He has \(viewModel.commandsLeft) \(viewModel.command.name) commands left")
                 .font(.subheadline)
                 .bold()
-                .foregroundColor(.white)
+                .foregroundColor(isMastered ? .primaryPurple : .white)
                 .multilineTextAlignment(.center)
-            ProgressBar(progress: viewModel.progress, color: .primaryPurple)
-                .frame(height: 8)
-                .padding(.horizontal, 20)
+            if !isMastered {
+                ProgressBar(progress: viewModel.progress, color: .primaryPurple)
+                    .frame(height: 8)
+                    .padding(.horizontal, 20)
+            }
             Spacer()
             ConfirmationButton(title: "Continue", type: .primaryLargeConfirmation) {
                 self.onDone()
             }
             .padding()
         }
-        .background(Color.teal, ignoresSafeAreaEdges: .all)
+        .background(isMastered ? Color.yellow : Color.teal, ignoresSafeAreaEdges: .all)
+        .onAppear {
+            isMastered = viewModel.progress == 1
+            
+            if isMastered {
+                SoundManager.sharedInstance.playClapping()
+            }
+        }
     }
 }
 

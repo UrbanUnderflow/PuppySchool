@@ -24,7 +24,7 @@ struct CheckListView: View {
     
     var body: some View  {
         VStack {
-            HeaderView(viewModel: HeaderViewModel(headerTitle: "Doggy Necessities", actionIcon: nil, closeModal: {
+            HeaderView(viewModel: HeaderViewModel(headerTitle: "Doggy Essentials", theme: .dark, actionIcon: nil, closeModal: {
                 //close
             }, actionCallBack: {
                 viewModel.appCoordinator.showLogAnEventModal()
@@ -39,6 +39,7 @@ struct CheckListView: View {
                     .frame(height: 100)
             }
         }
+        .background(Color.primaryPurple)
     }
 }
 
@@ -51,17 +52,17 @@ struct CheckListView_Previews: PreviewProvider {
                 imageUrl: "https://m.media-amazon.com/images/I/51n51fAoyPL._SL250_.jpg",
                 productURL: "https://amzn.to/3OLxwsk",
                 description: "A crate is a secure space for your puppy, resembling a den environment. It aids in housebreaking and ensures safety when you can't supervise directly.",
-                whyItsImportant: """
-                - Safety First: Keeps puppy safe from household hazards when unsupervised.
-                - Housebreaking: Puppies usually avoid soiling their sleeping quarters; helps in potty training.
-                - Comfort Zone: Provides a personal space where the puppy can relax and sleep.
-                - Travel: Safest way to transport your puppy in a car.
-                - Avoid Destruction: Prevents puppy from destructive behaviors when alone.
-                - Routine and Discipline: Instills a sense of routine and discipline in your puppy's life.
-                """,
+                whyItsImportant: [
+                "Safety First: Keeps puppy safe from household hazards when unsupervised.",
+                "Housebreaking: Puppies usually avoid soiling their sleeping quarters; helps in potty training.",
+                "Comfort Zone: Provides a personal space where the puppy can relax and sleep.",
+                "Travel: Safest way to transport your puppy in a car.",
+                "Avoid Destruction: Prevents puppy from destructive behaviors when alone.",
+                "Routine and Discipline: Instills a sense of routine and discipline in your puppy's life.",
+                ],
                 createdAt: Date(),
                 updatedAt: Date()
-                )
+            )
             ])
         )
     }

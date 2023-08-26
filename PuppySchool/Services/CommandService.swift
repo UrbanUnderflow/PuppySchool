@@ -12,6 +12,7 @@ class CommandService: ObservableObject {
     private var db: Firestore!
     
     @Published var userCommands: [UserCommand] = []
+    @Published var previousCommand: UserCommand?
     @Published var commands: [Command] = [
         // Obedience Commands
         Command(
@@ -24,7 +25,7 @@ class CommandService: ObservableObject {
                 "Once they’re in a sitting position, say 'Sit,' give them the treat, and share affection."
             ],
             icon: .sit,
-            category: .obedience,
+            category: .foundational,
             difficulty: .beginner,
             environment: .indoor,
             dogStage: .puppy,
@@ -43,7 +44,7 @@ class CommandService: ObservableObject {
                 "Take a few steps back. If they stay, reward them with a treat and affection."
             ],
             icon: .stay,
-            category: .obedience,
+            category: .foundational,
             difficulty: .beginner,
             environment: .indoor,
             dogStage: .puppy,
@@ -63,7 +64,7 @@ class CommandService: ObservableObject {
                 "Once they’re down, say 'Down,' give them the treat, and share affection."
             ],
             icon: .down,
-            category: .obedience,
+            category: .foundational,
             difficulty: .beginner,
             environment: .indoor,
             dogStage: .puppy,
@@ -82,7 +83,7 @@ class CommandService: ObservableObject {
                 "When they come to you, reward them with affection and a treat."
             ],
             icon: .come,
-            category: .obedience,
+            category: .foundational,
             difficulty: .beginner,
             environment: .outdoor,
             dogStage: .puppy,
@@ -141,7 +142,7 @@ class CommandService: ObservableObject {
                 "Gradually increase the door or gate opening and the time they're asked to wait."
             ],
             icon: .wait,
-            category: .safety,
+            category: .foundational,
             difficulty: .beginner,
             environment: .indoor,
             dogStage: .puppy,
@@ -160,7 +161,7 @@ class CommandService: ObservableObject {
                 "If they jump again, repeat the process."
             ],
             icon: .off,
-            category: .safety,
+            category: .obedience,
             difficulty: .beginner,
             environment: .social,
             dogStage: .puppy,
@@ -180,7 +181,7 @@ class CommandService: ObservableObject {
                 "Once they stop trying, give them the treat from the other hand."
             ],
             icon: .leaveIt,
-            category: .safety,
+            category: .foundational,
             difficulty: .beginner,
             environment: .indoor,
             dogStage: .puppy,
@@ -199,7 +200,7 @@ class CommandService: ObservableObject {
                 "Once they release the toy, reward them with the treat."
             ],
             icon: .dropIt,
-            category: .safety,
+            category: .obedience,
             difficulty: .intermediate,
             environment: .indoor,
             dogStage: .adolescent,
@@ -218,7 +219,7 @@ class CommandService: ObservableObject {
                 "When they've taken a few steps back, reward them with a treat and affection."
             ],
             icon: .backup,
-            category: .safety,
+            category: .obedience,
             difficulty: .intermediate,
             environment: .outdoor,
             dogStage: .adolescent,
@@ -237,7 +238,7 @@ class CommandService: ObservableObject {
                 "Reward them immediately with a treat and affection when they make contact."
             ],
             icon: .touch,
-            category: .safety,
+            category: .foundational,
             difficulty: .beginner,
             environment: .indoor,
             dogStage: .puppy,
@@ -611,6 +612,48 @@ class CommandService: ObservableObject {
         ),
         
         Command(
+            id: "Crate",
+            name: "Crate",
+            description: "Training the dog to enter the crate on command.",
+            steps: [
+                "Place the crate in a familiar area with the door open.",
+                "Guide the dog towards the crate using a treat as a lure.",
+                "As they approach, drop the treat into the back of the crate",
+                "Use the command 'Crate' or 'Home' in a clear voice as your dog enters the crate.",
+                "Reward the dog with another treat immediately after they willingly enter the crate."
+            ],
+            icon: .crate,
+            category: .foundational,
+            difficulty: .beginner,
+            environment: .indoor,
+            dogStage: .puppy,
+            completionMax: 50,
+            createdAt: Date(),
+            updatedAt: Date()
+        ),
+        
+        Command(
+            id: "SettleCrate",
+            name: "Settle in the Crate",
+            description: "Training the dog to relax and remain calm inside the crate.",
+            steps: [
+                "Place a soft blanket or toy inside the crate to make it comfortable.",
+                "Encourage the dog to enter the crate using the 'Crate' command.",
+                "Once inside, reward the dog for calm behavior.",
+                "Close the door briefly, then open it. Reward the dog for remaining calm.",
+                "Gradually increase the duration the dog remains inside, ensuring it's a positive experience."
+            ],
+            icon: .settleCrate,
+            category: .obedience,
+            difficulty: .beginner,
+            environment: .indoor,
+            dogStage: .puppy,
+            completionMax: 75,
+            createdAt: Date(),
+            updatedAt: Date()
+        ),
+       
+        Command(
             id: "Hold",
             name: "Hold",
             description: "Hold an item without chewing",
@@ -877,9 +920,8 @@ class CommandService: ObservableObject {
                 }
             }
             self.userCommands = userCommands
-            
+            self.previousCommand = userCommands.max { $0.updatedAt < $1.updatedAt }
             completion(userCommands, nil)
         }
     }
-
 }

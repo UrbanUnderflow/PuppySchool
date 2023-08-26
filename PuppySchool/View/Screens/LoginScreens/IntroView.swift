@@ -38,8 +38,8 @@ struct IntroView: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(.black)
-                .opacity(0.3)
+                .fill(viewModel.loginPressed ? Color.primaryPurple : .black)
+                .opacity(viewModel.loginPressed ? 0.5 : 0.3)
             if !viewModel.loginPressed {
                 Group {
                     VStack {
@@ -91,6 +91,8 @@ struct IntroView: View {
                 .foregroundColor(.white)
             } else {
                 LoginView(viewModel: LoginViewModel(appCoordinator: viewModel.appCoordinator, isSignUp: viewModel.newUser))
+                    .frame(width:.infinity, height: .infinity)
+                    .ignoresSafeArea(.all)
             }
         }
         .background(

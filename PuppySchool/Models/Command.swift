@@ -39,7 +39,7 @@ struct Command: Hashable {
     var name: String
     var description: String
     var steps: [String]
-    var icon: DogCommandIcon
+    var icon: DogCommandImages
     var category: CommandCategory
     var difficulty: Difficulty
     var environment: Environment
@@ -52,7 +52,7 @@ struct Command: Hashable {
          name: String,
          description: String,
          steps: [String],
-         icon: DogCommandIcon,
+         icon: DogCommandImages,
          category: CommandCategory,
          difficulty: Difficulty,
          environment: Environment,
@@ -80,7 +80,7 @@ struct Command: Hashable {
         self.description = dictionary["description"] as? String ?? ""
         self.steps = dictionary["steps"] as? [String] ?? []
 
-        self.icon = DogCommandIcon(rawValue: dictionary["icon"] as? String ?? "") ?? .sit
+        self.icon = DogCommandImages(rawValue: dictionary["icon"] as? String ?? "") ?? .sit
         self.category = CommandCategory(rawValue: dictionary["category"] as? String ?? "") ?? .foundational
         self.difficulty = Difficulty(rawValue: dictionary["difficulty"] as? String ?? "") ?? .beginner
         self.environment = Environment(rawValue: dictionary["environment"] as? String ?? "") ?? .indoor

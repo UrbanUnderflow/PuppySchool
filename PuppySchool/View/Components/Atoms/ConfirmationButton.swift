@@ -12,6 +12,8 @@ enum ButtonType {
     case secondaryCharcoal
     case secondaryBlue
     case primaryLargeConfirmation
+    case signInWithApple
+    case primaryLargeGradientConfirmation
     case secondaryLargeConfirmation
     case secondaryMediumConfirmation
     case secondarySmallConfirmation
@@ -81,15 +83,53 @@ struct ConfirmationButton: View {
                     .background(Color.primaryPurple)
                     .cornerRadius(18)
             }
+        case .signInWithApple:
+            Button(action: action) {
+                HStack(alignment: .center, spacing: 5) {
+                    Spacer()
+                    IconImage(.sfSymbol(.appleLogo, color: .white))
+                    Text(title)
+                        .font(.title3)
+                        .bold()
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.black)
+                .cornerRadius(18)
+            }
+        case .primaryLargeGradientConfirmation:
+            Button(action: action) {
+                Text(title)
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        LinearGradient(
+                            gradient: Gradient(colors: [
+                                Color(UIColor(red: 0.35, green: 0.38, blue: 1, alpha: 1)),
+                                Color(UIColor(red: 0.85, green: 0.34, blue: 1, alpha: 1))
+                            ]),
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .cornerRadius(18)
+            }
+
         case .secondaryLargeConfirmation:
             Button(action: action) {
                 Text(title)
-                    .font(.title2)
-                    .foregroundColor(Color.secondaryWhite)
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(.primaryPurple)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.secondaryCharcoal)
-                    .cornerRadius(50)
+                    .background(Color.secondaryWhite)
+                    .cornerRadius(18)
             }
             
         case .secondaryMediumConfirmation:
@@ -295,6 +335,9 @@ struct ConfirmationButton_Previews: PreviewProvider {
                 print("aciton")
             }
             ConfirmationButton(title: "test", type: .clearButton) {
+                print("aciton")
+            }
+            ConfirmationButton(title: "Sign In With Apple", type: .signInWithApple) {
                 print("aciton")
             }
             ConfirmationButton(title: "test", type: .secondaryMediumConfirmation) {

@@ -16,6 +16,8 @@
 		210B5C5E2A97C0E400237515 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C5D2A97C0E400237515 /* SettingsView.swift */; };
 		210B5C612A97DD1500237515 /* PreviewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C602A97DD1500237515 /* PreviewCardView.swift */; };
 		210B5C632A97E00100237515 /* PackageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210B5C622A97E00100237515 /* PackageCardView.swift */; };
+		21303C7E2A98D01B00231EAE /* DropDownFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21303C7D2A98D01B00231EAE /* DropDownFilterView.swift */; };
+		21303C802A98DAC500231EAE /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21303C7F2A98DAC500231EAE /* SwiftUIView.swift */; };
 		213BD68D2A93C8C800628FED /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD68C2A93C8C800628FED /* ProfileView.swift */; };
 		213BD68F2A93C98000628FED /* ProfileMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD68E2A93C98000628FED /* ProfileMenuItemView.swift */; };
 		213BD6912A93CB3C00628FED /* MasteredSkillBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD6902A93CB3C00628FED /* MasteredSkillBadgeView.swift */; };
@@ -25,10 +27,23 @@
 		213BD69B2A94E08800628FED /* StageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD69A2A94E08800628FED /* StageSelectionView.swift */; };
 		213BD69D2A94E3C500628FED /* DogStageDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD69C2A94E3C500628FED /* DogStageDescription.swift */; };
 		213BD6A02A94F2CB00628FED /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BD69F2A94F2CB00628FED /* UploadImageView.swift */; };
+		2144D4252A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2144D4242A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift */; };
+		2144D42C2A998CCC00D872EF /* ClickerSound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2144D42B2A998CCC00D872EF /* ClickerSound.m4a */; };
+		2144D42E2A998ED100D872EF /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2144D42D2A998ED100D872EF /* click.mp3 */; };
+		2144D4312A999EC000D872EF /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2144D4302A999EC000D872EF /* Divider.swift */; };
 		21624E532A9634FD00059F28 /* DogStageTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21624E522A9634FD00059F28 /* DogStageTips.swift */; };
 		21624E562A96A11E00059F28 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21624E552A96A11E00059F28 /* CalendarView.swift */; };
 		21624E582A96A28D00059F28 /* Array+PuppySchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21624E572A96A28D00059F28 /* Array+PuppySchool.swift */; };
 		21624E5A2A96AC0A00059F28 /* FilteredLogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21624E592A96AC0A00059F28 /* FilteredLogItem.swift */; };
+		2185A0C42A99B3F500B692CB /* TimeSensativeNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0C32A99B3F500B692CB /* TimeSensativeNotification.swift */; };
+		2185A0C62A99BF7D00B692CB /* party.json in Resources */ = {isa = PBXBuildFile; fileRef = 2185A0C52A99BF7D00B692CB /* party.json */; };
+		2185A0CB2A99C29E00B692CB /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2185A0CA2A99C29E00B692CB /* pop.mp3 */; };
+		2185A0CD2A99C51500B692CB /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0CC2A99C51500B692CB /* SoundManager.swift */; };
+		2185A0CF2A99CB3300B692CB /* cheering.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2185A0CE2A99CB3200B692CB /* cheering.mp3 */; };
+		2185A0D12A99CCB400B692CB /* walking.json in Resources */ = {isa = PBXBuildFile; fileRef = 2185A0D02A99CCB400B692CB /* walking.json */; };
+		2185A0D32A99CCC200B692CB /* driving.json in Resources */ = {isa = PBXBuildFile; fileRef = 2185A0D22A99CCC200B692CB /* driving.json */; };
+		2185A0D92A9A170E00B692CB /* NotificationPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0D82A9A170E00B692CB /* NotificationPanelView.swift */; };
+		2185A0DC2A9A4A0400B692CB /* AppleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0DB2A9A4A0400B692CB /* AppleSignInService.swift */; };
 		219C1E5D2A8FB69D002A62FF /* PuppySchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */; };
 		219C1E5F2A8FB69D002A62FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E5E2A8FB69D002A62FF /* ContentView.swift */; };
 		219C1E612A8FB69D002A62FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219C1E602A8FB69D002A62FF /* Assets.xcassets */; };
@@ -135,6 +150,8 @@
 		210B5C5D2A97C0E400237515 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		210B5C602A97DD1500237515 /* PreviewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCardView.swift; sourceTree = "<group>"; };
 		210B5C622A97E00100237515 /* PackageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCardView.swift; sourceTree = "<group>"; };
+		21303C7D2A98D01B00231EAE /* DropDownFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownFilterView.swift; sourceTree = "<group>"; };
+		21303C7F2A98DAC500231EAE /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		213BD68C2A93C8C800628FED /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		213BD68E2A93C98000628FED /* ProfileMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuItemView.swift; sourceTree = "<group>"; };
 		213BD6902A93CB3C00628FED /* MasteredSkillBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteredSkillBadgeView.swift; sourceTree = "<group>"; };
@@ -144,10 +161,26 @@
 		213BD69A2A94E08800628FED /* StageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelectionView.swift; sourceTree = "<group>"; };
 		213BD69C2A94E3C500628FED /* DogStageDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogStageDescription.swift; sourceTree = "<group>"; };
 		213BD69F2A94F2CB00628FED /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
+		2144D4242A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProgressViewStyle+PuppySchool.swift"; sourceTree = "<group>"; };
+		2144D42B2A998CCC00D872EF /* ClickerSound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = ClickerSound.m4a; sourceTree = "<group>"; };
+		2144D42D2A998ED100D872EF /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
+		2144D42F2A998F6600D872EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2144D4302A999EC000D872EF /* Divider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divider.swift; sourceTree = "<group>"; };
 		21624E522A9634FD00059F28 /* DogStageTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogStageTips.swift; sourceTree = "<group>"; };
 		21624E552A96A11E00059F28 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		21624E572A96A28D00059F28 /* Array+PuppySchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+PuppySchool.swift"; sourceTree = "<group>"; };
 		21624E592A96AC0A00059F28 /* FilteredLogItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredLogItem.swift; sourceTree = "<group>"; };
+		2185A0C32A99B3F500B692CB /* TimeSensativeNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSensativeNotification.swift; sourceTree = "<group>"; };
+		2185A0C52A99BF7D00B692CB /* party.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = party.json; sourceTree = "<group>"; };
+		2185A0CA2A99C29E00B692CB /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
+		2185A0CC2A99C51500B692CB /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		2185A0CE2A99CB3200B692CB /* cheering.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cheering.mp3; sourceTree = "<group>"; };
+		2185A0D02A99CCB400B692CB /* walking.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = walking.json; sourceTree = "<group>"; };
+		2185A0D22A99CCC200B692CB /* driving.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = driving.json; sourceTree = "<group>"; };
+		2185A0D42A99CFC800B692CB /* cheer.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = cheer.m4a; sourceTree = "<group>"; };
+		2185A0D82A9A170E00B692CB /* NotificationPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPanelView.swift; sourceTree = "<group>"; };
+		2185A0DA2A9A462700B692CB /* PuppySchool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PuppySchool.entitlements; sourceTree = "<group>"; };
+		2185A0DB2A9A4A0400B692CB /* AppleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInService.swift; sourceTree = "<group>"; };
 		219C1E592A8FB69D002A62FF /* PuppySchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppySchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppySchoolApp.swift; sourceTree = "<group>"; };
 		219C1E5E2A8FB69D002A62FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -319,12 +352,39 @@
 			path = UploadImage;
 			sourceTree = "<group>";
 		};
+		2144D4292A998C9500D872EF /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				2185A0D02A99CCB400B692CB /* walking.json */,
+				2185A0D22A99CCC200B692CB /* driving.json */,
+				2185A0C52A99BF7D00B692CB /* party.json */,
+				21EBE4672A912261005BE320 /* dog.json */,
+			);
+			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
+		2144D42A2A998CA600D872EF /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2144D42B2A998CCC00D872EF /* ClickerSound.m4a */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		21624E542A96A11100059F28 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
 				21624E552A96A11E00059F28 /* CalendarView.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		2185A0D52A9A16CD00B692CB /* NotificationPanel */ = {
+			isa = PBXGroup;
+			children = (
+				2185A0D82A9A170E00B692CB /* NotificationPanelView.swift */,
+			);
+			path = NotificationPanel;
 			sourceTree = "<group>";
 		};
 		219C1E502A8FB69D002A62FF = {
@@ -350,6 +410,8 @@
 		219C1E5B2A8FB69D002A62FF /* PuppySchool */ = {
 			isa = PBXGroup;
 			children = (
+				2185A0DA2A9A462700B692CB /* PuppySchool.entitlements */,
+				2144D42F2A998F6600D872EF /* Info.plist */,
 				21EBE4662A912251005BE320 /* Resources */,
 				21EBE45D2A90E5C9005BE320 /* GoogleService-Info.plist */,
 				219C1ED32A8FC0B5002A62FF /* Helpers */,
@@ -412,6 +474,8 @@
 				21EBE45B2A90E0AD005BE320 /* CommandService.swift */,
 				21EBE4752A925900005BE320 /* LogService.swift */,
 				21EBE4822A92C4CC005BE320 /* CheckListService.swift */,
+				2185A0CC2A99C51500B692CB /* SoundManager.swift */,
+				2185A0DB2A9A4A0400B692CB /* AppleSignInService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -419,6 +483,7 @@
 		219C1E922A8FB984002A62FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				2185A0D52A9A16CD00B692CB /* NotificationPanel */,
 				210B5C5C2A97C0D300237515 /* Settings */,
 				210B5C542A9797DF00237515 /* Subscription */,
 				213BD68B2A93C8B200628FED /* Profile */,
@@ -449,6 +514,7 @@
 				213BD6922A94165000628FED /* MasteredBadge.swift */,
 				213BD69C2A94E3C500628FED /* DogStageDescription.swift */,
 				21624E522A9634FD00059F28 /* DogStageTips.swift */,
+				2185A0C32A99B3F500B692CB /* TimeSensativeNotification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +541,7 @@
 				219C1EBD2A8FBE8B002A62FF /* TextFieldWithIcon.swift */,
 				21EBE4572A9053C5005BE320 /* DottedLine.swift */,
 				210B5C4F2A97781A00237515 /* BadgeBackground.swift */,
+				2144D4302A999EC000D872EF /* Divider.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -489,7 +556,6 @@
 				21EBE4892A92CD77005BE320 /* RemoteImage */,
 				21EBE46D2A9184F0005BE320 /* HeaderView */,
 				219C1EFA2A90063F002A62FF /* PhaseScroll */,
-				219C1EF72A8FFD56002A62FF /* CommandCard */,
 				219C1EE62A8FC56D002A62FF /* NavButtons */,
 				219C1EE12A8FC31A002A62FF /* ToastView */,
 				219C1EDE2A8FC2BB002A62FF /* CustomModalView */,
@@ -519,6 +585,7 @@
 				21EBE4622A911079005BE320 /* Fixtures.swift */,
 				21EBE47B2A927DEF005BE320 /* Date+PuppySchool.swift */,
 				21624E572A96A28D00059F28 /* Array+PuppySchool.swift */,
+				2144D4242A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -584,7 +651,12 @@
 		21EBE4662A912251005BE320 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				21EBE4672A912261005BE320 /* dog.json */,
+				2185A0CA2A99C29E00B692CB /* pop.mp3 */,
+				2144D42D2A998ED100D872EF /* click.mp3 */,
+				2185A0D42A99CFC800B692CB /* cheer.m4a */,
+				2185A0CE2A99CB3200B692CB /* cheering.mp3 */,
+				2144D42A2A998CA600D872EF /* Sounds */,
+				2144D4292A998C9500D872EF /* LottieAnimations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -602,9 +674,12 @@
 		21EBE46A2A9179AE005BE320 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				219C1EF72A8FFD56002A62FF /* CommandCard */,
 				219C1E982A8FB9EE002A62FF /* HomeView.swift */,
 				219C1EFF2A9047A0002A62FF /* CommandDetailView.swift */,
 				21EBE4642A911D8E005BE320 /* CommandSummaryView.swift */,
+				21303C7D2A98D01B00231EAE /* DropDownFilterView.swift */,
+				21303C7F2A98DAC500231EAE /* SwiftUIView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -764,10 +839,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2144D42E2A998ED100D872EF /* click.mp3 in Resources */,
 				210B5C5B2A97AF3E00237515 /* StoreKitTestCertificate.cer in Resources */,
+				2185A0D32A99CCC200B692CB /* driving.json in Resources */,
+				2185A0C62A99BF7D00B692CB /* party.json in Resources */,
+				2185A0CF2A99CB3300B692CB /* cheering.mp3 in Resources */,
+				2185A0CB2A99C29E00B692CB /* pop.mp3 in Resources */,
 				219C1E642A8FB69D002A62FF /* Preview Assets.xcassets in Resources */,
+				2185A0D12A99CCB400B692CB /* walking.json in Resources */,
 				21EBE45E2A90E5C9005BE320 /* GoogleService-Info.plist in Resources */,
 				21EBE4682A912261005BE320 /* dog.json in Resources */,
+				2144D42C2A998CCC00D872EF /* ClickerSound.m4a in Resources */,
 				219C1E612A8FB69D002A62FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -795,6 +877,7 @@
 			files = (
 				219C1EEF2A8FC6E6002A62FF /* TermsAndConditionsView.swift in Sources */,
 				219C1ECF2A8FBFF2002A62FF /* CustomTextField.swift in Sources */,
+				2144D4312A999EC000D872EF /* Divider.swift in Sources */,
 				21EBE4712A918596005BE320 /* LogItem.swift in Sources */,
 				219C1EF32A8FCA15002A62FF /* PlayerUIView.swift in Sources */,
 				213BD68F2A93C98000628FED /* ProfileMenuItemView.swift in Sources */,
@@ -814,6 +897,7 @@
 				21EBE45C2A90E0AD005BE320 /* CommandService.swift in Sources */,
 				21EBE47C2A927DEF005BE320 /* Date+PuppySchool.swift in Sources */,
 				219C1EC82A8FBF48002A62FF /* Color+PuppySchool.swift in Sources */,
+				2185A0C42A99B3F500B692CB /* TimeSensativeNotification.swift in Sources */,
 				219C1EA02A8FB9EE002A62FF /* HomeView.swift in Sources */,
 				213BD69D2A94E3C500628FED /* DogStageDescription.swift in Sources */,
 				219C1EA12A8FB9EE002A62FF /* RegistrationView.swift in Sources */,
@@ -823,6 +907,7 @@
 				219C1EF02A8FC6E6002A62FF /* PrivacyPolicyView.swift in Sources */,
 				21EBE47F2A92C355005BE320 /* CheckListView.swift in Sources */,
 				213BD6912A93CB3C00628FED /* MasteredSkillBadgeView.swift in Sources */,
+				2185A0CD2A99C51500B692CB /* SoundManager.swift in Sources */,
 				213BD6A02A94F2CB00628FED /* UploadImageView.swift in Sources */,
 				213BD6952A94CE0000628FED /* RegistrationModal.swift in Sources */,
 				213BD6982A94D04200628FED /* MultipleChoiceView.swift in Sources */,
@@ -831,6 +916,7 @@
 				219C1ED62A8FC0E9002A62FF /* Helpers.swift in Sources */,
 				219C1EF92A8FFDB6002A62FF /* CommandCard.swift in Sources */,
 				219C1E5F2A8FB69D002A62FF /* ContentView.swift in Sources */,
+				2185A0DC2A9A4A0400B692CB /* AppleSignInService.swift in Sources */,
 				219C1EBE2A8FBE8B002A62FF /* IconImage.swift in Sources */,
 				219C1EC42A8FBEC5002A62FF /* CircularProgressBarView.swift in Sources */,
 				210B5C612A97DD1500237515 /* PreviewCardView.swift in Sources */,
@@ -845,7 +931,9 @@
 				210B5C4E2A97527900237515 /* SnapScrollView.swift in Sources */,
 				21EBE4652A911D8E005BE320 /* CommandSummaryView.swift in Sources */,
 				219C1E9B2A8FB9EE002A62FF /* NewIntroductionView.swift in Sources */,
+				2144D4252A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift in Sources */,
 				219C1E8E2A8FB92D002A62FF /* FirebaseService.swift in Sources */,
+				2185A0D92A9A170E00B692CB /* NotificationPanelView.swift in Sources */,
 				219C1E9F2A8FB9EE002A62FF /* PayWallView.swift in Sources */,
 				219C1E8F2A8FB92D002A62FF /* NotificationService.swift in Sources */,
 				21624E5A2A96AC0A00059F28 /* FilteredLogItem.swift in Sources */,
@@ -855,12 +943,14 @@
 				219C1EE92A8FC583002A62FF /* CloseButtonView.swift in Sources */,
 				219C1EC02A8FBE8B002A62FF /* TextFieldWithIcon.swift in Sources */,
 				219C1ED02A8FBFF2002A62FF /* CustomTextEditor.swift in Sources */,
+				21303C7E2A98D01B00231EAE /* DropDownFilterView.swift in Sources */,
 				219C1EFE2A901AB2002A62FF /* Command.swift in Sources */,
 				213BD6932A94165000628FED /* MasteredBadge.swift in Sources */,
 				210B5C572A97989800237515 /* OfferingViewModel.swift in Sources */,
 				219C1E5D2A8FB69D002A62FF /* PuppySchoolApp.swift in Sources */,
 				21EBE4762A925900005BE320 /* LogService.swift in Sources */,
 				219C1EE32A8FC365002A62FF /* ToastView.swift in Sources */,
+				21303C802A98DAC500231EAE /* SwiftUIView.swift in Sources */,
 				219C1E9E2A8FB9EE002A62FF /* IntroView.swift in Sources */,
 				219C1EEA2A8FC583002A62FF /* BackButton.swift in Sources */,
 				21EBE4832A92C4CC005BE320 /* CheckListService.swift in Sources */,
@@ -1029,17 +1119,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PuppySchool/PuppySchool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PuppySchool/Preview Content\"";
 				DEVELOPMENT_TEAM = ZG887P86D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PuppySchool/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1060,17 +1151,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PuppySchool/PuppySchool.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PuppySchool/Preview Content\"";
 				DEVELOPMENT_TEAM = ZG887P86D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PuppySchool/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -17,43 +17,17 @@ class ServiceManager: ObservableObject {
     let userService = UserService.sharedInstance
     let notificationService = NotificationService.sharedInstance
     let purchaseService = PurchaseService.sharedInstance
+    let signInWithAppleService = AppleSignInService.sharedInstance
 
     @Published var isConfigured = false
-    
     @Published var showTabBar = false
-
+    
 
     func configure() async {
         do {
-            
             // Do any other configuration here
             if self.firebaseService.isAuthenticated {
-                self.userService.getUser { user, error in
-                    
-                    guard let u = self.userService.user else {
-                        DispatchQueue.main.async {
-                            self.isConfigured = true
-                            self.requestTrackingAuthorization()
-                        }
-                        
-                        return
-                    }
-                    
-                    CommandService.sharedInstance.loadCommands()
-//                    CommandService.sharedInstance.saveCommands { error in
-//                        print("Commands Saved")
-//                    }
-//                    LogService.sharedInstance.saveLogs { error in
-//                        print("Logs saved")
-//                    }
-                    
-                    LogService.sharedInstance.fetchPuppyLogs()
-                    
-                    CommandService.sharedInstance.fetchUserCommands { userCommands, error in
-                        self.isConfigured = true
-                        print(userCommands)
-                    }
-                }
+                self.configureFromSuccessfulAuth()
             } else {
                 DispatchQueue.main.async {
                     self.isConfigured = true
@@ -63,6 +37,35 @@ class ServiceManager: ObservableObject {
         } catch {
             print(error)
             self.requestTrackingAuthorization()
+        }
+    }
+
+    
+    func configureFromSuccessfulAuth() {
+        self.userService.getUser { user, error in
+            guard let u = self.userService.user else {
+                DispatchQueue.main.async {
+                    self.isConfigured = true
+                    self.requestTrackingAuthorization()
+                }
+                
+                return
+            }
+            
+            CommandService.sharedInstance.loadCommands()
+//                    CommandService.sharedInstance.saveCommands { error in
+//                        print("Commands Saved")
+//                    }
+//                    LogService.sharedInstance.saveLogs { error in
+//                        print("Logs saved")
+//                    }
+            
+            LogService.sharedInstance.fetchPuppyLogs()
+            
+            CommandService.sharedInstance.fetchUserCommands { userCommands, error in
+                self.isConfigured = true
+                print(userCommands)
+            }
         }
     }
     

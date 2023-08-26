@@ -3,10 +3,40 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "PhaseScroll.getUserCommand(for:):PhaseScroll.swift">
+         contextName = "AppCoordinator.closeModals():AppCoordinator.swift">
          <PersistentStrings>
             <PersistentString
-               value = "viewModel.userCommands">
+               value = "modalScreen">
+            </PersistentString>
+            <PersistentString
+               value = "self">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HomeViewModel.updateTitles():HomeView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "titles">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CommandService.updateUserCommand(userCommand:):CommandService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in CustomTextField.textField.getter:CustomTextField.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "showSecureText">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #1 in CommandCard.body.getter:CommandCard.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.userCommand">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -15,20 +45,6 @@
          <PersistentStrings>
             <PersistentString
                value = "yearlyPackage">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in CommandService.updateUserCommand(userCommand:):CommandService.swift">
-      </ContextState>
-      <ContextState
-         contextName = "UserCommand.init(id:dictionary:):UserCommand.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in CustomTextField.textField.getter:CustomTextField.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "showSecureText">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -55,10 +71,10 @@
          contextName = "closure #2 in HomeView.body.getter:HomeView.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in closure #1 in CommandCard.body.getter:CommandCard.swift">
+         contextName = "PhaseScroll.getUserCommand(for:):PhaseScroll.swift">
          <PersistentStrings>
             <PersistentString
-               value = "viewModel.userCommand">
+               value = "viewModel.userCommands">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -67,6 +83,17 @@
          <PersistentStrings>
             <PersistentString
                value = "userCommands">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserCommand.init(id:dictionary:):UserCommand.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in closure #2 in closure #1 in PayWallView.body.getter:PayWallView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "viewModel.appCoordinator.modalScreen">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

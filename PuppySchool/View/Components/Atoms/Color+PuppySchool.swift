@@ -10,6 +10,7 @@ import SwiftUI
 
 extension Color {
     static let primaryPurple = Color("primaryPurple")
+    static let darkPurple = Color("darkPurple")
     static let primaryBlue = Color("primaryBlue")
     static let secondaryCharcoal = Color("secondaryCharcoal")
     static let blueGray = Color("blueGray")
@@ -48,3 +49,15 @@ extension Color {
     }
 }
 
+extension LinearGradient {
+    static var primaryGradient: LinearGradient {
+        return LinearGradient(
+            gradient: Gradient(stops: [
+                Gradient.Stop(color: Color(red: 0.85, green: 0.34, blue: 1), location: 0.00),
+                Gradient.Stop(color: Color(red: 0.24, green: 0.58, blue: 1), location: 1.00),
+            ]),
+            startPoint: UnitPoint(x: 0.93, y: 0.78),
+            endPoint: UnitPoint(x: 0.09, y: 0.24)
+        )
+    }
+}

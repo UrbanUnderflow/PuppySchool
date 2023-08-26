@@ -9,13 +9,15 @@ import SwiftUI
 
 struct CardBackground: View {
     var color: Color
+    var border: CGFloat = 1
+    
     var body: some View {
         Rectangle()
             .fill(color)
             .cornerRadius(12)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.gray, lineWidth: 1) // Gray border
+                        .stroke(Color.gray, lineWidth: border) // Gray border
                 )
             
     }

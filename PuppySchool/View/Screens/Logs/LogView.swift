@@ -90,6 +90,7 @@ struct LogView: View {
     var emptyState: some View {
         VStack {
             Spacer()
+                .frame(height: 80)
             LottieView(animationName: "dog", loopMode: .loop)
                 .frame(width: 150, height: 150)
             Text("You dont have any \nlogs yet today")
@@ -110,7 +111,9 @@ struct LogView: View {
                 HeaderView(viewModel: HeaderViewModel(headerTitle: "Puppy Logs",
                 theme: .dark,
                                                       actionIcon: viewModel.filteredLogs.count == 0 ? .custom(.calendar) : .sfSymbol(.minusCalendar, color: .white),
-                closeModal: nil,
+                closeModal: {
+                    //nothing
+                },
                 actionCallBack: {
                     if viewModel.filteredLogs.count == 0 {
                         viewModel.appCoordinator.showCalendarModal(viewModel: CalendarViewModel(appCoordinator: viewModel.appCoordinator, puppyLogs: LogService.sharedInstance.puppyLogs))
@@ -143,7 +146,7 @@ struct LogView: View {
                     ZStack {
                         Circle()
                             .fill(Color.secondaryPink)
-                            .frame(width: 70, height: 70)
+                            .frame(width: 60, height: 60)
                         IconImage(.sfSymbol(.plus, color: .secondaryWhite))
                     }
                     .padding(.trailing, 20)

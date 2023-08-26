@@ -9,10 +9,10 @@ import Foundation
 
 struct MasteredBadge: Hashable {
     var id: String
-    var icon: DogCommandIcon
+    var icon: DogCommandImages
     
     init(id: String,
-         icon: DogCommandIcon) {
+         icon: DogCommandImages) {
         self.id = id
         self.icon = icon
     }

@@ -17,7 +17,7 @@ struct PackageCardView: View {
     var bottomLabel: String
     var buttonTitle: String
     
-    var package: PackageViewModel
+    var package: PackageViewModel?
     @ObservedObject var offeringViewModel: OfferingViewModel
     
     var onPurchase: () -> Void
@@ -25,20 +25,20 @@ struct PackageCardView: View {
     var body: some View {
         VStack {
             HStack {
-                VStack {
-                    Text(badgeLabel)
-                        .padding(.horizontal, 20)
-                        .padding(.vertical, 8)
-                }
-                .background(BadgeBackground(color: .blueGray, cornerRadius: 40))
-                .padding(.top)
-                .padding(.leading)
-                
-                Spacer()
-            }
-            HStack {
                 Spacer()
                 VStack {
+                    HStack {
+                        VStack {
+                            Text(badgeLabel)
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 8)
+                        }
+                        .background(BadgeBackground(color: .blueGray, cornerRadius: 40))
+                        .padding(.top)
+                        .padding(.leading)
+                        
+                        Spacer()
+                    }
                     Spacer()
                     Text(title)
                         .font(.title2)
@@ -75,9 +75,10 @@ struct PackageCardView: View {
 
 struct PackageCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "$249", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: Package(), offeringViewModel: OfferingViewModel()) {
+        PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "$249", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: nil, offeringViewModel: OfferingViewModel()) {
             
             //check the status of subscription before moving forwad with this purchase
+            
             
         }
     }

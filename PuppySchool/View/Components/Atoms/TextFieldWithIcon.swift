@@ -12,12 +12,22 @@ struct TextFieldWithIcon: View {
     let placeholder: String
     let icon: Icon
     let isSecure: Bool
+    let isDisabled: Bool
     @State private var showSecureText: Bool = false
+    
+    init(text: Binding<String>, placeholder: String, icon: Icon, isSecure: Bool, isDisabled: Bool = false, showSecureText: Bool = false) {
+        self._text = text
+        self.placeholder = placeholder
+        self.icon = icon
+        self.isSecure = isSecure
+        self.isDisabled = isDisabled
+        self.showSecureText = showSecureText
+    }
     
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(Color.white)
+                .fill(Color.darkPurple)
                 .frame(height: 56)
             
             HStack {
@@ -26,7 +36,7 @@ struct TextFieldWithIcon: View {
                     .frame(width: 22, height: 22)
                     .padding(.trailing, 5)
                 
-                CustomTextField(text: $text, placeholder: placeholder, placeholderColor: Color.gray, foregroundColor: .secondaryCharcoal, isSecure: isSecure, showSecureText: showSecureText)
+                CustomTextField(text: $text, placeholder: placeholder, placeholderColor: Color.gray, foregroundColor: .secondaryWhite, isSecure: isSecure, showSecureText: showSecureText)
                 
                 if isSecure {
                     Button(action: {

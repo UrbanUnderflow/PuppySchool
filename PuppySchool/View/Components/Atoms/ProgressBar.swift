@@ -8,48 +8,34 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    let progress: CGFloat
+    @State var progress: CGFloat
     let color: Color
+    let backgroundColor: Color?
     
-    init(progress: CGFloat, color: Color) {
-        self.progress = progress
+    @State private var animatedProgress: CGFloat = 0
+    
+    init(progress: CGFloat, color: Color, backgroundColor: Color? = Color.gray) {
+        self._progress = State(initialValue: progress)
         self.color = color
+        self.backgroundColor = backgroundColor
     }
 
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 5)
-                    .fill(Color.gray.opacity(0.3))
+                    .fill(backgroundColor != nil ? backgroundColor! : Color.gray.opacity(0.3))
                 
                 RoundedRectangle(cornerRadius: 5)
                     .fill(color)
-                    .frame(width: progress * geometry.size.width) // Use the available width multiplied by progress
-                    .animation(.linear(duration: 1))
+                    .frame(width: animatedProgress * geometry.size.width) // Use animatedProgress for the width
             }
         }
         .cornerRadius(10)
+        .onAppear {
+            withAnimation(.linear(duration: 1)) {
+                animatedProgress = progress
+            }
+        }
     }
 }
-
-//struct ProgressBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            ZStack {
-//                Color.secondaryCharcoal
-//                ProgressBar(progress: <#T##CGFloat#>, color: <#T##Color#>)
-//                ProgressBar(progress: 0.3, color: Color.primaryPurple)
-//                    .frame(height: 20)
-//                    .padding()
-//            }
-//            
-//            GeometryReader { geometry in
-//                ProgressBar(progress: 0.7)
-//                    .frame(height: 20)
-//                    .padding()
-//            }
-//            .previewLayout(.fixed(width: 300, height: 50))
-//        }
-//    }
-//}
-

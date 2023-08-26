@@ -10,16 +10,20 @@ import SwiftUI
 
 enum Icon: Equatable {
     case sfSymbol(_ icon:SFSymbols, color: Color?)
-    case custom(CustomIcons)
-    case commands(DogCommandIcon)
+    case custom(CustomImages)
+    case customIcon(_ icon: CustomIcons, color: Color?)
+    case commands(DogCommandImages)
+    case commandIcon(_ icon: DogCommandIcon, color: Color?)
     case logs(_ icon:LogIcon, color: Color?)
-    case dogStage(DogStageIcon)
+    case dogStage(_ icon: DogStageIcon, color: Color?)
+    case messageImage(MessageImage)
 }
 
 enum SFSymbols: String {
     case message = "message"
     case pencil = "pencil"
     case person = "person"
+    case personFill = "person.fill"
     case gear = "gear"
     case check = "checkmark.circle.fill"
     case close = "xmark.circle.fill"
@@ -51,9 +55,11 @@ enum SFSymbols: String {
     case reload = "arrow.counterclockwise"
     case privacy = "lock.shield.fill"
     case doc = "doc"
+    case birthday = "birthday.cake"
+    case appleLogo = "apple.logo"
 }
 
-enum CustomIcons: String {
+enum CustomImages: String {
     case oval = "oval"
     case play = "play"
     case miniChevLeft = "miniChevLeft"
@@ -73,13 +79,22 @@ enum CustomIcons: String {
     case taskbarListSelected = "tabbar-list-selected"
     case taskbarProfile = "tabbar-profile"
     case taskbarProfileSelected = "tabbar-profile-selected"
+    case backgroundImage1 = "dogTrainingGraphic"
+    case graidentPaw = "gradientPaw"
+    case tap = "tap-double"
     
 }
 
+enum CustomIcons: String {
+    case dog = "dog.SFSymbol"
+    case notification = "notification.SFSymbol"
+    case profile = "profile.SFSymbol"
+}
+
 enum DogStageIcon: String {
-    case puppyStage = "puppyStage"
-    case adolescentStage = "adolescentStage"
-    case adultStage = "adultStage"
+    case puppyStage = "puppyStage.SFSymbol"
+    case adolescentStage = "adolescentStage.SFSymbol"
+    case adultStage = "adultStage.SFSymbol"
 }
 
 enum LogIcon: String {
@@ -90,12 +105,20 @@ enum LogIcon: String {
     case water = "water"
 }
 
-enum DogCommandIcon: String {
+enum MessageImage: String {
+    case nailClip = "nailClip"
+}
+
+
+enum DogCommandImages: String {
     case sit = "sit" //have it
     case stay = "stay" // have it
     case down = "down" //have it
     case come = "come" //have it
     case heel = "heel" //have it
+    case crate = "crate"
+    case settle = "settle"
+    case kennel = "kennel"
     case off = "off"
     case leaveIt = "leaveIt"
     case dropIt = "dropIt" //
@@ -121,7 +144,7 @@ enum DogCommandIcon: String {
     case takeIt = "takeIt"
     case findIt = "findIt"
     case hold = "hold"
-    case settle = "settle"
+    case settleCrate = "settleCrate"
     case bow = "bow"
     case dance = "dance"
     case peekABoo = "peekABoo"
@@ -130,4 +153,47 @@ enum DogCommandIcon: String {
     case hug = "hug"
     case paw = "paw" //have it
     case place = "place"
+    
+}
+
+enum DogCommandIcon: String {
+    case sit = "sit.SFSymbol" //have it
+    case stay = "stay.SFSymbol" // have it
+    case down = "down.SFSymbol" //have it
+    case come = "come.SFSymbol" //have it
+    case heel = "heel.SFSymbol" //have it
+    case off = "off.SFSymbol"
+    case leaveIt = "leaveIt.SFSymbol"
+    case dropIt = "dropIt.SFSymbol" //
+    case watchMe = "focus.SFSymbol" //have it
+    case quiet = "quiet.SFSymbol"
+    case wait = "wait.SFSymbol"
+    case backup = "backup.SFSymbol"
+    case touch = "touch.SFSymbol"
+    case spin = "spin.SFSymbol"
+    case rollOver = "rollOver.SFSymbol"
+    case fetch = "fetch.SFSymbol"
+    case speak = "speak.SFSymbol"
+    case tug = "tug.SFSymbol"
+    case playDead = "playDead.SFSymbol"
+    case stand = "stand.SFSymbol"
+    case turn = "turn.SFSymbol"
+    case legWeave = "legWeave.SFSymbol"
+    case goAround = "goAround.SFSymbol"
+    case over = "over.SFSymbol"
+    case under = "under.SFSymbol"
+    case crawl = "crawl.SFSymbol"
+    case weave = "weave.SFSymbol"
+    case takeIt = "takeIt.SFSymbol"
+    case findIt = "findIt.SFSymbol"
+    case hold = "hold.SFSymbol"
+    case settle = "settle.SFSymbol"
+    case bow = "bow.SFSymbol"
+    case dance = "dance.SFSymbol"
+    case peekABoo = "peekABoo.SFSymbol"
+    case jump = "jump.SFSymbol"
+    case balance = "balance.SFSymbol"
+    case hug = "hug.SFSymbol"
+    case paw = "paw.SFSymbol" //have it
+    case place = "place.SFSymbol"
 }

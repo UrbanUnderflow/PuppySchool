@@ -13,16 +13,18 @@ struct CustomTextField: View {
     var placeholderColor: Color
     var foregroundColor: Color
     var isSecure: Bool
+    var isDisabled: Bool
     var showSecureText: Bool
     @State private var isEditing: Bool = false
 
     // Note that the Binding parameters should be passed in from the parent view
-    init(text: Binding<String>, placeholder: String, placeholderColor: Color, foregroundColor: Color, isSecure: Bool = false, showSecureText: Bool = false) {
+    init(text: Binding<String>, placeholder: String, placeholderColor: Color, foregroundColor: Color, isSecure: Bool = false, isDisabled: Bool = false, showSecureText: Bool = false) {
         self._text = text
         self.placeholder = placeholder
         self.placeholderColor = placeholderColor
         self.foregroundColor = foregroundColor
         self.isSecure = isSecure
+        self.isDisabled = isDisabled
         self.showSecureText = showSecureText
     }
 
@@ -36,6 +38,7 @@ struct CustomTextField: View {
                 if isSecure {
                     if showSecureText {
                         TextField("", text: $text)
+                            .disabled(isDisabled)
                     } else {
                         SecureField("", text: $text, onCommit: {
                             self.isEditing = false
@@ -43,6 +46,7 @@ struct CustomTextField: View {
                     }
                 } else {
                     TextField("", text: $text)
+                        .disabled(isDisabled)
                 }
             }
             .foregroundColor(foregroundColor)

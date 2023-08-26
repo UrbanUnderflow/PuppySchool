@@ -23,18 +23,26 @@ struct MasteredSkillBadgeView: View {
     var body: some View {
         ZStack {
             if viewModel.isMastered == true {
-                IconImage(.commands(viewModel.badge.icon))
-                    .frame(width: 30, height: 30)
-                    .padding(20)
+                ZStack {
+                    Circle()
+                        .fill(.white)
+                        .frame(width: 100, height: 100)
+                    IconImage(.commands(viewModel.badge.icon))
+                        .frame(width: 60, height: 60)
+                }
             } else {
-                IconImage(.commands(viewModel.badge.icon))
-                    .opacity(0.5)
-                    .frame(width: 30, height: 30)
-                    .padding(20)
+                ZStack {
+                    Circle()
+                        .fill(Color.darkPurple)
+                        .frame(width: 100, height: 100)
+                    if let commandIcon = DogCommandIcon(rawValue: "\(viewModel.badge.icon.rawValue).SFSymbol") {
+                        IconImage(.commandIcon(commandIcon, color: .primaryPurple), width: 60, height: 60)
+                    }
+                }
             }
         }
         .background(RoundedRectangle(cornerRadius: 70)
-            .stroke(viewModel.isMastered ? Color.gray : Color.blueGray, lineWidth: 1))
+            .stroke(viewModel.isMastered ? Color.gray : Color.clear, lineWidth: 1))
     }
 }
 

@@ -11,14 +11,18 @@ import UserNotifications
 class NotificationService {
     static let sharedInstance = NotificationService()
 
-    func scheduleDailyNotification() {
-        // Create notification content
-        let content = UNMutableNotificationContent()
-        content.title = "Your workout is ready"
-        content.body = "Your workout is ready when you are!"
-        content.sound = UNNotificationSound.default
 
-        // Calculate the trigger time (2 hours before the task expires)
+
+    
+    
+//    func scheduleDailyNotification() {
+//        // Create notification content
+//        let content = UNMutableNotificationContent()
+//        content.title = "Training"
+//        content.body = "You havent trained hendrix today. don't forget to train for at least 15 mins today."
+//        content.sound = UNNotificationSound.default
+//
+//        // Calculate the trigger time (2 hours before the task expires)
 //        let calendar = Calendar.current
 //        guard let expirationDate = getActivityExpirationFromUserDefaults() else {
 //            print("Error: Couldn't get activity expiration date from UserDefaults")
@@ -41,5 +45,10 @@ class NotificationService {
 //                print("Daily notification scheduled successfully")
 //            }
 //        }
+//    }
+    
+    func scheduleTimeSensativeMessage() {
+        // scheduel time senstavie notifications array
+        // We should do this by saving a ReviecedMessage Model to file base that maps back to one of our notification in the notifications array.
     }
 }

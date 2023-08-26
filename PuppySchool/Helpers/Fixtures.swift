@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RevenueCat
 
 class Fixtures {
     // Singleton instance
@@ -33,6 +34,25 @@ class Fixtures {
         ), timesCompleted: 10, didMaster: false, createdAt: Date(), updatedAt: Date())
     }()
     
+        //Purchase Package
+    lazy var yearlyPackage: Package = {
+        // StoreProduct properties
+        let productType: StoreProduct.ProductType = .consumable
+        let productCategory: StoreProduct.ProductCategory = .subscription
+        let localizedDescription: String = "A yearly subscription package"
+        let localizedTitle: String = "Yearly Subscription"
+        let currencyCode: String? = "USD"
+        let price: Decimal = 49.99
+        let localizedPriceString: String = "$49.99"
+        let productIdentifier: String = "com.example.app.yearlysubscription"
+
+        // Create a StoreProduct instance
+        let storeProduct = StoreProduct(sk1Product: SK1Product())
+        
+
+        // Return a Package instance
+        return Package(identifier: "yearlyPackageIdentifier", packageType: .annual, storeProduct: storeProduct, offeringIdentifier: "yearlyOffering")
+    }()
     
     // Mock data for Logs
     lazy var puppyLogAte: PuppyLog = {
@@ -59,7 +79,7 @@ class Fixtures {
         return Command(
             id: "Sit",
             name: "Sit",
-            description: "Sit down",
+            description: "Command your dog to sit in a seated psition.",
             steps: [
                 "Hold a treat close to your dog's nose.",
                 "Move your hand up, allowing their head to follow the treat and causing their bottom to lower.",

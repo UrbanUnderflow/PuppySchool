@@ -26,7 +26,7 @@ struct ProfileView: View {
             VStack {
                 HStack(alignment: .center) {
                     Spacer()
-                    Text(UserService.sharedInstance.user?.dogName ?? "")
+                    Text(UserService.sharedInstance.user?.dogName.capitalized ?? "")
                         .font(.largeTitle)
                         .foregroundColor(Color.secondaryWhite)
                         .bold()
@@ -39,18 +39,18 @@ struct ProfileView: View {
                 .padding(.bottom, 20)
                 .padding(.top, 20)
                 .padding(.horizontal, 20)
-                RemoteImage(url: "https://firebasestorage.googleapis.com/v0/b/puppyschool-a2c26.appspot.com/o/Hentrix.jpg?alt=media&token=a3364eed-633e-4a44-bb9d-aab1f21993e4")
-                    .frame(width: 200, height: 200)
-                    .cornerRadius(100, corners: .all)
+                
+                RemoteImage(url: UserService.sharedInstance.user?.profileImageURL ?? "", placeHolderImage: .customIcon(.dog, color: .lightGray), width: 120, height: 120, cornerRadius: 60)
                     .padding(.bottom, 100)
+
                 Text("Streak")
                     .font(.title3)
                     .foregroundColor(.secondaryWhite)
                     .bold()
                     .padding(.bottom, 20)
-                ProfileMenuItemView(viewModel: ProfileMenuItemViewModel(title: "CURRENT", value: "0"))
+                ProfileMenuItemView(viewModel: ProfileMenuItemViewModel(title: "CURRENT", value: "\(determineStreak())"))
                     .padding(.bottom, 16)
-                ProfileMenuItemView(viewModel: ProfileMenuItemViewModel(title: "ALL TIME RECORD", value: "0"))
+                ProfileMenuItemView(viewModel: ProfileMenuItemViewModel(title: "ALL TIME RECORD", value: "\(determineAllTimeHighestStreak())"))
                     .padding(.bottom, 20)
                 
                 Text("Mastered Skills (\(countMasteredCommands()))")
@@ -101,7 +101,66 @@ struct ProfileView: View {
         
         return masteredCommands
     }
+    
+    func determineStreak() -> Int {
+        let logs = LogService.sharedInstance.puppyLogs
+        guard !logs.isEmpty else { return 0 }
 
+        // Sort logs by createdAt in ascending order
+        let sortedLogs = logs.sorted { $0.createdAt < $1.createdAt }
+
+        var streak = 1
+        var currentStreak = 1
+
+        let calendar = Calendar.current
+
+        for i in 1..<sortedLogs.count {
+            let previousDate = sortedLogs[i-1].createdAt
+            let currentDate = sortedLogs[i].createdAt
+
+            // Check if the two dates are consecutive days
+            if let nextDate = calendar.date(byAdding: .day, value: 1, to: previousDate),
+               calendar.isDate(nextDate, inSameDayAs: currentDate) {
+                currentStreak += 1
+                streak = max(streak, currentStreak)
+            } else {
+                currentStreak = 1
+            }
+        }
+
+        return streak
+    }
+    
+    func determineAllTimeHighestStreak() -> Int {
+        let logs = LogService.sharedInstance.puppyLogs
+        guard !logs.isEmpty else { return 0 }
+
+        // Sort logs by createdAt in ascending order
+        let sortedLogs = logs.sorted { $0.createdAt < $1.createdAt }
+
+        var highestStreak = 0
+        var currentStreak = 1
+
+        let calendar = Calendar.current
+
+        for i in 1..<sortedLogs.count {
+            let previousDate = sortedLogs[i-1].createdAt
+            let currentDate = sortedLogs[i].createdAt
+
+            // Check if the two dates are consecutive days
+            if let nextDate = calendar.date(byAdding: .day, value: 1, to: previousDate),
+               calendar.isDate(nextDate, inSameDayAs: currentDate) {
+                currentStreak += 1
+            } else {
+                highestStreak = max(highestStreak, currentStreak)
+                currentStreak = 1
+            }
+        }
+
+        highestStreak = max(highestStreak, currentStreak)
+
+        return highestStreak
+    }
 }
 
 struct ProfileView_Previews: PreviewProvider {

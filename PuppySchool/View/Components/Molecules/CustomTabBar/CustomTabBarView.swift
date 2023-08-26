@@ -24,7 +24,8 @@ struct CustomTabBarView: View {
     @State private var selectedTab: Tab = .home
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            Divider(color: .gray, height: 1)
             HStack {
                 TabButton(
                     icon: IconImage(.custom(selectedTab == .home ? .taskbarPawSelected : .taskbarPaw)),
@@ -55,7 +56,7 @@ struct CustomTabBarView: View {
                 Spacer()
                 
                 TabButton(
-                    icon: IconImage(.custom(selectedTab == .list ? .taskbarListSelected : .taskbarList)),
+                    icon: IconImage(selectedTab == .list ? .custom(.taskbarListSelected) : .custom(.taskbarList)),
                         text: "List",
                         isSelected: selectedTab == .list,
                         action: {
@@ -69,7 +70,9 @@ struct CustomTabBarView: View {
                 Spacer()
                 
                 TabButton(
-                    icon: IconImage(.custom(selectedTab == .profile ? .taskbarProfileSelected : .taskbarProfile)),
+                    icon: IconImage(selectedTab == .profile ?
+                        .sfSymbol(.personFill, color:  .secondaryPink) :
+                        .sfSymbol(.person, color:  .secondaryWhite)),
                         text: "Profile",
                         isSelected: selectedTab == .profile,
                         action: {
@@ -82,8 +85,7 @@ struct CustomTabBarView: View {
                 
             }
             .padding()
-            .background(Color.black)
-            .cornerRadius(20, corners: .top)
+            .background(Color.primaryPurple.opacity(0.9))
         }
     }
 }
@@ -104,14 +106,11 @@ private struct TabButton: View {
             VStack {
                 icon
                 .frame(width: 24, height: 24)
-                Text(isSelected ? text : "")
+                Text(text)
                     .bold()
                     .font(.subheadline)
-                    .frame(width: isSelected ? 60 : 0)
             }
-            .foregroundColor(isSelected ? color : .gray)
-            .padding(.horizontal, isSelected ? 20 : 0)
-            .padding(.vertical, isSelected ? 10 : 0)
+            .foregroundColor(isSelected ? color : .secondaryWhite)
         }
     }
 }

@@ -11,19 +11,20 @@ import Foundation
 struct CircularProgressBarView: View {
     var progress: Double
     var maxProgress: Double
-    let colors: (start: Color, end: Color)
-
+    var colors: (start: Color, end: Color)
+    
     var body: some View {
         ZStack {
             Circle()
-                .stroke(lineWidth: 8)
+                .stroke(lineWidth: 10)
                 .opacity(0.3)
-                .foregroundColor(.gray)
-
+                .foregroundColor(Color.darkPurple)
+            
             Circle()
-                .trim(from: 0.0, to: CGFloat(min(progress / maxProgress, 1.0)))
-                .stroke(style: StrokeStyle(lineWidth: 8, lineCap: .round, lineJoin: .round))
-                .foregroundColor(progress >= maxProgress ? .red : (progress > maxProgress - 10 ? .orange : colors.start))
+                .trim(from: 0.0, to: CGFloat(min(self.progress / self.maxProgress, 1.0)))
+                .stroke(
+                    LinearGradient(gradient: Gradient(colors: [colors.start, colors.end]), startPoint: .leading, endPoint: .trailing),
+                    style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
                 .rotationEffect(Angle(degrees: 270.0))
                 .animation(.linear)
         }

@@ -10,6 +10,8 @@ import SwiftUI
 class RegistrationModalViewModel: ObservableObject {
     @Published var appCoordinator: AppCoordinator
     @Published var selectedStage = DogStage.puppy
+    @Published var birthday: String = ""
+    @Published var birthdate: Date = Date()
     @Published var selectedDogStageDescription: DogStageDescription? = DogStageDescription(
                                                                                id: UUID(),
                                                                                title: "Get ready for a life of dog parenthood!",
@@ -48,6 +50,7 @@ struct RegistrationModal: View {
     @ObservedObject var viewModel: RegistrationModalViewModel
     @State private var selectedPage = 0
     @State var selectedImage: UIImage? = nil
+    @State private var isDatePickerShown = false
     
     func nextButtonPressed() {
         guard let u = UserService.sharedInstance.user else {
@@ -72,32 +75,37 @@ struct RegistrationModal: View {
             UserService.sharedInstance.updateUser(user: updatedUser)
         }
         
+        if selectedPage == 2 {
+            updatedUser.birthdate = viewModel.birthdate
+            UserService.sharedInstance.updateUser(user: updatedUser)
+        }
         
-        if selectedPage <= 3 {
+        if selectedPage <= 4 {
             withAnimation {
                 selectedPage += 1
             }
         }
         
         //once everything is selected we can create a workout for the user
-        if selectedPage > 3 {
+        if selectedPage > 4 {
             viewModel.appCoordinator.closeModals()
         }
     }
 
     var titleGroup: some View {
         VStack {
-            if selectedPage == 3 {
+            if selectedPage == 4 {
                 HStack {
                     VStack(alignment: .leading, spacing: 9) {
                         Text(viewModel.selectedDogStageDescription?.title ?? "Prepare to me a new dog parent!")
                             .multilineTextAlignment(.leading)
+                            .foregroundColor(.secondaryWhite)
                             .font(.system(size: 44))
                             .bold()
                         Text("Here's some information about your dog at this stage.")
                             .multilineTextAlignment(.leading)
                             .font(.headline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.secondaryWhite)
                     }
                     Spacer()
                 }
@@ -111,10 +119,11 @@ struct RegistrationModal: View {
                             .multilineTextAlignment(.leading)
                             .font(.largeTitle)
                             .bold()
+                            .foregroundColor(.secondaryWhite)
                         Text("Tell us about your dog.")
                             .multilineTextAlignment(.leading)
                             .font(.headline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.secondaryWhite)
                     }
                     Spacer()
                 }
@@ -124,17 +133,224 @@ struct RegistrationModal: View {
                 
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
-                        Text("\(selectedPage + 1)/3")
-                            .foregroundColor(Color.gray)
+                        Text("\(selectedPage + 1)/4")
+                            .foregroundColor(Color.secondaryWhite)
                             .font(.subheadline)
                             .padding(.leading, 20)
                         Spacer()
                     }
                     ProgressView(value: Double(selectedPage + 1), total: 5)
                         .padding()
-                        .progressViewStyle(LinearProgressViewStyle(tint: Color.primaryPurple))
+                        .overlay(
+                            LinearGradient(
+                                gradient: Gradient(colors: [
+                                    Color(UIColor(red: 0.35, green: 0.38, blue: 1, alpha: 1)),
+                                    Color(UIColor(red: 0.85, green: 0.34, blue: 1, alpha: 1))
+                                ]),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                            .mask(
+                                ProgressView(value: Double(selectedPage + 1), total: 5)
+                                    .padding()
+                            )
+                        )
                 }
             }
+        }
+    }
+    
+    var puppyName: some View {
+        VStack(alignment: .leading) {
+            Text("What is your puppy's name?")
+                .bold()
+                .padding(.leading, 20)
+                .foregroundColor(.secondaryWhite)
+            
+            ZStack {
+                TextFieldWithIcon(text: $viewModel.puppyName, placeholder: "", icon: .customIcon(.dog, color: Color.secondaryWhite), isSecure: false)
+            }
+            .background(RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.gray, lineWidth: 1))
+            .padding()
+            Spacer()
+            
+        }
+    }
+    
+    var puppyAge: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading) {
+                Text("Choose the age of your puppy.")
+                    .bold()
+                    .padding(.leading, 20)
+                    .padding(.bottom, 12)
+                    .foregroundColor(.secondaryWhite)
+                StageSelectionView(viewModel: StageSelectionViewModel(), onSubmittedAnswer: { selectedOption in
+                    print("Selected option: \(selectedOption)")
+                    viewModel.selectedStage = selectedOption.stage
+                    viewModel.selectedDogStageDescription = selectedOption
+                })
+                Spacer()
+                    .frame(height: 60)
+            }
+        }
+    }
+    
+    var puppyBirthday: some View {
+        VStack(alignment: .leading) {
+            Text("If you know your puppy's birthday, choose the date")
+                .bold()
+                .padding(.leading, 20)
+                .foregroundColor(.secondaryWhite)
+
+            ZStack {
+                Color.darkPurple
+                if !isDatePickerShown {
+                   HStack {
+                       IconImage(.sfSymbol(.birthday, color: .secondaryWhite))
+                           .padding(.trailing, 10)
+                      
+                       Text(viewModel.birthday.isEmpty ? "Choose Date" : viewModel.birthday)
+                           .foregroundColor(.secondaryWhite)
+                       Spacer()
+                   }
+                   .onTapGesture {
+                       isDatePickerShown.toggle()
+                   }
+                   .padding()
+               }
+                
+                if isDatePickerShown {
+                    VStack {
+                        DatePicker("", selection: $viewModel.birthdate, displayedComponents: .date)
+                            .background(Color.white)
+                            .datePickerStyle(WheelDatePickerStyle())
+                            .onDisappear {
+                                viewModel.birthday = viewModel.birthdate.dayMonthYearFormat
+                            }
+                            .padding(.top, 100)
+                        
+                        Button {
+                            isDatePickerShown.toggle()
+                            viewModel.birthday = viewModel.birthdate.dayMonthYearFormat
+                        } label: {
+                            Text("Done")
+                                .foregroundColor(.secondaryWhite)
+                                .padding(.vertical)
+                        }
+                    }
+                }
+            }
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.secondaryWhite, lineWidth: isDatePickerShown ? 0 : 1)
+            )
+            .frame(height: 30)
+            .padding()
+            Spacer()
+
+        }
+    }
+    
+    var uploadPhoto: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text("Let's get your puppy's cutest photo!")
+                    .bold()
+                    .padding(.bottom, 12)
+                    .foregroundColor(.secondaryWhite)
+                
+                HStack {
+                    Spacer()
+                    UploadImageView(viewModel: UploadImageViewModel(serviceManager: viewModel.appCoordinator.serviceManager, onImageUploaded: { image in
+                        self.selectedImage = image
+                    })) {
+                        VStack(alignment: .center, spacing:20) {
+                            if let image = selectedImage {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 150, height: 150)
+                                    .cornerRadius(75, corners: .all)
+                            } else {
+                                VStack {
+                                    IconImage(.sfSymbol(.camera, color: .secondaryWhite), width: 36 , height: 36)
+                                    
+                                    Text("Upload a photo")
+                                        .foregroundColor(.secondaryWhite)
+                                        .font(.title3)
+                                        .bold()
+                                        .padding(.bottom, 5)
+                                }
+                                .frame(height: 150)
+                            }
+                            
+                        }
+                    }
+                    Spacer()
+                }
+                .padding(50)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(
+                            Color.blueGray,
+                            lineWidth: 2
+                        )
+                )
+                ConfirmationButton(title: "Skip", type: .clearButton) {
+                    nextButtonPressed()
+                }
+                Spacer()
+                
+            }
+            .padding(.horizontal, 20)
+            Spacer()
+        }
+    }
+    
+    var puppyTips: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
+                    if let icon = viewModel.selectedDogStageDescription?.icon {
+                        IconImage(.dogStage(icon, color: .secondaryWhite), width: 200, height: 200)
+                            .padding(30)
+                    }
+                    Spacer()
+                }
+                .padding()
+                
+                Text(viewModel.selectedDogStageDescription?.longDescription ?? "")
+                    .foregroundColor(.secondaryWhite)
+                    .padding(.bottom)
+                
+                Text("Tips for your dog at this stage")
+                    .bold()
+                    .font(.title3)
+                    .foregroundColor(.secondaryWhite)
+                    .padding(.bottom)
+                
+                if let tips = viewModel.selectedDogStageDescription?.tips {
+                    ForEach(tips, id: \.self) { tip in
+                        VStack(alignment: .leading) {
+                            Text(tip.title)
+                                .bold()
+                                .foregroundColor(.secondaryWhite)
+                                .padding(.bottom, 2)
+                            Text(tip.description)
+                                .foregroundColor(.secondaryWhite)
+                                .padding(.bottom, 12)
+                            
+                        }
+                    }
+                }
+                Spacer()
+                    .frame(height: 50)
+            }
+            .padding(.horizontal, 20)
+            Spacer()
         }
     }
     
@@ -143,150 +359,80 @@ struct RegistrationModal: View {
             titleGroup
             
             ZStack {
+                Color.primaryPurple
+                
                 TabView(selection: $selectedPage) {
-                    VStack(alignment: .leading) {
-                        Text("What is your puppy's name?")
-                            .bold()
-                            .padding(.leading, 20)
-                        
-                        ZStack {
-                            TextFieldWithIcon(text: $viewModel.puppyName, placeholder: "", icon: .dogStage(.puppyStage), isSecure: false)
-                        }
-                        .background(RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 1))
-                        .padding()
-                        Spacer()
-                        
-                    }
+                    puppyName
+                        .background(Color.primaryPurple)
                     .tag(0)
                     
-                    ScrollView {
-                        VStack(alignment: .leading) {
-                            Text("Choose the age of your puppy.")
-                                .bold()
-                                .padding(.leading, 20)
-                                .padding(.bottom, 12)
-                            StageSelectionView(viewModel: StageSelectionViewModel(), onSubmittedAnswer: { selectedOption in
-                                print("Selected option: \(selectedOption)")
-                                viewModel.selectedStage = selectedOption.stage
-                                viewModel.selectedDogStageDescription = selectedOption
-                            })
-                            Spacer()
-                                .frame(height: 60)
-                        }
-                    }.tag(1)
+                    puppyAge
+                        .background(Color.primaryPurple)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .tag(1)
                     
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Let's get your puppy's cutest photo!")
-                                .bold()
-                                .padding(.bottom, 12)
-                            
-                            HStack {
-                                Spacer()
-                                UploadImageView(viewModel: UploadImageViewModel(serviceManager: viewModel.appCoordinator.serviceManager, onImageUploaded: { image in
-                                    self.selectedImage = image
-                                })) {
-                                    VStack(alignment: .center, spacing:20) {
-                                        if let image = selectedImage {
-                                            Image(uiImage: image)
-                                                .resizable()
-                                                .scaledToFill()
-                                                .frame(width: 150, height: 150)
-                                                .cornerRadius(75, corners: .all)
-                                        } else {
-                                            VStack {
-                                                IconImage(.sfSymbol(.camera, color: .gray), width: 36 , height: 36)
-                                                
-                                                Text("Upload a photo")
-                                                    .foregroundColor(.gray)
-                                                    .font(.title3)
-                                                    .bold()
-                                                    .padding(.bottom, 5)
-                                            }
-                                            .frame(height: 150)
-                                        }
-                                        
-                                    }
-                                }
-                                Spacer()
-                            }
-                            .padding(50)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(
-                                        Color.blueGray,
-                                        lineWidth: 2
-                                    )
-                            )
-                            ConfirmationButton(title: "Skip", type: .clearButton) {
-                                viewModel.appCoordinator.closeModals()
-                            }
-                            Spacer()
-                            
-                        }
-                        .padding(.horizontal, 20)
-                        Spacer()
-                    }.tag(2)
+                    puppyBirthday
+                        .background(Color.primaryPurple)
+                        .tag(2)
                     
-                    ScrollView {
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Spacer()
-                                if let icon = viewModel.selectedDogStageDescription?.icon {
-                                    IconImage(.dogStage(icon))
-                                        .frame(width: 200, height: 200)
-                                }
-                                Spacer()
-                            }
-                            .padding()
-                            
-                            Text(viewModel.selectedDogStageDescription?.longDescription ?? "")
-                                .padding(.bottom)
-                            
-                            Text("Tips for your dog at this stage")
-                                .bold()
-                                .font(.title3)
-                                .padding(.bottom)
-                            
-                            if let tips = viewModel.selectedDogStageDescription?.tips {
-                                ForEach(tips, id: \.self) { tip in
-                                    VStack(alignment: .leading) {
-                                        Text(tip.title)
-                                            .bold()
-                                            .padding(.bottom, 2)
-                                        Text(tip.description)
-                                            .padding(.bottom, 12)
-                                    }
-                                }
-                            }
-
-                         
-                            ConfirmationButton(title: "Skip", type: .clearButton) {
-                                viewModel.appCoordinator.closeModals()
-                            }
-                            Spacer()
-                            
-                        }
-                        .padding(.horizontal, 20)
-                        Spacer()
-                    }.tag(3)
-                }
+                    uploadPhoto
+                        .background(Color.primaryPurple)
+                    .tag(3)
+                    
+                    puppyTips
+                        .background(Color.primaryPurple)
+                    .tag(4)
+                }.background(.clear)
                 
                 VStack {
                     Spacer()
-                    ConfirmationButton(title: selectedPage == 3 ? "Complete" : "Next", type: .primaryLargeConfirmation) {
+                    ConfirmationButton(title: selectedPage == 4 ? "Complete" : "Next", type: .primaryLargeGradientConfirmation) {
                         nextButtonPressed()
                     }
                     .padding()
                 }
+                
             }
         }
+        .background(Color.primaryPurple, ignoresSafeAreaEdges: .all)
     }
 }
 
 struct RegistrationModal_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationModal(viewModel: RegistrationModalViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
+    }
+}
+
+
+struct WhiteDatePicker: UIViewRepresentable {
+    @Binding var date: Date
+    var onDone: () -> Void
+
+    func makeUIView(context: Context) -> UIDatePicker {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.setValue(UIColor.white, forKey: "textColor")
+        return datePicker
+    }
+
+    func updateUIView(_ uiView: UIDatePicker, context: Context) {
+        uiView.date = date
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    class Coordinator: NSObject {
+        var parent: WhiteDatePicker
+
+        init(_ parent: WhiteDatePicker) {
+            self.parent = parent
+        }
+
+        @objc func done() {
+            parent.onDone()
+        }
     }
 }

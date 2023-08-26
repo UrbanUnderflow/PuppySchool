@@ -23,10 +23,10 @@ class HeaderViewModel: ObservableObject {
     @Published var type: HeaderType
     @Published var actionIcon: Icon?
     
-    var closeModal: (() -> Void)? // Make this optional
+    var closeModal: (() -> Void)
     var actionCallBack: () -> Void
 
-    init(headerTitle: String, theme: ThemeType = .light, type: HeaderType = .close, actionIcon: Icon? = nil, closeModal: (() -> Void)? = nil, actionCallBack: @escaping () -> Void) {
+    init(headerTitle: String, theme: ThemeType = .light, type: HeaderType = .close, actionIcon: Icon? = nil, closeModal: @escaping (() -> Void), actionCallBack: @escaping () -> Void) {
         self.headerTitle = headerTitle
         self.theme = theme
         self.type = type
@@ -43,22 +43,16 @@ struct HeaderView: View {
     var body: some View {
         VStack {
             HStack {
-                if let closeAction = viewModel.closeModal { //
-                    if viewModel.type == .back {
-                        BackButton().onTapGesture {
-                            closeAction()
-                        }
-                        .padding(.leading, 20)
-                    } else {
-                        CloseButtonView {
-                            closeAction()
-                        }
-                        .padding(.leading, 20)
+                if viewModel.type == .back {
+                    BackButton().onTapGesture {
+                        viewModel.closeModal()
                     }
+                    .padding(.leading, 20)
                 } else {
-                    Spacer()
-                        .frame(width: 24, height: 24)
-                        .padding(.leading, 20)
+                    CloseButtonView {
+                        viewModel.closeModal()
+                    }
+                    .padding(.leading, 20)
                 }
 
                 Spacer()
