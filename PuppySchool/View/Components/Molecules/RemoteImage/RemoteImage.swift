@@ -26,6 +26,7 @@ struct RemoteImage: View {
             if let imageData = imageData, let uiImage = UIImage(data: imageData) {
                 Image(uiImage: uiImage)
                     .resizable()
+                    .scaledToFill()
                     .frame(width: width, height: height)
                     .cornerRadius(cornerRadius, corners: .all)
             } else if isImageLoading {

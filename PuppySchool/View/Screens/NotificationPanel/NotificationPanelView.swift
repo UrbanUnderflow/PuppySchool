@@ -9,54 +9,17 @@ import SwiftUI
 
 class NotificationPanelViewModel: ObservableObject {
 	let appCoordinator: AppCoordinator
+    let notifications: [UserNotification]
 
-	init(appCoordinator: AppCoordinator) {
+    init(appCoordinator: AppCoordinator, notifications: [UserNotification]) {
 		self.appCoordinator = appCoordinator
+        self.notifications = notifications
 	}
 
 }
 
 struct NotificationPanelView: View {
 	@ObservedObject var viewModel: NotificationPanelViewModel
-
-    var message: some View {
-        VStack {
-            VStack {
-                HStack {
-                    Text("Handling Sensitization")
-                        .font(.headline)
-                        .foregroundColor(.secondaryWhite)
-                    Spacer()
-                }
-                
-                HStack {
-                    VStack {
-                        IconImage(.messageImage(.nailClip))
-                            .frame(width: 160, height: 160)
-                    }
-                    VStack(alignment: .leading, spacing: 20) {
-                    Text("Gently handle your puppy's paws, ears, and mouth regularly. This will make them more comfortable with being handled and will make future grooming and veterinary visits easier.")
-                        .foregroundColor(.secondaryWhite)
-                        .font(.subheadline)
-                    }
-                    .padding(.leading)
-                }
-                .padding(.bottom, 10)
-                
-                HStack {
-                    Spacer()
-                    Text("8 weeks")
-                        .foregroundColor(.teal)
-                        .font(.subheadline)
-                        .bold()
-                }
-            }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 20)
-            .background(CardBackground(color: .primaryPurple, border: 0))
-            .padding(.horizontal, 20)
-        }
-    }
     
     var body: some View {
       VStack {
@@ -68,19 +31,35 @@ struct NotificationPanelView: View {
           }))
           Divider(color: .white.opacity(0.2), height: 2)
               .padding(.bottom, 20)
-          VStack(spacing: 12) {
-              message
-              message
+          ScrollView {
+              VStack(spacing: 12) {
+                  ForEach(viewModel.notifications) { notification in
+                      NotificationCardView(viewModel: NotificationCardViewModel(notification: notification.notification))
+                  }
+              }
           }
          Spacer()
           
       }
       .background(Color.darkPurple)
+      .onAppear {
+          for notification in viewModel.notifications {
+              if notification.wasDelivered == false {
+                  var newNotification = notification
+                  newNotification.wasDelivered = true
+                  NotificationService.sharedInstance.updateUserNotification(userNotification: newNotification) { error in
+                      if (error == nil) {
+                          print("User notification updated to delivered")
+                      }
+                  }
+              }
+          }
+      }
     }
 }
 
 struct NotificationPanelView_Previews: PreviewProvider {
     static var previews: some View {
-	NotificationPanelView(viewModel: NotificationPanelViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
+        NotificationPanelView(viewModel: NotificationPanelViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager()), notifications: [Fixtures.shared.UserNotification]))
     }
 }

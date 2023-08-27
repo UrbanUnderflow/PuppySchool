@@ -116,6 +116,14 @@ struct HomeView: View {
                 .fill(Color.secondaryWhite)
                 .frame(width: 50, height:50)
             IconImage(.customIcon(.notification, color: .black))
+            
+            if NotificationService.sharedInstance.userNotifications.filter({$0.wasDelivered == false }).count != 0 {
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 10, height: 10)
+                    .offset(x: 6)
+                    .offset(y: -8)
+            }
         }
     }
     
@@ -140,9 +148,11 @@ struct HomeView: View {
             notificationBell
             .padding(.trailing, 20)
             .onTapGesture {
+                var notifications = NotificationService.sharedInstance.userNotifications
+                
                 viewModel.appCoordinator.showAlertPanelModal(
                     viewModel:
-                        NotificationPanelViewModel(appCoordinator: viewModel.appCoordinator))
+                        NotificationPanelViewModel(appCoordinator: viewModel.appCoordinator, notifications: notifications))
             }
         }
     }

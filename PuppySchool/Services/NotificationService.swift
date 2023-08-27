@@ -21,6 +21,10 @@ class NotificationService {
         db = Firestore.firestore()
     }
     
+    func extract(_ userNotifications: [UserNotification]) -> [TimeSensativeNotification] {
+        return userNotifications.map { $0.notification }
+    }
+    
     func saveTimeSensitiveNotifications(completion: @escaping (Error?) -> Void) {
         let notificationsRef = db.collection("notifications")
                 
@@ -126,6 +130,28 @@ class NotificationService {
         
         batch.commit { err in
             completion(err)
+        }
+    }
+    
+    func updateUserNotification(userNotification: UserNotification, completion: @escaping (Error?) -> Void) {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            completion(NSError(domain: "No user ID found", code: 401, userInfo: nil))
+            return
+        }
+        
+        let userNotificationRef = db.collection("users").document(userId).collection("userNotifications").document(userNotification.id)
+        
+        userNotificationRef.updateData(userNotification.toDictionary()) { err in
+            if let err = err {
+                completion(err)
+            } else {
+                // Find the index of the userNotification in the userNotifications array
+                if let index = self.userNotifications.firstIndex(where: { $0.id == userNotification.id }) {
+                    // Replace the old userNotification with the new one
+                    self.userNotifications[index] = userNotification
+                }
+                completion(nil)
+            }
         }
     }
     

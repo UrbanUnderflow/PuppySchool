@@ -42,6 +42,14 @@ class RegistrationModalViewModel: ObservableObject {
         
     init(appCoordinator: AppCoordinator) {
         self.appCoordinator = appCoordinator
+        
+        if let user = UserService.sharedInstance.user {
+            self.puppyName = user.dogName.capitalized
+            self.selectedStage = DogStage(rawValue: user.dogStage.rawValue) ?? .puppy
+            self.birthday = user.birthdate.dayMonthYearFormat
+            self.birthdate = user.birthdate
+            self.imageUrl = user.profileImageURL
+        }
     }
     
 }
@@ -88,7 +96,7 @@ struct RegistrationModal: View {
         
         //Once complete we can set the modal so that it is no longer shown.
         if selectedPage > 4 {
-            UserService.sharedInstance.settings.hasIntroductionModalShown = false
+            UserService.sharedInstance.settings.hasIntroductionModalShown = true
             viewModel.appCoordinator.closeModals()
         }
     }
@@ -269,26 +277,30 @@ struct RegistrationModal: View {
                     UploadImageView(viewModel: UploadImageViewModel(serviceManager: viewModel.appCoordinator.serviceManager, onImageUploaded: { image in
                         self.selectedImage = image
                     })) {
-                        VStack(alignment: .center, spacing:20) {
-                            if let image = selectedImage {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 150, height: 150)
-                                    .cornerRadius(75, corners: .all)
-                            } else {
-                                VStack {
-                                    IconImage(.sfSymbol(.camera, color: .secondaryWhite), width: 36 , height: 36)
-                                    
-                                    Text("Upload a photo")
-                                        .foregroundColor(.secondaryWhite)
-                                        .font(.title3)
-                                        .bold()
-                                        .padding(.bottom, 5)
+                        if viewModel.imageUrl.isEmpty {
+                            VStack(alignment: .center, spacing:20) {
+                                if let image = selectedImage {
+                                    Image(uiImage: image)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 150, height: 150)
+                                        .cornerRadius(75, corners: .all)
+                                } else {
+                                    VStack {
+                                        IconImage(.sfSymbol(.camera, color: .secondaryWhite), width: 36 , height: 36)
+                                        
+                                        Text("Upload a photo")
+                                            .foregroundColor(.secondaryWhite)
+                                            .font(.title3)
+                                            .bold()
+                                            .padding(.bottom, 5)
+                                    }
+                                    .frame(height: 150)
                                 }
-                                .frame(height: 150)
+                                
                             }
-                            
+                        } else {
+                            RemoteImage(url: viewModel.imageUrl, placeHolderImage: .customIcon(.dog, color: .lightGray), width: 120, height: 120, cornerRadius: 60)
                         }
                     }
                     Spacer()

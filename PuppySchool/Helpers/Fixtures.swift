@@ -34,6 +34,14 @@ class Fixtures {
         ), timesCompleted: 10, didMaster: false, createdAt: Date(), updatedAt: Date())
     }()
     
+    lazy var TimeSensativeNotification: TimeSensativeNotification = {
+        return TimeSensativeNotificationData.shared.data.first!
+    }()
+    
+    lazy var UserNotification: UserNotification = {
+        return PuppySchool.UserNotification(id: UUID().uuidString, notification: Fixtures.shared.TimeSensativeNotification, wasDelivered: false, wasRead: false, createdAt: Date(), updatedAt: Date())
+    }()
+    
         //Purchase Package
     lazy var yearlyPackage: Package = {
         // StoreProduct properties

@@ -19,6 +19,7 @@ struct TimeSensativeNotification: Hashable, Identifiable {
     var id: String
     var title: String
     var category: NotificationCategory
+    var icon: MessageImage
     var message: String
     var deliverAtXWeeks: Int
     var isRecurring: Bool
@@ -26,10 +27,11 @@ struct TimeSensativeNotification: Hashable, Identifiable {
     var createdAt: Date
     var updatedAt: Date
     
-    init(id: String, title: String, category: NotificationCategory, message: String, deliverAtXWeeks: Int, isRecurring: Bool, recurrenceInterval: Int? = nil, createdAt: Date, updatedAt: Date) {
+    init(id: String, title: String, category: NotificationCategory, icon: MessageImage, message: String, deliverAtXWeeks: Int, isRecurring: Bool, recurrenceInterval: Int? = nil, createdAt: Date, updatedAt: Date) {
         self.id = id
         self.title = title
         self.category = category
+        self.icon = icon
         self.message = message
         self.deliverAtXWeeks = deliverAtXWeeks
         self.isRecurring = isRecurring
@@ -42,6 +44,8 @@ struct TimeSensativeNotification: Hashable, Identifiable {
         guard let title = dictionary["title"] as? String,
               let categoryString = dictionary["category"] as? String,
               let category = NotificationCategory(rawValue: categoryString),
+              let iconString = dictionary["icon"] as? String,
+              let icon = MessageImage(rawValue: iconString),
               let message = dictionary["message"] as? String,
               let deliverAtXWeeks = dictionary["deliverAtXWeeks"] as? Int,
               let isRecurring = dictionary["isRecurring"] as? Bool,
@@ -53,6 +57,7 @@ struct TimeSensativeNotification: Hashable, Identifiable {
         self.id = id
         self.title = title
         self.category = category
+        self.icon = icon
         self.message = message
         self.deliverAtXWeeks = deliverAtXWeeks
         self.isRecurring = isRecurring
@@ -66,6 +71,7 @@ struct TimeSensativeNotification: Hashable, Identifiable {
             "id": id,
             "title": title,
             "category": category.rawValue,
+            "icon": icon.rawValue,
             "message": message,
             "deliverAtXWeeks": deliverAtXWeeks,
             "isRecurring": isRecurring,

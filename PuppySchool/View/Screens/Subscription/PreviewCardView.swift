@@ -23,7 +23,7 @@ struct PreviewCardView: View {
             
             Group {
                 HStack {
-                    Circle()
+                    IconImage(.commands(.quiet))
                         .frame(width: 100, height: 100)
                     VStack(alignment:.leading) {
                         Text("Foundation First")
@@ -41,11 +41,11 @@ struct PreviewCardView: View {
                             .font(.subheadline)
                             .multilineTextAlignment(.leading)
                     }
-                    Circle()
+                    IconImage(.commands(.wait))
                         .frame(width: 100, height: 100)
                 }
                 HStack {
-                    Circle()
+                    IconImage(.commands(.advancedTraining))
                         .frame(width: 100, height: 100)
                     VStack(alignment:.leading) {
                         Text("Growth & Learning")
@@ -64,12 +64,12 @@ struct PreviewCardView: View {
                             .font(.subheadline)
                             .multilineTextAlignment(.leading)
                     }
-                    Circle()
+                    IconImage(.messageImage(.vet))
                         .frame(width: 100, height: 100)
                 }
                 
                 HStack {
-                    Circle()
+                    IconImage(.commands(.dropIt))
                         .frame(width: 100, height: 100)
                     VStack(alignment:.leading) {
                         Text("Mastery")

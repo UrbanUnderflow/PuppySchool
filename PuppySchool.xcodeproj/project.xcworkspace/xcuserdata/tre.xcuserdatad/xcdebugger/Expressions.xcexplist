@@ -98,6 +98,14 @@
          contextName = "closure #2 in HomeView.body.getter:HomeView.swift">
       </ContextState>
       <ContextState
+         contextName = "NotificationCardViewModel.init(notification:):NotificationCardView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "notification.deliverAtXWeeks">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "PhaseScroll.getUserCommand(for:):PhaseScroll.swift">
          <PersistentStrings>
             <PersistentString

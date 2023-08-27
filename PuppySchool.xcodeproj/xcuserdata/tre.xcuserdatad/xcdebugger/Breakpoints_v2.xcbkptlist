@@ -62,8 +62,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "shouldAppendNotification(_:userNotifications:)"
             landmarkType = "9">
             <Locations>
@@ -185,8 +185,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "shouldAppendNotification(_:userNotifications:)"
             landmarkType = "9">
             <Locations>
@@ -233,8 +233,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "shouldAppendNotification(_:userNotifications:)"
             landmarkType = "9">
             <Locations>
@@ -281,8 +281,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "shouldAppendNotification(_:userNotifications:)"
             landmarkType = "9">
             <Locations>
@@ -329,8 +329,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "shouldAppendNotification(_:userNotifications:)"
             landmarkType = "9">
             <Locations>
@@ -377,8 +377,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "shouldAppendNotification(_:userNotifications:)"
             landmarkType = "9">
             <Locations>
@@ -440,8 +440,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "checkForNotificationsToSend(puppyBirthday:notifications:)"
             landmarkType = "7">
             <Locations>
@@ -488,8 +488,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "shouldAppendNotification(_:userNotifications:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -504,8 +504,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "checkForNotificationsToSend(puppyBirthday:notifications:)"
             landmarkType = "7">
             <Locations>
@@ -552,8 +552,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "shouldAppendNotification(_:userNotifications:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -568,8 +568,8 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "checkForNotificationsToSend(puppyBirthday:notifications:)"
             landmarkType = "7">
             <Locations>
@@ -631,10 +631,10 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "shouldAppendNotification(_:userNotifications:)"
-            landmarkType = "9">
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "checkForNotificationsToSend(puppyBirthday:notifications:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "9D8578AB-C335-45BD-A35B-BD1623904E36 - 5fd9cf724b233f4d"
@@ -679,10 +679,202 @@
             filePath = "PuppySchool/Services/NotificationService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "checkForNotificationsToSend(puppyBirthday:notifications:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "72F6D105-7B83-47F7-9782-A3009354EE96"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Screens/Modals/RegistrationModal/RegistrationModal.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "init(appCoordinator:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "72F6D105-7B83-47F7-9782-A3009354EE96 - 26e665beb2211669"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.RegistrationModalViewModel.init(appCoordinator: PuppySchool.AppCoordinator) -&gt; PuppySchool.RegistrationModalViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Modals/RegistrationModal/RegistrationModal.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "3940">
+               </Location>
+               <Location
+                  uuid = "72F6D105-7B83-47F7-9782-A3009354EE96 - 26e665beb2211669"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.RegistrationModalViewModel.init(appCoordinator: PuppySchool.AppCoordinator) -&gt; PuppySchool.RegistrationModalViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Modals/RegistrationModal/RegistrationModal.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "3976">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E4E61A0-D205-4353-B2AF-1869ABBE4160"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Screens/NotificationPanel/NotificationCardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "init(notification:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E4E61A0-D205-4353-B2AF-1869ABBE4160 - 627147363ed3cc46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.NotificationCardViewModel.init(notification: PuppySchool.TimeSensativeNotification) -&gt; PuppySchool.NotificationCardViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/NotificationPanel/NotificationCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "852">
+               </Location>
+               <Location
+                  uuid = "9E4E61A0-D205-4353-B2AF-1869ABBE4160 - 627147363ed3cc46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.NotificationCardViewModel.init(notification: PuppySchool.TimeSensativeNotification) -&gt; PuppySchool.NotificationCardViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/NotificationPanel/NotificationCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "828">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68FAA230-AD9F-43FA-8DF8-7E29F9EB6362"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Screens/NotificationPanel/NotificationCardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "init(notification:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "68FAA230-AD9F-43FA-8DF8-7E29F9EB6362 - 627147363ed3cc25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.NotificationCardViewModel.init(notification: PuppySchool.TimeSensativeNotification) -&gt; PuppySchool.NotificationCardViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/NotificationPanel/NotificationCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "780">
+               </Location>
+               <Location
+                  uuid = "68FAA230-AD9F-43FA-8DF8-7E29F9EB6362 - 627147363ed3cc25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.NotificationCardViewModel.init(notification: PuppySchool.TimeSensativeNotification) -&gt; PuppySchool.NotificationCardViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/NotificationPanel/NotificationCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "796">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C5425D6-BA75-49C8-A2D1-9AAC50DAFC9D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Components/Atoms/Icon.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "MessageImage"
+            landmarkType = "13">
+            <Locations>
+               <Location
+                  uuid = "7C5425D6-BA75-49C8-A2D1-9AAC50DAFC9D - 22d2f9b7d4faa8f7"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.MessageImage.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;PuppySchool.MessageImage&gt;"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Atoms/Icon.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "7C5425D6-BA75-49C8-A2D1-9AAC50DAFC9D - e07f3490555e5d65"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.MessageImage.rawValue.getter : Swift.String"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Components/Atoms/Icon.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

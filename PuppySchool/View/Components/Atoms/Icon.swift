@@ -106,7 +106,24 @@ enum LogIcon: String {
 }
 
 enum MessageImage: String {
-    case nailClip = "nailClip"
+    case care = "care"
+    case anxiety = "anxiety"
+    case boundaires = "boundaries" // have it
+    case exercise = "exercise" //have it
+    case fleaAndTick = "fleaAndTick" //have it
+    case grooming = "grooming" //have it
+    case handling = "handling"
+    case leashTraining = "leashTraining"
+    case microChipping = "microChipping"
+    case newEnviornment = "newEnviornment"
+    case nutrition = "nutrition"
+    case socialization = "socialization" //
+    case socializeWithDog = "socializeWithDog" //have it
+    case socializeWithPeople = "socializeWithPeople"
+    case spay = "spay"
+    case teething = "teething"
+    case vaccine = "vaccine"
+    case vet = "vet"
 }
 
 
@@ -119,6 +136,7 @@ enum DogCommandImages: String {
     case crate = "crate"
     case settle = "settle"
     case kennel = "kennel"
+    case advancedTraining = "advancedTraining"
     case off = "off"
     case leaveIt = "leaveIt"
     case dropIt = "dropIt" //
