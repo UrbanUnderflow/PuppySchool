@@ -79,7 +79,7 @@ class Fixtures {
         return Command(
             id: "Sit",
             name: "Sit",
-            description: "Command your dog to sit in a seated psition.",
+            description: "Command your dog to sit in a seated position.",
             steps: [
                 "Hold a treat close to your dog's nose.",
                 "Move your hand up, allowing their head to follow the treat and causing their bottom to lower.",

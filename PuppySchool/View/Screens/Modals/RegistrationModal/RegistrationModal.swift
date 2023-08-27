@@ -86,8 +86,9 @@ struct RegistrationModal: View {
             }
         }
         
-        //once everything is selected we can create a workout for the user
+        //Once complete we can set the modal so that it is no longer shown.
         if selectedPage > 4 {
+            UserService.sharedInstance.settings.hasIntroductionModalShown = false
             viewModel.appCoordinator.closeModals()
         }
     }
@@ -228,12 +229,14 @@ struct RegistrationModal: View {
                             .datePickerStyle(WheelDatePickerStyle())
                             .onDisappear {
                                 viewModel.birthday = viewModel.birthdate.dayMonthYearFormat
+                                viewModel.birthdate = viewModel.birthdate
                             }
                             .padding(.top, 100)
                         
                         Button {
                             isDatePickerShown.toggle()
                             viewModel.birthday = viewModel.birthdate.dayMonthYearFormat
+                            viewModel.birthdate = viewModel.birthdate
                         } label: {
                             Text("Done")
                                 .foregroundColor(.secondaryWhite)

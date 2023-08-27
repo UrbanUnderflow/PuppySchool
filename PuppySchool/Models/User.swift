@@ -42,7 +42,7 @@ struct User {
     init?(id: String, dictionary: [String: Any]) {
         self.id = id
         self.email = dictionary["email"] as? String ?? ""
-        let birthdateStamp = dictionary["createdAt"] as? Double ?? 0
+        let birthdateStamp = dictionary["birthdate"] as? Double ?? 0
         
         self.birthdate = Date(timeIntervalSince1970: birthdateStamp)
 
@@ -77,7 +77,7 @@ struct User {
             "dogName": dogName,
             "dogStage": dogStage.rawValue,
             "profileImageURL": profileImageURL,
-            "subscriptionType": subscriptionType,
+            "subscriptionType": subscriptionType.rawValue,
             "createdAt": createdAt.timeIntervalSince1970,
             "updatedAt": updatedAt.timeIntervalSince1970
         ]

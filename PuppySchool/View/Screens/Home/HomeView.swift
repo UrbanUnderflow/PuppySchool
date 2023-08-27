@@ -268,7 +268,6 @@ struct HomeView: View {
             delay(1) {
                 if !userService.settings.hasIntroductionModalShown {
                     viewModel.appCoordinator.showRegisterModal()
-                    userService.settings.hasIntroductionModalShown = true
                 }
             }
         }

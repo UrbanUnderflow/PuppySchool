@@ -31,12 +31,10 @@ class ServiceManager: ObservableObject {
             } else {
                 DispatchQueue.main.async {
                     self.isConfigured = true
-                    self.requestTrackingAuthorization()
                 }
             }
         } catch {
             print(error)
-            self.requestTrackingAuthorization()
         }
     }
 
@@ -53,12 +51,20 @@ class ServiceManager: ObservableObject {
             }
             
             CommandService.sharedInstance.loadCommands()
-//                    CommandService.sharedInstance.saveCommands { error in
-//                        print("Commands Saved")
-//                    }
+//            CommandService.sharedInstance.saveCommands { error in
+//                print("Commands Saved")
+//            }
 //                    LogService.sharedInstance.saveLogs { error in
 //                        print("Logs saved")
 //                    }
+            
+            NotificationService.sharedInstance.saveTimeSensitiveNotifications { error in
+                print(error)
+            }
+            
+            NotificationService.sharedInstance.fetchUserNotifications { userNotification, error in
+                NotificationService.sharedInstance.checkForNotificationsToSend(puppyBirthday: UserService.sharedInstance.user?.birthdate ?? Date(), notifications: NotificationService.sharedInstance.timeSensitiveNotifications)
+            }
             
             LogService.sharedInstance.fetchPuppyLogs()
             

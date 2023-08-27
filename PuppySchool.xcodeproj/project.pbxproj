@@ -44,6 +44,8 @@
 		2185A0D32A99CCC200B692CB /* driving.json in Resources */ = {isa = PBXBuildFile; fileRef = 2185A0D22A99CCC200B692CB /* driving.json */; };
 		2185A0D92A9A170E00B692CB /* NotificationPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0D82A9A170E00B692CB /* NotificationPanelView.swift */; };
 		2185A0DC2A9A4A0400B692CB /* AppleSignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0DB2A9A4A0400B692CB /* AppleSignInService.swift */; };
+		2185A0DE2A9AB01400B692CB /* TimeSensativeNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0DD2A9AB01400B692CB /* TimeSensativeNotificationData.swift */; };
+		2185A0E02A9AD1AC00B692CB /* UserNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0DF2A9AD1AC00B692CB /* UserNotification.swift */; };
 		219C1E5D2A8FB69D002A62FF /* PuppySchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */; };
 		219C1E5F2A8FB69D002A62FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E5E2A8FB69D002A62FF /* ContentView.swift */; };
 		219C1E612A8FB69D002A62FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219C1E602A8FB69D002A62FF /* Assets.xcassets */; };
@@ -181,6 +183,8 @@
 		2185A0D82A9A170E00B692CB /* NotificationPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPanelView.swift; sourceTree = "<group>"; };
 		2185A0DA2A9A462700B692CB /* PuppySchool.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PuppySchool.entitlements; sourceTree = "<group>"; };
 		2185A0DB2A9A4A0400B692CB /* AppleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInService.swift; sourceTree = "<group>"; };
+		2185A0DD2A9AB01400B692CB /* TimeSensativeNotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSensativeNotificationData.swift; sourceTree = "<group>"; };
+		2185A0DF2A9AD1AC00B692CB /* UserNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotification.swift; sourceTree = "<group>"; };
 		219C1E592A8FB69D002A62FF /* PuppySchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppySchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppySchoolApp.swift; sourceTree = "<group>"; };
 		219C1E5E2A8FB69D002A62FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 				213BD69C2A94E3C500628FED /* DogStageDescription.swift */,
 				21624E522A9634FD00059F28 /* DogStageTips.swift */,
 				2185A0C32A99B3F500B692CB /* TimeSensativeNotification.swift */,
+				2185A0DF2A9AD1AC00B692CB /* UserNotification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -584,6 +589,7 @@
 				21EBE4602A910422005BE320 /* Corners.swift */,
 				21EBE4622A911079005BE320 /* Fixtures.swift */,
 				21EBE47B2A927DEF005BE320 /* Date+PuppySchool.swift */,
+				2185A0DD2A9AB01400B692CB /* TimeSensativeNotificationData.swift */,
 				21624E572A96A28D00059F28 /* Array+PuppySchool.swift */,
 				2144D4242A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift */,
 			);
@@ -883,6 +889,7 @@
 				213BD68F2A93C98000628FED /* ProfileMenuItemView.swift in Sources */,
 				219C1EF42A8FCA15002A62FF /* PlayerView.swift in Sources */,
 				21EBE4612A910422005BE320 /* Corners.swift in Sources */,
+				2185A0DE2A9AB01400B692CB /* TimeSensativeNotificationData.swift in Sources */,
 				210B5C502A97781A00237515 /* BadgeBackground.swift in Sources */,
 				21EBE4632A911079005BE320 /* Fixtures.swift in Sources */,
 				21EBE45A2A90DD76005BE320 /* UserCommand.swift in Sources */,
@@ -917,6 +924,7 @@
 				219C1EF92A8FFDB6002A62FF /* CommandCard.swift in Sources */,
 				219C1E5F2A8FB69D002A62FF /* ContentView.swift in Sources */,
 				2185A0DC2A9A4A0400B692CB /* AppleSignInService.swift in Sources */,
+				2185A0E02A9AD1AC00B692CB /* UserNotification.swift in Sources */,
 				219C1EBE2A8FBE8B002A62FF /* IconImage.swift in Sources */,
 				219C1EC42A8FBEC5002A62FF /* CircularProgressBarView.swift in Sources */,
 				210B5C612A97DD1500237515 /* PreviewCardView.swift in Sources */,

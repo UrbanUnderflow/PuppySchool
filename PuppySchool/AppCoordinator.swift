@@ -140,7 +140,7 @@ class AppCoordinator: ObservableObject {
         
         Task {
             await PurchaseService.sharedInstance.offering.start()
-            self.serviceManager.configureFromSuccessfulAuth()
+            try await serviceManager.configure()
 
             PurchaseService.sharedInstance.checkSubscriptionStatus { [weak self] (result) in
                 switch result {
@@ -292,7 +292,7 @@ extension AppCoordinator.Screen: Screen {
                     .onAppear {
                         Task {
                             do {
-                                try await serviceManager.configure()
+                                serviceManager.requestTrackingAuthorization()
                                 await Task.sleep(5 * 1_000_000_000) // Wait for 5 seconds
                                 await appCoordinator.handleLogin()
                             } catch {
