@@ -30,7 +30,8 @@ class LoginViewModel: ObservableObject {
                     //got user
                     print(user)
                 }
-                self.appCoordinator.showAppIntro()
+               // self.appCoordinator.showAppIntro()
+                self.appCoordinator.showPayWall()
             case .failure(let error):
                 self.errorMessage = error.localizedDescription
             }
@@ -91,13 +92,13 @@ struct LoginView: View {
                 }
                 .padding(.bottom, 33)
                
-                TextFieldWithIcon(text: $viewModel.email, placeholder: "Email address", icon: .sfSymbol(.message, color: .secondaryCharcoal), isSecure: false)
+                TextFieldWithIcon(text: $viewModel.email, placeholder: "Email address", icon: .sfSymbol(.message, color: .secondaryWhite), isSecure: false)
                     .keyboardType(.emailAddress)
                     .textContentType(.emailAddress)
                     .padding(.horizontal, 20)
                 Spacer()
                     .frame(height:20)
-                TextFieldWithIcon(text: $viewModel.password, placeholder: "Password", icon: .sfSymbol(.lock, color: .secondaryCharcoal), isSecure: true)
+                TextFieldWithIcon(text: $viewModel.password, placeholder: "Password", icon: .sfSymbol(.lock, color: .secondaryWhite), isSecure: true)
                     .keyboardType(.default)
                     .textContentType(.password)
                     .padding(.horizontal, 20)
