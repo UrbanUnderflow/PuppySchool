@@ -106,6 +106,7 @@
 		219C1EFC2A90065B002A62FF /* PhaseScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1EFB2A90065B002A62FF /* PhaseScroll.swift */; };
 		219C1EFE2A901AB2002A62FF /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1EFD2A901AB2002A62FF /* Command.swift */; };
 		219C1F002A9047A0002A62FF /* CommandDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1EFF2A9047A0002A62FF /* CommandDetailView.swift */; };
+		21E974B52A9CC2C2000035F1 /* BetaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E974B42A9CC2C2000035F1 /* BetaService.swift */; };
 		21EBE4582A9053C5005BE320 /* DottedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBE4572A9053C5005BE320 /* DottedLine.swift */; };
 		21EBE45A2A90DD76005BE320 /* UserCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBE4592A90DD76005BE320 /* UserCommand.swift */; };
 		21EBE45C2A90E0AD005BE320 /* CommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBE45B2A90E0AD005BE320 /* CommandService.swift */; };
@@ -242,6 +243,7 @@
 		219C1EFB2A90065B002A62FF /* PhaseScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseScroll.swift; sourceTree = "<group>"; };
 		219C1EFD2A901AB2002A62FF /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		219C1EFF2A9047A0002A62FF /* CommandDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandDetailView.swift; sourceTree = "<group>"; };
+		21E974B42A9CC2C2000035F1 /* BetaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaService.swift; sourceTree = "<group>"; };
 		21EBE4572A9053C5005BE320 /* DottedLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedLine.swift; sourceTree = "<group>"; };
 		21EBE4592A90DD76005BE320 /* UserCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommand.swift; sourceTree = "<group>"; };
 		21EBE45B2A90E0AD005BE320 /* CommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandService.swift; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 				21EBE4822A92C4CC005BE320 /* CheckListService.swift */,
 				2185A0CC2A99C51500B692CB /* SoundManager.swift */,
 				2185A0DB2A9A4A0400B692CB /* AppleSignInService.swift */,
+				21E974B42A9CC2C2000035F1 /* BetaService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -933,6 +936,7 @@
 				2185A0E42A9BD0D800B692CB /* test.swift in Sources */,
 				213BD6A02A94F2CB00628FED /* UploadImageView.swift in Sources */,
 				213BD6952A94CE0000628FED /* RegistrationModal.swift in Sources */,
+				21E974B52A9CC2C2000035F1 /* BetaService.swift in Sources */,
 				213BD6982A94D04200628FED /* MultipleChoiceView.swift in Sources */,
 				2185A0ED2A9BF28100B692CB /* BackgroundVideoView.swift in Sources */,
 				219C1EC32A8FBEC5002A62FF /* ConfirmationButton.swift in Sources */,

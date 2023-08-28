@@ -27,6 +27,7 @@ final class PurchaseService: NSObject, PurchasesDelegate {
     
     static let sharedInstance = PurchaseService()
     let offering = OfferingViewModel.sharedInstance
+    var subscriptionType: SubscriptionType = .free
 
     @Published private(set) var isSubscribed = false
     
@@ -49,6 +50,7 @@ final class PurchaseService: NSObject, PurchasesDelegate {
                 completion(.failure(error))
             } else if let purchaserInfo = purchaserInfo {
                 let isSubscribed = purchaserInfo.entitlements["plus"]?.isActive == true
+                self.updateUserSubscription(identifier: purchaserInfo.entitlements["plus"]?.productIdentifier ?? "")
                 if UserService.sharedInstance.isBetaUser == true {
                     self.isSubscribed = true
                 } else {
@@ -59,6 +61,37 @@ final class PurchaseService: NSObject, PurchasesDelegate {
                 self.isSubscribed = false
                 completion(.failure(CustomError.noPurchaserInfo))
             }
+        }
+    }
+    
+    func restorePurchases(completion: @escaping (Result<Bool, Error>) -> Void) {
+        Purchases.shared.restorePurchases { (purchaserInfo, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let purchaserInfo = purchaserInfo {
+                let isSubscribed = purchaserInfo.entitlements["plus"]?.isActive == true
+                self.updateUserSubscription(identifier: purchaserInfo.entitlements["plus"]?.productIdentifier ?? "")
+                if UserService.sharedInstance.isBetaUser == true {
+                    self.isSubscribed = true
+                } else {
+                    self.isSubscribed = isSubscribed
+                }
+                completion(.success(self.isSubscribed))
+            } else {
+                self.isSubscribed = false
+                completion(.failure(CustomError.noPurchaserInfo))
+            }
+        }
+    }
+    
+    func updateUserSubscription(identifier: String) {
+        switch identifier {
+        case "ps_1299_1m":
+            subscriptionType = .monthly
+        case "ps_7999_1y":
+            subscriptionType = .annual
+        default:
+            break
         }
     }
 }

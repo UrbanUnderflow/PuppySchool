@@ -3,24 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "closure #2 in shouldAppendNotification #1 (_:userNotifications:) in NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
+         contextName = "closure #1 in closure #1 in closure #2 in closure #1 in PayWallView.body.getter:PayWallView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "userNotifications">
-            </PersistentString>
-            <PersistentString
-               value = "exists">
+               value = "viewModel.appCoordinator.modalScreen">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "AppCoordinator.closeModals():AppCoordinator.swift">
+         contextName = "shouldAppendNotification #1 (_:userNotifications:) in NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "UserCommand.init(id:dictionary:):UserCommand.swift">
+      </ContextState>
+      <ContextState
+         contextName = "NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
          <PersistentStrings>
             <PersistentString
-               value = "modalScreen">
-            </PersistentString>
-            <PersistentString
-               value = "self">
+               value = "self.userNotifications">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -33,13 +33,40 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #1 in CommandService.updateUserCommand(userCommand:):CommandService.swift">
+         contextName = "closure #2 in HomeView.body.getter:HomeView.swift">
       </ContextState>
       <ContextState
-         contextName = "closure #1 in closure #1 in CustomTextField.textField.getter:CustomTextField.swift">
+         contextName = "User.init(id:dictionary:):User.swift">
          <PersistentStrings>
             <PersistentString
-               value = "showSecureText">
+               value = "birthdateStamp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "NotificationCardViewModel.init(notification:):NotificationCardView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "notification.deliverAtXWeeks">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CommandService.getUserCommand(command:):CommandService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userCommands">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in shouldAppendNotification #1 (_:userNotifications:) in NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "exists">
+            </PersistentString>
+            <PersistentString
+               value = "userNotifications">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -47,15 +74,18 @@
          contextName = "closure #1 in ServiceManager.configureFromSuccessfulAuth():ServiceManager.swift">
          <PersistentStrings>
             <PersistentString
+               value = "newUser.subscriptionType">
+            </PersistentString>
+            <PersistentString
                value = "UserService.sharedInstance.user?.birthdate">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "User.init(id:dictionary:):User.swift">
+         contextName = "closure #1 in closure #2 in closure #1 in closure #1 in closure #1 in closure #1 in closure #1 in PayWallView.body.getter:PayWallView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "birthdateStamp">
+               value = "BetaService.sharedInstance.betaEligibleUsers">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -87,21 +117,21 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CommandDetailViewModel.clickClicker():CommandDetailView.swift">
+         contextName = "AppCoordinator.closeModals():AppCoordinator.swift">
          <PersistentStrings>
             <PersistentString
-               value = "userCommand">
+               value = "modalScreen">
+            </PersistentString>
+            <PersistentString
+               value = "self">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "closure #2 in HomeView.body.getter:HomeView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "NotificationCardViewModel.init(notification:):NotificationCardView.swift">
+         contextName = "closure #1 in closure #1 in CustomTextField.textField.getter:CustomTextField.swift">
          <PersistentStrings>
             <PersistentString
-               value = "notification.deliverAtXWeeks">
+               value = "showSecureText">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -114,32 +144,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "CommandService.getUserCommand(command:):CommandService.swift">
+         contextName = "closure #1 in CommandService.updateUserCommand(userCommand:):CommandService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CommandDetailViewModel.clickClicker():CommandDetailView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "userCommands">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "UserCommand.init(id:dictionary:):UserCommand.swift">
-      </ContextState>
-      <ContextState
-         contextName = "NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.userNotifications">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "shouldAppendNotification #1 (_:userNotifications:) in NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
-      </ContextState>
-      <ContextState
-         contextName = "closure #1 in closure #1 in closure #2 in closure #1 in PayWallView.body.getter:PayWallView.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "viewModel.appCoordinator.modalScreen">
+               value = "userCommand">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

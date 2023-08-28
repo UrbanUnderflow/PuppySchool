@@ -82,6 +82,8 @@ struct PreviewCardView: View {
                 }
             }
             .foregroundColor(.secondaryWhite)
+            .padding()
+            .padding(.vertical, 20)
             
             Spacer()
         }

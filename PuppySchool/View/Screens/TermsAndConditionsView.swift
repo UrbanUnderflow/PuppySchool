@@ -38,7 +38,7 @@ struct TermsConditionsView: View {
                             .padding()
                             .multilineTextAlignment(.leading)
                         
-                        Text("By using QuickLifts, you are agreeing to the following terms and conditions.")
+                        Text("By using Puppy School, you are agreeing to the following terms and conditions.")
                             .foregroundColor(.secondaryWhite)
                             .padding()
                             .multilineTextAlignment(.leading)
@@ -49,20 +49,20 @@ struct TermsConditionsView: View {
                             .padding()
                             .multilineTextAlignment(.leading)
                         
-                        Text("You are responsible for your own account and all activity occurring under it. You must use QuickLifts in compliance with all laws, regulations, and rules.")
+                        Text("You are responsible for your own account and all activity occurring under it. You must use Puppy School in compliance with all laws, regulations, and rules.")
                             .foregroundColor(.secondaryWhite)
                             .padding()
                             .multilineTextAlignment(.leading)
                     }
                     
                     Group {
-                        Text("Fitness Disclaimer:")
+                        Text("Veterinary Disclaimer:")
                             .font(.title2)
                             .foregroundColor(.secondaryWhite)
                             .padding()
                             .multilineTextAlignment(.leading)
                         
-                        Text("The workouts provided by QuickLifts are AI generated and we are not physicians. Consult with a healthcare professional before starting any new workout routine.")
+                        Text("The advice provided by Puppy School is not a substitute for professional veterinary advice. We are not veterinarians. Consult with a professional veterinarian before making any decisions concerning your pet’s health.")
                             .foregroundColor(.secondaryWhite)
                             .padding()
                             .multilineTextAlignment(.leading)
@@ -73,7 +73,7 @@ struct TermsConditionsView: View {
                             .padding()
                             .multilineTextAlignment(.leading)
                         
-                        Text("QuickLifts retains rights to all content uploaded to the app and can use it for improving the service, research, and promotional purposes.")
+                        Text("Puppy School retains rights to all content uploaded to the app and can use it for improving the service, research, and promotional purposes.")
                             .foregroundColor(.secondaryWhite)
                             .padding()
                             .multilineTextAlignment(.leading)
@@ -84,7 +84,7 @@ struct TermsConditionsView: View {
                             .padding()
                             .multilineTextAlignment(.leading)
                         
-                        Text("QuickLifts owns all intellectual property rights in and to the service, including but not limited to text, graphics, logos, and software. Users are prohibited from copying, distributing, or creating derivative works without the express permission of QuickLifts.")
+                        Text("Puppy School owns all intellectual property rights in and to the service, including but not limited to text, graphics, logos, and software. Users are prohibited from copying, distributing, or creating derivative works without the express permission of Puppy School.")
                             .foregroundColor(.secondaryWhite)
                             .padding()
                             .multilineTextAlignment(.leading)

@@ -50,6 +50,17 @@ class ServiceManager: ObservableObject {
                 return
             }
             
+            //UpdateSubscription status
+            var newUser = u
+            //We should never change the lifetime flag!
+            if newUser.subscriptionType != .lifetime, newUser.subscriptionType != self.purchaseService.subscriptionType {
+                newUser.subscriptionType = self.purchaseService.subscriptionType
+                self.userService.updateUser(user: newUser)
+            }
+            
+            BetaService.sharedInstance.getEligibleUsers()
+
+            
             CommandService.sharedInstance.loadCommands()
 //            CommandService.sharedInstance.saveCommands { error in
 //                print("Commands Saved")

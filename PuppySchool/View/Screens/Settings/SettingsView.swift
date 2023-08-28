@@ -37,20 +37,27 @@ struct SettingsView: View {
 //                    SettingCard(title: "Notification Settings")
 //                    SettingCard(title: "Privacy Settings")
 //                    SettingCard(title: "Language")
-                    SettingCard(title: "Subscription Plan", subtitle: "Current Plan: \(UserService.sharedInstance.user?.subscriptionType.rawValue.capitalized ?? "Monthly")")
-                        .onTapGesture {
-                            viewModel.appCoordinator.closeModals()
-                            viewModel.appCoordinator.showPayWall()
-                            
-                        }
-                    SettingCard(title: "Privacy Policy", subtitle: "")
-                        .onTapGesture {
-                            viewModel.appCoordinator.showPrivacyScreenModal()
-                        }
-                    SettingCard(title: "Terms and Conditions", subtitle: "")
-                        .onTapGesture {
-                            viewModel.appCoordinator.showPrivacyScreenModal()
-                        }
+                    Button {
+                        viewModel.appCoordinator.closeModals()
+                        viewModel.appCoordinator.showPayWall()
+                    } label: {
+                        SettingCard(title: "Subscription Plan", subtitle: "Current Plan: \(UserService.sharedInstance.user?.subscriptionType.rawValue.capitalized ?? "Monthly")")
+                    }
+
+                    Button {
+                        viewModel.appCoordinator.showPrivacyScreenModal()
+
+                    } label: {
+                        SettingCard(title: "Privacy Policy", subtitle: "")
+                    }
+
+                    Button {
+                        viewModel.appCoordinator.showTermsScreenModal()
+                    } label: {
+                        SettingCard(title: "Terms and Conditions", subtitle: "")
+
+                    }
+
 //                    SettingCard(title: "Help & Support")
 //                        .onTapGesture {
 //                            showMailView.toggle()
@@ -58,10 +65,10 @@ struct SettingsView: View {
 //                        .sheet(isPresented: $showMailView) {
 //                                        MailView(subject: "Support from \(UserService.sharedInstance.user?.username ?? "User")", body: "", recipients: ["quickliftsapp@gmail.com"], isPresented: self.$showMailView)
 //                                    }
-                    SettingCard(title: "About", subtitle: "")
-                        .onTapGesture {
-                            //viewModel.appCoordinator.showAboutScreenModal()
-                        }
+//                    SettingCard(title: "About", subtitle: "")
+//                        .onTapGesture {
+//                            //viewModel.appCoordinator.showAboutScreenModal()
+//                        }
                     Button {
                         viewModel.appCoordinator.showNotificationModal(viewModel: CustomModalViewModel(type: .field, title: "Delete Account", message: "Are you sure you want to delete your account?", primaryButtonTitle: "Yes, delete my account", secondaryButtonTitle: "Cancel", fieldSubtitle: "Enter your password to confirm deletion.", primaryAction: { message in
                             viewModel.appCoordinator.serviceManager.userService.deleteAccount(email: UserService.sharedInstance.user?.email ?? "", password: message) { result in
