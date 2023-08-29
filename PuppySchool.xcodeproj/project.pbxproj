@@ -63,7 +63,7 @@
 		219C1E8F2A8FB92D002A62FF /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E8B2A8FB92D002A62FF /* NotificationService.swift */; };
 		219C1E902A8FB92D002A62FF /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E8C2A8FB92D002A62FF /* ServiceManager.swift */; };
 		219C1E912A8FB92D002A62FF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E8D2A8FB92D002A62FF /* UserService.swift */; };
-		219C1E9B2A8FB9EE002A62FF /* NewIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E932A8FB9EE002A62FF /* NewIntroductionView.swift */; };
+		219C1E9B2A8FB9EE002A62FF /* NewUserIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E932A8FB9EE002A62FF /* NewUserIntroductionView.swift */; };
 		219C1E9C2A8FB9EE002A62FF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E942A8FB9EE002A62FF /* LoginView.swift */; };
 		219C1E9E2A8FB9EE002A62FF /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E962A8FB9EE002A62FF /* IntroView.swift */; };
 		219C1E9F2A8FB9EE002A62FF /* PayWallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E972A8FB9EE002A62FF /* PayWallView.swift */; };
@@ -209,7 +209,7 @@
 		219C1E8B2A8FB92D002A62FF /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		219C1E8C2A8FB92D002A62FF /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		219C1E8D2A8FB92D002A62FF /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		219C1E932A8FB9EE002A62FF /* NewIntroductionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewIntroductionView.swift; sourceTree = "<group>"; };
+		219C1E932A8FB9EE002A62FF /* NewUserIntroductionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewUserIntroductionView.swift; sourceTree = "<group>"; };
 		219C1E942A8FB9EE002A62FF /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		219C1E962A8FB9EE002A62FF /* IntroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		219C1E972A8FB9EE002A62FF /* PayWallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayWallView.swift; sourceTree = "<group>"; };
@@ -522,7 +522,7 @@
 				219C1EEB2A8FC63D002A62FF /* SplashLoader.swift */,
 				219C1EE42A8FC47F002A62FF /* AboutView.swift */,
 				219C1E9A2A8FB9EE002A62FF /* ChangePasswordView.swift */,
-				219C1E932A8FB9EE002A62FF /* NewIntroductionView.swift */,
+				219C1E932A8FB9EE002A62FF /* NewUserIntroductionView.swift */,
 				219C1E992A8FB9EE002A62FF /* RegistrationView.swift */,
 			);
 			path = Screens;
@@ -960,7 +960,7 @@
 				210B5C4E2A97527900237515 /* SnapScrollView.swift in Sources */,
 				21EBE4652A911D8E005BE320 /* CommandSummaryView.swift in Sources */,
 				2185A0E22A9BC01600B692CB /* NotificationCardView.swift in Sources */,
-				219C1E9B2A8FB9EE002A62FF /* NewIntroductionView.swift in Sources */,
+				219C1E9B2A8FB9EE002A62FF /* NewUserIntroductionView.swift in Sources */,
 				2144D4252A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift in Sources */,
 				219C1E8E2A8FB92D002A62FF /* FirebaseService.swift in Sources */,
 				2185A0D92A9A170E00B692CB /* NotificationPanelView.swift in Sources */,
@@ -1163,6 +1163,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1199,6 +1200,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

@@ -198,7 +198,7 @@ struct PayWallView: View {
                                     .onTapGesture {
                                         viewModel.appCoordinator.showTermsScreenModal()
                                     }
-                                    if BetaService.sharedInstance.betaEligibleUsers.contains(UserService.sharedInstance.user?.email ?? "nothing"){
+                                    if BetaService.sharedInstance.betaEligibleUsers.contains(UserService.sharedInstance.user?.email ?? "nothing") {
                                         HStack {
                                             IconImage(.sfSymbol(.doc, color: .gray))
                                             Text("Enroll in Beta")

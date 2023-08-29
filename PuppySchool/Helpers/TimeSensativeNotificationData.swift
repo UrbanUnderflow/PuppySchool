@@ -16,7 +16,7 @@ class TimeSensativeNotificationData {
            TimeSensativeNotification(id: "1",
              title: "Puppy Socialization",
              category: .socialization,
-            icon: .care,
+             icon: .socializeWithDog,
              message: "It's time to bring your puppy around some other dogs",
              deliverAtXWeeks: 12,
              isRecurring: false,

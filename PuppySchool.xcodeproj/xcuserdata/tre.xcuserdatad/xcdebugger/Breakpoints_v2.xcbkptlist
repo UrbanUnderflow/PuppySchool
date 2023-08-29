@@ -14,8 +14,8 @@
             filePath = "PuppySchool/Services/ServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "configureFromSuccessfulAuth()"
             landmarkType = "7">
             <Locations>
@@ -730,6 +730,21 @@
                   endingLineNumber = "49"
                   offsetFromSymbolStart = "3976">
                </Location>
+               <Location
+                  uuid = "72F6D105-7B83-47F7-9782-A3009354EE96 - 26e665beb2211669"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.RegistrationModalViewModel.init(appCoordinator: PuppySchool.AppCoordinator) -&gt; PuppySchool.RegistrationModalViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/Modals/RegistrationModal/RegistrationModal.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "4284">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -778,6 +793,21 @@
                   endingLineNumber = "23"
                   offsetFromSymbolStart = "828">
                </Location>
+               <Location
+                  uuid = "9E4E61A0-D205-4353-B2AF-1869ABBE4160 - 627147363ed3cc46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.NotificationCardViewModel.init(notification: PuppySchool.TimeSensativeNotification) -&gt; PuppySchool.NotificationCardViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/NotificationPanel/NotificationCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "936">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -825,6 +855,21 @@
                   startingLineNumber = "22"
                   endingLineNumber = "22"
                   offsetFromSymbolStart = "796">
+               </Location>
+               <Location
+                  uuid = "68FAA230-AD9F-43FA-8DF8-7E29F9EB6362 - 627147363ed3cc25"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PuppySchool.NotificationCardViewModel.init(notification: PuppySchool.TimeSensativeNotification) -&gt; PuppySchool.NotificationCardViewModel"
+                  moduleName = "PuppySchool"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/View/Screens/NotificationPanel/NotificationCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "880">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -951,57 +996,10 @@
             filePath = "PuppySchool/Services/ServiceManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "configureFromSuccessfulAuth()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1C1FB2D3-22C6-44FC-85B6-CF72A404A1AB - 23dfda8ec169a6d4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;PuppySchool.User&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PuppySchool.ServiceManager.configureFromSuccessfulAuth() -&gt; ()"
-                  moduleName = "PuppySchool"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/Services/ServiceManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "696">
-               </Location>
-               <Location
-                  uuid = "1C1FB2D3-22C6-44FC-85B6-CF72A404A1AB - 23dfda8ec169a63b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;PuppySchool.User&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PuppySchool.ServiceManager.configureFromSuccessfulAuth() -&gt; ()"
-                  moduleName = "PuppySchool"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/Services/ServiceManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "836">
-               </Location>
-               <Location
-                  uuid = "1C1FB2D3-22C6-44FC-85B6-CF72A404A1AB - 23dfda8ec169a63b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;PuppySchool.User&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PuppySchool.ServiceManager.configureFromSuccessfulAuth() -&gt; ()"
-                  moduleName = "PuppySchool"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tre/PuppySchool/PuppySchool/Services/ServiceManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "900">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1024,7 +1022,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EC6C727F-C84B-4E44-B792-49F0BF96F6A3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PuppySchool/Services/BetaService.swift"
@@ -1080,6 +1078,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
             endingLineNumber = "201"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80DA51F8-019F-4EBE-A632-3B6AA7F2805C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PuppySchool/View/Screens/Subscription/PayWallView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>

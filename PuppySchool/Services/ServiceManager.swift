@@ -50,6 +50,8 @@ class ServiceManager: ObservableObject {
                 return
             }
             
+            self.requestTrackingAuthorization()
+
             //UpdateSubscription status
             var newUser = u
             //We should never change the lifetime flag!
@@ -59,7 +61,6 @@ class ServiceManager: ObservableObject {
             }
             
             BetaService.sharedInstance.getEligibleUsers()
-
             
             CommandService.sharedInstance.loadCommands()
 //            CommandService.sharedInstance.saveCommands { error in
