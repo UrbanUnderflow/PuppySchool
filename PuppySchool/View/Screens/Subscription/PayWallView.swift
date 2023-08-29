@@ -88,7 +88,7 @@ struct PayWallView: View {
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 10) {
                                         if let package = offeringViewModel.yearlyPackage {
-                                            PackageCardView(badgeLabel: "Best Value", title: "Annual Pro Plan", subtitle: "The best trainig app for your new puppy with all our pro features.", breakDownPrice: "About $6 per month", billPrice: "$79.99 billed annually", bottomLabel: "Most popular plan", buttonTitle: "Get 7 day Trial w/ Annual", package: package, offeringViewModel: offeringViewModel) {
+                                            PackageCardView(badgeLabel: "Best Value", title: "Annual Pro Plan", subtitle: "The best trainig app for your new puppy with all our pro features.", breakDownPrice: "About $6 per month", billPrice: "$79.99 billed annually after 7 day trial", bottomLabel: "Most popular plan", buttonTitle: "Get 7 day Trial", package: package, offeringViewModel: offeringViewModel) {
                                                 
                                                 self.offeringViewModel.purchase(package) { result in
                                                     switch result {
