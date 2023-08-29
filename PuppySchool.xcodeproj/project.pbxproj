@@ -107,6 +107,7 @@
 		219C1EFE2A901AB2002A62FF /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1EFD2A901AB2002A62FF /* Command.swift */; };
 		219C1F002A9047A0002A62FF /* CommandDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1EFF2A9047A0002A62FF /* CommandDetailView.swift */; };
 		21E974B52A9CC2C2000035F1 /* BetaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E974B42A9CC2C2000035F1 /* BetaService.swift */; };
+		21E974B82A9E5B32000035F1 /* ErrorScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E974B72A9E5B32000035F1 /* ErrorScreenView.swift */; };
 		21EBE4582A9053C5005BE320 /* DottedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBE4572A9053C5005BE320 /* DottedLine.swift */; };
 		21EBE45A2A90DD76005BE320 /* UserCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBE4592A90DD76005BE320 /* UserCommand.swift */; };
 		21EBE45C2A90E0AD005BE320 /* CommandService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EBE45B2A90E0AD005BE320 /* CommandService.swift */; };
@@ -244,6 +245,7 @@
 		219C1EFD2A901AB2002A62FF /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		219C1EFF2A9047A0002A62FF /* CommandDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandDetailView.swift; sourceTree = "<group>"; };
 		21E974B42A9CC2C2000035F1 /* BetaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaService.swift; sourceTree = "<group>"; };
+		21E974B72A9E5B32000035F1 /* ErrorScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorScreenView.swift; sourceTree = "<group>"; };
 		21EBE4572A9053C5005BE320 /* DottedLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DottedLine.swift; sourceTree = "<group>"; };
 		21EBE4592A90DD76005BE320 /* UserCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCommand.swift; sourceTree = "<group>"; };
 		21EBE45B2A90E0AD005BE320 /* CommandService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandService.swift; sourceTree = "<group>"; };
@@ -508,6 +510,7 @@
 		219C1E922A8FB984002A62FF /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				21E974B62A9E5B1D000035F1 /* ErrorScreen */,
 				2185A0D52A9A16CD00B692CB /* NotificationPanel */,
 				210B5C5C2A97C0D300237515 /* Settings */,
 				210B5C542A9797DF00237515 /* Subscription */,
@@ -663,6 +666,14 @@
 				219C1EFB2A90065B002A62FF /* PhaseScroll.swift */,
 			);
 			path = PhaseScroll;
+			sourceTree = "<group>";
+		};
+		21E974B62A9E5B1D000035F1 /* ErrorScreen */ = {
+			isa = PBXGroup;
+			children = (
+				21E974B72A9E5B32000035F1 /* ErrorScreenView.swift */,
+			);
+			path = ErrorScreen;
 			sourceTree = "<group>";
 		};
 		21EBE45F2A90E67D005BE320 /* LoginScreens */ = {
@@ -954,6 +965,7 @@
 				219C1EDD2A8FC28F002A62FF /* CustomTabBarView.swift in Sources */,
 				219C1EB82A8FBD50002A62FF /* User.swift in Sources */,
 				21624E532A9634FD00059F28 /* DogStageTips.swift in Sources */,
+				21E974B82A9E5B32000035F1 /* ErrorScreenView.swift in Sources */,
 				219C1EA22A8FB9EE002A62FF /* ChangePasswordView.swift in Sources */,
 				219C1ED72A8FC0E9002A62FF /* LottieView.swift in Sources */,
 				219C1EE02A8FC2D2002A62FF /* CustomModalView.swift in Sources */,

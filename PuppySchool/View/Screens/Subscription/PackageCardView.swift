@@ -39,21 +39,33 @@ struct PackageCardView: View {
                         
                         Spacer()
                     }
+                    .padding(.horizontal, 10)
+                    .padding(.top, 10)
+
                     Spacer()
-                    Text(title)
-                        .font(.title2)
-                    
-                    Text(subtitle)
-                        .padding(.horizontal)
-                        .multilineTextAlignment(.center)
-                        .padding(.bottom, 10)
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(title)
+                                .font(.title)
+                                .bold()
+                                .padding(.leading, 20)
+                                .padding(.bottom, 5)
+                            Text(subtitle)
+                                .padding(.horizontal)
+                                .multilineTextAlignment(.leading)
+                                .padding(.bottom, 10)
+                        }
+                        Spacer()
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.bottom, 10)
                     
                     Text(breakDownPrice)
-                        .font(.headline)
+                        .font(.title2)
                         .bold()
                     Text(billPrice)
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
+                        .font(.title2)
+                        .bold()
                     
                     Spacer()
                     ConfirmationButton(title: buttonTitle, type: .primaryLargeConfirmation) {

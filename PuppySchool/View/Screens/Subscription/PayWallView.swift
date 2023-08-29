@@ -10,11 +10,38 @@ import RevenueCat
 
 class PayWallViewModel: ObservableObject {
     @Published var appCoordinator: AppCoordinator
+    @Published var monthPackage: PackageViewModel? = nil
+    @Published var annualPackage: PackageViewModel? = nil
+    @Published var lifeTimePackage: PackageViewModel? = nil
+    var offeringViewModel = PurchaseService.sharedInstance.offering
+    var showErrorScreen: Bool = false
+    var isTesting: Bool = false
     
-    init(appCoordinator: AppCoordinator) {
+    init(appCoordinator: AppCoordinator, isTesting: Bool = false) {
         self.appCoordinator = appCoordinator
+        if let package = offeringViewModel.monthlyPackage {
+            self.monthPackage = package
+        } else {
+            showErrorScreen = true
+        }
+        
+        if let package = offeringViewModel.yearlyPackage {
+            self.annualPackage = package
+        } else {
+            showErrorScreen = true
+        }
+        
+        if let package = offeringViewModel.lifetimePackage {
+            self.lifeTimePackage = package
+        } else {
+            showErrorScreen = true
+        }
+        
+        if isTesting {
+            showErrorScreen = false
+        }
     }
-    
+          
     func checkSubscriptionStatus(completion: @escaping (Bool) -> Void) {
         PurchaseService.sharedInstance.checkSubscriptionStatus { [weak self] (result) in
             switch result {
@@ -48,10 +75,9 @@ class PayWallViewModel: ObservableObject {
 }
 
 struct PayWallView: View {
-    var offeringViewModel = PurchaseService.sharedInstance.offering
     @ObservedObject var viewModel: PayWallViewModel
     
-    var body: some View {
+    var payWall: some View {
         ZStack {
             VStack {
                 ScrollView {
@@ -87,57 +113,51 @@ struct PayWallView: View {
                                 
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 10) {
-                                        if let package = offeringViewModel.yearlyPackage {
-                                            PackageCardView(badgeLabel: "Best Value", title: "Annual Pro Plan", subtitle: "The best trainig app for your new puppy with all our pro features.", breakDownPrice: "About $6 per month", billPrice: "$79.99 billed annually after 7 day trial", bottomLabel: "Most popular plan", buttonTitle: "Get 7 day Trial", package: package, offeringViewModel: offeringViewModel) {
-                                                
-                                                self.offeringViewModel.purchase(package) { result in
-                                                    switch result {
-                                                    case .success:
-                                                        print("Success")
-                                                        viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
-                                                        viewModel.appCoordinator.showHomeScreen()
-                                                    case .failure(let error):
-                                                        print("There was an error while purchasing \(error)")
-                                                    }
+                                 
+                                        PackageCardView(badgeLabel: "Best Value", title: "Annual Pro Plan", subtitle: "The best trainig app for your new puppy with all our pro features.", breakDownPrice: "$79.99 /year", billPrice: "Start with a free 7 day trial", bottomLabel: "Most popular plan", buttonTitle: "Continue", package: viewModel.annualPackage, offeringViewModel: viewModel.offeringViewModel) {
+                                            
+                                            viewModel.offeringViewModel.purchase(viewModel.annualPackage!) { result in
+                                                switch result {
+                                                case .success:
+                                                    print("Success")
+                                                    viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
+                                                    viewModel.appCoordinator.showHomeScreen()
+                                                case .failure(let error):
+                                                    print("There was an error while purchasing \(error)")
                                                 }
                                             }
                                         }
-                                        if let package = offeringViewModel.monthlyPackage {
-                                            PackageCardView(badgeLabel: "Most Flexible", title: "Monthly Pro Plan", subtitle: "Flexible, great for dogs that just need a bit of extra training.", breakDownPrice: "12.99 /month", billPrice: "Billed monthly", bottomLabel: "Great for limited training", buttonTitle: "Get Monthly", package: package, offeringViewModel: offeringViewModel) {
-                                                
-                                                self.offeringViewModel.purchase(package) { result in
-                                                    switch result {
-                                                    case .success:
-                                                        print("Success")
-                                                        viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
-                                                        viewModel.appCoordinator.showHomeScreen()
-                                                    case .failure(let error):
-                                                        print("There was an error while purchasing \(error)")
-                                                    }
+                                        PackageCardView(badgeLabel: "Most Flexible", title: "Monthly Pro Plan", subtitle: "Flexible, great for dogs that just need a bit of extra training.", breakDownPrice: "12.99 /month", billPrice: "Billed monthly", bottomLabel: "Great for limited training", buttonTitle: "Get Monthly", package: viewModel.monthPackage, offeringViewModel: viewModel.offeringViewModel) {
+                                            
+                                            viewModel.offeringViewModel.purchase(viewModel.monthPackage!) { result in
+                                                switch result {
+                                                case .success:
+                                                    print("Success")
+                                                    viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
+                                                    viewModel.appCoordinator.showHomeScreen()
+                                                case .failure(let error):
+                                                    print("There was an error while purchasing \(error)")
                                                 }
                                             }
                                         }
-                                        if let package = offeringViewModel.lifetimePackage {
-                                            PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "$249", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: package, offeringViewModel: offeringViewModel) {
-                                                
-                                                //check the status of subscription before moving forwad with this purchase
-                                                viewModel.checkSubscriptionStatus { isPermitted in
-                                                    if isPermitted == true {
-                                                        self.viewModel.appCoordinator.hideNotification()
-                                                        
-                                                        self.offeringViewModel.purchase(package) { result in
-                                                            switch result {
-                                                            case .success:
-                                                                print("Success")
-                                                                viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
-                                                                viewModel.appCoordinator.showHomeScreen()
-                                                            case .failure(let error):
-                                                                print("There was an error while purchasing \(error)")
-                                                            }
+                                        PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "$249", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: viewModel.lifeTimePackage, offeringViewModel: viewModel.offeringViewModel) {
+                                            
+                                            //check the status of subscription before moving forwad with this purchase
+                                            viewModel.checkSubscriptionStatus { isPermitted in
+                                                if isPermitted == true {
+                                                    self.viewModel.appCoordinator.hideNotification()
+                                                    
+                                                    viewModel.offeringViewModel.purchase(viewModel.lifeTimePackage!) { result in
+                                                        switch result {
+                                                        case .success:
+                                                            print("Success")
+                                                            viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
+                                                            viewModel.appCoordinator.showHomeScreen()
+                                                        case .failure(let error):
+                                                            print("There was an error while purchasing \(error)")
                                                         }
                                                     }
                                                 }
-                                                
                                             }
                                         }
                                     }
@@ -236,10 +256,19 @@ struct PayWallView: View {
             }
         }
     }
+    
+    var body: some View {
+        if viewModel.showErrorScreen {
+            ErrorScreenView(viewModel: ErrorScreenViewModel(errorCode: .purchase))
+        } else {
+            payWall
+        }
+
+    }
 }
 
 struct PayWallView_Previews: PreviewProvider {
     static var previews: some View {
-        PayWallView(viewModel: PayWallViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
+        PayWallView(viewModel: PayWallViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager()), isTesting: true))
     }
 }

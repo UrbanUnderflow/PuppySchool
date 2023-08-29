@@ -13,7 +13,6 @@ enum PurchaseResult {
     case failure(Error)
 }
 
-@MainActor
 final class OfferingViewModel: ObservableObject {
     
     static let sharedInstance = OfferingViewModel()
