@@ -139,7 +139,6 @@ class AppCoordinator: ObservableObject {
         }
         
         Task {
-            await PurchaseService.sharedInstance.offering.start()
             try await serviceManager.configure()
 
             PurchaseService.sharedInstance.checkSubscriptionStatus { [weak self] (result) in
@@ -292,7 +291,7 @@ extension AppCoordinator.Screen: Screen {
                     .onAppear {
                         Task {
                             do {
-                                serviceManager.requestTrackingAuthorization()
+                                await PurchaseService.sharedInstance.offering.start()
                                 await Task.sleep(5 * 1_000_000_000) // Wait for 5 seconds
                                 await appCoordinator.handleLogin()
                             } catch {
@@ -304,6 +303,9 @@ extension AppCoordinator.Screen: Screen {
         case .introView:
             return AnyView(
                 IntroView(viewModel: IntroViewViewModel(serviceManager: serviceManager, appCoordinator: appCoordinator))
+                    .onAppear {
+                        serviceManager.requestTrackingAuthorization()
+                    }
             )
         case .appIntro:
             return AnyView(
