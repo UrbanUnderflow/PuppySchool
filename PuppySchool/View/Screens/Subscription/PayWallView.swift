@@ -227,6 +227,15 @@ struct PayWallView: View {
                                         .onTapGesture {
                                             viewModel.appCoordinator.showHomeScreen()
                                         }
+                                    } else {
+                                        HStack {
+                                            IconImage(.sfSymbol(.signOut, color: .gray))
+                                            Text("Sign out")
+                                                .foregroundColor(.gray)
+                                        }
+                                        .onTapGesture {
+                                            viewModel.appCoordinator.handleLogout()
+                                        }
                                     }
                                 }
                                 .padding(.leading, 20)

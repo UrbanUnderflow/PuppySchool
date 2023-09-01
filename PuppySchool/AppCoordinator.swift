@@ -69,6 +69,9 @@ class AppCoordinator: ObservableObject {
             switch result {
             case .success(_):
                 completion(.success("success"))
+                delay(0.5) {
+                    self.serviceManager.firebaseService.createUserObject()
+                }
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -121,11 +124,17 @@ class AppCoordinator: ObservableObject {
             serviceManager.userService.user = nil
             serviceManager.isConfigured = false
             serviceManager.showTabBar = false
-        } catch { error
+            
+            // Clear all user defaults
+            if let appDomain = Bundle.main.bundleIdentifier {
+                UserDefaults.standard.removePersistentDomain(forName: appDomain)
+            }
+        } catch let error {
             print(error)
         }
         showIntroScreen()
     }
+
     
     func handleLoginSuccess() {
         guard let user = Auth.auth().currentUser else {
@@ -144,11 +153,18 @@ class AppCoordinator: ObservableObject {
             PurchaseService.sharedInstance.checkSubscriptionStatus { [weak self] (result) in
                 switch result {
                 case .success(let isSubscribed):
+                    let userService = UserService.sharedInstance
+                    
                     if isSubscribed {
                         self?.showHomeScreen()
                         UserService.sharedInstance.isSubscribed = true
                     } else {
-                        self?.showPayWall()
+                        if !userService.settings.hasIntroductionModalShown {
+                            self?.showHomeScreen()
+                        } else {
+                            self?.showPayWall()
+                            UserService.sharedInstance.isSubscribed = false
+                        }
                     }
                 case .failure(let error):
                     // Handle the error here

@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 class RegistrationModalViewModel: ObservableObject {
     @Published var appCoordinator: AppCoordinator
     @Published var selectedStage = DogStage.puppy
-    @Published var birthday: String = ""
+    @Published var birthday: String = Date().dayMonthYearFormat
     @Published var birthdate: Date = Date()
     @Published var selectedDogStageDescription: DogStageDescription? = DogStageDescription(
                                                                                id: UUID(),
@@ -61,12 +62,31 @@ struct RegistrationModal: View {
     @State private var isDatePickerShown = false
     
     func nextButtonPressed() {
-        guard let u = UserService.sharedInstance.user else {
-            print("Something went wrong with getting the user during auth")
-            return
+        if let u = UserService.sharedInstance.user {
+            handleNext(user: u)
+        } else {
+            UserService.sharedInstance.getUser { user, error in
+                if let u = user {
+                    handleNext(user: u)
+                } else {
+                    guard let id = Auth.auth().currentUser?.uid else {
+                        viewModel.appCoordinator.showToast(viewModel: ToastViewModel(message: "Hmmm, something seems to have went wrong during sign up, try closing the app.", backgroundColor: .secondaryCharcoal, textColor: .white))
+                        return
+                    }
+                    
+                    guard let email = Auth.auth().currentUser?.email else {
+                        viewModel.appCoordinator.showToast(viewModel: ToastViewModel(message: "Hmmm, something seems to have went wrong during sign up, try closing the app.", backgroundColor: .secondaryCharcoal, textColor: .white))
+                        return
+                    }
+                    
+                    handleNext(user: User(id: id, email: email, birthdate: Date(), dogName: "", dogStage: .puppy, profileImageURL: nil, subscriptionType: .free, createdAt: Date(), updatedAt: Date()))
+                }
+            }
         }
-        
-        var updatedUser = u
+    }
+    
+    func handleNext(user: User) {
+        var updatedUser = user
         
         if selectedPage == 0 {
             updatedUser.dogName = viewModel.puppyName.lowercased()

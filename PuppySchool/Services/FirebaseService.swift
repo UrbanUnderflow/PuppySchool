@@ -74,7 +74,6 @@ class FirebaseService: NSObject  {
             if let error = error {
                 completion(.failure(error))
             } else if let authResult = authResult {
-                self.createUserObject()
                 completion(.success(authResult))
             } else {
                 // This case should never occur, but handle it anyway
@@ -206,6 +205,7 @@ class FirebaseService: NSObject  {
                     print("Error creating user document: \(error.localizedDescription)")
                 } else {
                     print("User document created successfully")
+                    UserService.sharedInstance.user = User(id: userId, email: email, birthdate: Date(), dogName: "", dogStage: .puppy, profileImageURL: nil, subscriptionType: .free, createdAt: Date(), updatedAt: Date())
                 }
             }
         }

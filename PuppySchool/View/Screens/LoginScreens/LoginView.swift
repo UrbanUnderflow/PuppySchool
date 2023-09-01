@@ -30,8 +30,7 @@ class LoginViewModel: ObservableObject {
                     //got user
                     print(user)
                 }
-               // self.appCoordinator.showAppIntro()
-                self.appCoordinator.showPayWall()
+                self.appCoordinator.showHomeScreen()
             case .failure(let error):
                 self.errorMessage = error.localizedDescription
             }
