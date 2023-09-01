@@ -32,7 +32,7 @@ class TimeSensativeNotificationData {
                                      updatedAt: Date()),
            TimeSensativeNotification(id: "3",
                                      title: "Microchipping",
-                                     category: .health, icon: .microChipping,
+                                     category: .health, icon: .microchip,
                                      message: "If you are considering geting your puppy microchiped, now is a good time.",
                                      deliverAtXWeeks: 12,
                                      isRecurring: false,

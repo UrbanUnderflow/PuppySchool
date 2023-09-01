@@ -96,8 +96,9 @@ struct RegistrationModal: View {
         
         //Once complete we can set the modal so that it is no longer shown.
         if selectedPage > 4 {
-            UserService.sharedInstance.settings.hasIntroductionModalShown = true
+            UserService.sharedInstance.settings.hasRegistrationModalShown = true
             viewModel.appCoordinator.closeModals()
+            viewModel.appCoordinator.showAppIntro()
         }
     }
 

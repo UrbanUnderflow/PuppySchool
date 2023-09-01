@@ -206,6 +206,7 @@ class AppCoordinator: ObservableObject {
     
     func showAppIntro() {
         currentScreen = .appIntro
+        self.serviceManager.showTabBar = false
     }
     
     //Modals

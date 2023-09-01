@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserNotification: Identifiable {
+struct UserNotification: Identifiable, Hashable {
     var id: String
     var notification: TimeSensativeNotification
     var wasDelivered: Bool

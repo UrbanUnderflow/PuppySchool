@@ -28,7 +28,7 @@ class HomeViewModel: ObservableObject {
         
         switch filterBy {
         case .category:
-            let predefinedOrder: [CommandCategory] = [.foundational, .obedience, .safety, .playful, .task, .advanced]
+            let predefinedOrder: [CommandCategory] = [.startHere, .foundational, .obedience, .safety, .playful, .task, .advanced]
             titles = commands.map { $0.category.rawValue }
             titles.sort { (a, b) -> Bool in
                 if let indexA = predefinedOrder.firstIndex(of: CommandCategory(rawValue: a) ?? .foundational), let indexB = predefinedOrder.firstIndex(of: CommandCategory(rawValue: b) ?? .foundational) {
@@ -244,6 +244,7 @@ struct HomeView: View {
                 }
                 VStack {
                     topBar
+                        .padding(.top, 40)
                     //                DropDownFilterView(viewModel: DropDownFilterViewModel(filterBy: .category))
                     if let prevCommand = CommandService.sharedInstance.previousCommand {
                         if prevCommand.calculateProgress() != 1 {

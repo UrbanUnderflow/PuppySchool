@@ -27,7 +27,7 @@ struct CommandSummaryView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text(isMastered ? "Hendrix has mastered the sit command!" : "Good Job")
+            Text(isMastered ? "\(UserService.sharedInstance.user?.dogName ?? "Your puppy") has mastered the sit command!" : "Good Job")
                 .font(.largeTitle)
                 .bold()
                 .foregroundColor(isMastered ? .primaryPurple : .secondaryWhite)
@@ -53,7 +53,7 @@ struct CommandSummaryView: View {
                     .padding()
             }
             
-            Text(isMastered ? "Continue to train to keep \(UserService.sharedInstance.user?.dogName ?? "Hendrix" ) stimulated and playful" : "Hendrix is on his way to mastery. He has \(viewModel.commandsLeft) \(viewModel.command.name) commands left")
+            Text(isMastered ? "Continue to train to keep \(UserService.sharedInstance.user?.dogName.capitalized ?? "Your puppy") stimulated and playful" : "\(UserService.sharedInstance.user?.dogName.capitalized ?? "Your puppy") is on his way to mastery. He has \(viewModel.commandsLeft) \(viewModel.command.name) commands left")
                 .font(.subheadline)
                 .bold()
                 .foregroundColor(isMastered ? .primaryPurple : .white)

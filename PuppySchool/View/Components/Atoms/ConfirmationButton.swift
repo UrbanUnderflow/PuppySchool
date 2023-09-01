@@ -19,6 +19,7 @@ enum ButtonType {
     case secondarySmallConfirmation
     case borderedButton
     case clearButton
+    case clearButtonBold
     case whiteClearButton
     case shadowButton
     case chipButton
@@ -170,6 +171,15 @@ struct ConfirmationButton: View {
             Button(action: action) {
                 Text(title)
                     .font(.subheadline)
+                    .foregroundColor(foregroundColor)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+            }
+        case .clearButtonBold:
+            Button(action: action) {
+                Text(title)
+                    .font(.subheadline)
+                    .bold()
                     .foregroundColor(foregroundColor)
                     .padding()
                     .frame(maxWidth: .infinity)

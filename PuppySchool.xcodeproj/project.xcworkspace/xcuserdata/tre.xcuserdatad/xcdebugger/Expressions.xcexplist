@@ -3,18 +3,15 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "shouldAppendNotification #1 (_:userNotifications:) in NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in closure #1 in closure #2 in closure #1 in PayWallView.body.getter:PayWallView.swift">
          <PersistentStrings>
             <PersistentString
                value = "viewModel.appCoordinator.modalScreen">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "shouldAppendNotification #1 (_:userNotifications:) in NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
-      </ContextState>
-      <ContextState
-         contextName = "UserCommand.init(id:dictionary:):UserCommand.swift">
       </ContextState>
       <ContextState
          contextName = "NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
@@ -25,21 +22,13 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "UserCommand.init(id:dictionary:):UserCommand.swift">
+      </ContextState>
+      <ContextState
          contextName = "HomeViewModel.updateTitles():HomeView.swift">
          <PersistentStrings>
             <PersistentString
                value = "titles">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "closure #2 in HomeView.body.getter:HomeView.swift">
-      </ContextState>
-      <ContextState
-         contextName = "User.init(id:dictionary:):User.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "birthdateStamp">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -50,6 +39,17 @@
                value = "notification.deliverAtXWeeks">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "User.init(id:dictionary:):User.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "birthdateStamp">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #2 in HomeView.body.getter:HomeView.swift">
       </ContextState>
       <ContextState
          contextName = "CommandService.getUserCommand(command:):CommandService.swift">
@@ -63,10 +63,18 @@
          contextName = "closure #2 in shouldAppendNotification #1 (_:userNotifications:) in NotificationService.checkForNotificationsToSend(puppyBirthday:notifications:):NotificationService.swift">
          <PersistentStrings>
             <PersistentString
-               value = "exists">
+               value = "userNotifications">
             </PersistentString>
             <PersistentString
-               value = "userNotifications">
+               value = "exists">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #1 in BetaService.getEligibleUsers():BetaService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "document.documentID">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -151,6 +159,14 @@
          <PersistentStrings>
             <PersistentString
                value = "userCommand">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #2 in closure #1 in closure #1 in closure #1 in closure #1 in closure #1 in PayWallView.payWall.getter:PayWallView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "BetaService.sharedInstance.betaEligibleUser">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

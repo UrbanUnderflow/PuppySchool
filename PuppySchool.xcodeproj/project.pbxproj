@@ -51,6 +51,8 @@
 		2185A0E82A9BF1DB00B692CB /* PlayerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0E62A9BF1DB00B692CB /* PlayerUIView.swift */; };
 		2185A0E92A9BF1DB00B692CB /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0E72A9BF1DB00B692CB /* PlayerView.swift */; };
 		2185A0ED2A9BF28100B692CB /* BackgroundVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0EC2A9BF28100B692CB /* BackgroundVideoView.swift */; };
+		219390072AA1268A006EF2A9 /* CustomTabViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219390062AA1268A006EF2A9 /* CustomTabViewIndicator.swift */; };
+		219390092AA17CC3006EF2A9 /* CommandData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219390082AA17CC3006EF2A9 /* CommandData.swift */; };
 		219C1E5D2A8FB69D002A62FF /* PuppySchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */; };
 		219C1E5F2A8FB69D002A62FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E5E2A8FB69D002A62FF /* ContentView.swift */; };
 		219C1E612A8FB69D002A62FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219C1E602A8FB69D002A62FF /* Assets.xcassets */; };
@@ -195,6 +197,8 @@
 		2185A0E62A9BF1DB00B692CB /* PlayerUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerUIView.swift; sourceTree = "<group>"; };
 		2185A0E72A9BF1DB00B692CB /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		2185A0EC2A9BF28100B692CB /* BackgroundVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideoView.swift; sourceTree = "<group>"; };
+		219390062AA1268A006EF2A9 /* CustomTabViewIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewIndicator.swift; sourceTree = "<group>"; };
+		219390082AA17CC3006EF2A9 /* CommandData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandData.swift; sourceTree = "<group>"; };
 		219C1E592A8FB69D002A62FF /* PuppySchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppySchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppySchoolApp.swift; sourceTree = "<group>"; };
 		219C1E5E2A8FB69D002A62FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -413,6 +417,14 @@
 			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
+		219390052AA12663006EF2A9 /* CustomTabViewIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				219390062AA1268A006EF2A9 /* CustomTabViewIndicator.swift */,
+			);
+			path = CustomTabViewIndicator;
+			sourceTree = "<group>";
+		};
 		219C1E502A8FB69D002A62FF = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +590,7 @@
 		219C1ECB2A8FBFCF002A62FF /* Molecules */ = {
 			isa = PBXGroup;
 			children = (
+				219390052AA12663006EF2A9 /* CustomTabViewIndicator */,
 				2185A0E52A9BF19E00B692CB /* VideoPlayer */,
 				210B5C4C2A97526900237515 /* SnapScrollView */,
 				21624E542A96A11100059F28 /* Calendar */,
@@ -615,6 +628,7 @@
 				2185A0DD2A9AB01400B692CB /* TimeSensativeNotificationData.swift */,
 				21624E572A96A28D00059F28 /* Array+PuppySchool.swift */,
 				2144D4242A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift */,
+				219390082AA17CC3006EF2A9 /* CommandData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -919,6 +933,7 @@
 				213BD68F2A93C98000628FED /* ProfileMenuItemView.swift in Sources */,
 				21EBE4612A910422005BE320 /* Corners.swift in Sources */,
 				2185A0DE2A9AB01400B692CB /* TimeSensativeNotificationData.swift in Sources */,
+				219390092AA17CC3006EF2A9 /* CommandData.swift in Sources */,
 				210B5C502A97781A00237515 /* BadgeBackground.swift in Sources */,
 				21EBE4632A911079005BE320 /* Fixtures.swift in Sources */,
 				21EBE45A2A90DD76005BE320 /* UserCommand.swift in Sources */,
@@ -986,6 +1001,7 @@
 				219C1EC02A8FBE8B002A62FF /* TextFieldWithIcon.swift in Sources */,
 				219C1ED02A8FBFF2002A62FF /* CustomTextEditor.swift in Sources */,
 				21303C7E2A98D01B00231EAE /* DropDownFilterView.swift in Sources */,
+				219390072AA1268A006EF2A9 /* CustomTabViewIndicator.swift in Sources */,
 				219C1EFE2A901AB2002A62FF /* Command.swift in Sources */,
 				213BD6932A94165000628FED /* MasteredBadge.swift in Sources */,
 				210B5C572A97989800237515 /* OfferingViewModel.swift in Sources */,

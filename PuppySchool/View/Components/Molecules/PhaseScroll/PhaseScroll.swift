@@ -32,11 +32,11 @@ struct PhaseScroll: View {
         }
         return viewModel.userCommands.first(where: { $0.command.id == command.id })
     }
-    
+
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(viewModel.commands, id: \.self) { command in
+                ForEach(viewModel.commands.sorted(by: { $0.priority < $1.priority }), id: \.self) { command in
                     CommandButtonView(command: command, userCommand: getUserCommand(for: command), action: onCommandTap)
                 }
             }

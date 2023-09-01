@@ -11,6 +11,7 @@ class HeaderViewModel: ObservableObject {
     enum HeaderType {
         case close
         case back
+        case none
     }
     
     enum ThemeType {
@@ -43,16 +44,21 @@ struct HeaderView: View {
     var body: some View {
         VStack {
             HStack {
-                if viewModel.type == .back {
-                    BackButton().onTapGesture {
-                        viewModel.closeModal()
+                if viewModel.type != .none {
+                    if viewModel.type == .back {
+                        BackButton().onTapGesture {
+                            viewModel.closeModal()
+                        }
+                        .padding(.leading, 20)
+                    } else {
+                        CloseButtonView {
+                            viewModel.closeModal()
+                        }
+                        .padding(.leading, 20)
                     }
-                    .padding(.leading, 20)
                 } else {
-                    CloseButtonView {
-                        viewModel.closeModal()
-                    }
-                    .padding(.leading, 20)
+                    Spacer()
+                        .frame(width: 24, height: 24)
                 }
 
                 Spacer()

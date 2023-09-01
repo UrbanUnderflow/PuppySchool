@@ -24,42 +24,39 @@ struct CheckListItemView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                VStack {
-                    RemoteImage(url: viewModel.checkListItem.imageUrl, placeHolderImage: .customIcon(.dog, color: .secondaryCharcoal), width: 115, height: 115, cornerRadius: 57)
-                        .scaledToFill()
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                    Button {
-                        if let url = URL(string: viewModel.checkListItem.productURL) {
-                            UIApplication.shared.open(url)
-                        }
-                    } label: {
-                        Text("Purchase")
-                            .font(.headline)
-                            .bold()
-                            .foregroundColor(.white)
-                            .padding(.vertical, 6)
-                            .frame(maxWidth: .infinity)
-                            .background(Color.secondaryCharcoal)
-                            .cornerRadius(18)
-                            .padding(.vertical, 5)
-                            
-                    }
-                }
-                .padding(.vertical)
-                .padding(.horizontal, 20)
-                
-                VStack(alignment: .leading, spacing: 5) {
+            VStack(spacing: 0) {
+                HStack {
                     Text(viewModel.checkListItem.title)
-                        .font(.headline)
+                        .font(.title)
                         .bold()
                         .foregroundColor(Color.secondaryWhite)
-                    Text(viewModel.checkListItem.description)
-                        .foregroundColor(Color.secondaryWhite)
+                    Spacer()
                 }
-                .padding(.trailing, 20)
+                .padding(.horizontal, 40)
+                .padding(.top, 30)
+                HStack {
+                    VStack {
+                        RemoteImage(url: viewModel.checkListItem.imageUrl, placeHolderImage: .customIcon(.dog, color: .secondaryCharcoal), width: 115, height: 115, cornerRadius: 57)
+                            .scaledToFill()
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .padding(.bottom, 8)
+                        
+                        ConfirmationButton(title: "Purchase", type: .primaryLargeGradientConfirmation) {
+                            if let url = URL(string: viewModel.checkListItem.productURL) {
+                                UIApplication.shared.open(url)
+                            }
+                        }
+                    }
+                    .padding(.vertical)
+                    .padding(.horizontal, 20)
+                    
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(viewModel.checkListItem.description)
+                            .foregroundColor(Color.secondaryWhite)
+                    }
+                    .padding(.trailing, 20)
+                }
             }
-            .padding(.top, 20)
             
             VStack(alignment: .leading) {
                 Text("Why is this item important:")
@@ -76,7 +73,7 @@ struct CheckListItemView: View {
                             .padding(.horizontal)
                     }
                     .padding(.horizontal)
-
+                    
                 }
             }
             .padding(.vertical, 20)
@@ -102,12 +99,12 @@ struct CheckListItemView_Previews: PreviewProvider {
                                         productURL: "https://amzn.to/3OLxwsk",
                                         description: "A crate is a secure space for your puppy, resembling a den environment. It aids in housebreaking and ensures safety when you can't supervise directly.",
                                         whyItsImportant: [
-                                        "Safety First: Keeps puppy safe from household hazards when unsupervised.",
-                                        "Housebreaking: Puppies usually avoid soiling their sleeping quarters; helps in potty training.",
-                                        "Comfort Zone: Provides a personal space where the puppy can relax and sleep.",
-                                        "Travel: Safest way to transport your puppy in a car.",
-                                        "Avoid Destruction: Prevents puppy from destructive behaviors when alone.",
-                                        "Routine and Discipline: Instills a sense of routine and discipline in your puppy's life.",
+                                            "Safety First: Keeps puppy safe from household hazards when unsupervised.",
+                                            "Housebreaking: Puppies usually avoid soiling their sleeping quarters; helps in potty training.",
+                                            "Comfort Zone: Provides a personal space where the puppy can relax and sleep.",
+                                            "Travel: Safest way to transport your puppy in a car.",
+                                            "Avoid Destruction: Prevents puppy from destructive behaviors when alone.",
+                                            "Routine and Discipline: Instills a sense of routine and discipline in your puppy's life.",
                                         ],
                                         createdAt: Date(),
                                         updatedAt: Date()

@@ -101,3 +101,10 @@ public func randomShadeColor() -> Color {
     let brightness: Double = 0.9  // Adjust as needed based on the desired brightness
     return Color(hue: hue, saturation: saturation, brightness: brightness)
 }
+
+public func randomDarkerShadeColor() -> Color {
+    let hue = Double.random(in: 0..<1) // Hue can be from 0 to 1
+    let saturation: Double = 0.7  // Adjust as needed
+    let brightness: Double = 0.4  // Adjust as needed based on the desired brightness
+    return Color(hue: hue, saturation: saturation, brightness: brightness)
+}

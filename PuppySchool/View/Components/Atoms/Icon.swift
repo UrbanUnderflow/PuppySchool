@@ -84,6 +84,16 @@ enum CustomImages: String {
     case graidentPaw = "gradientPaw"
     case tap = "tap-double"
     
+    case eatCommand = "eatCommandImage"
+    case balanceCommand = "balanceCommandImage"
+    case pawCommand = "pawCommandImage"
+    case commandPreview = "commandPreview"
+    case sitCommand = "sitCommandImage"
+    case clickerTraining = "clickerTrainingImage"
+    case logImage = "logImage"
+    case listImage = "listImage"
+    case alertImage = "alertImage"
+    
 }
 
 enum CustomIcons: String {
@@ -115,16 +125,18 @@ enum MessageImage: String {
     case grooming = "grooming" //have it
     case handling = "handling"
     case leashTraining = "leashTraining"
-    case microChipping = "microChipping"
     case newEnviornment = "newEnviornment"
     case nutrition = "nutrition"
     case socialization = "socialization" //
-    case socializeWithDog = "socializeWithDog" //have it
+    case socializeWithDog = "socializationWithDogs" //have it
     case socializeWithPeople = "socializeWithPeople"
     case spay = "spay"
     case teething = "teething"
     case vaccine = "vaccine"
     case vet = "vet"
+    case microchip = "microchip"
+    
+    
 }
 
 
@@ -134,6 +146,8 @@ enum DogCommandImages: String {
     case down = "down" //have it
     case come = "come" //have it
     case heel = "heel" //have it
+    case lure = "lure"
+    case nameRecognition = "nameRecognition"
     case crate = "crate"
     case settle = "settle"
     case kennel = "kennel"
@@ -181,6 +195,9 @@ enum DogCommandIcon: String {
     case down = "down.SFSymbol" //have it
     case come = "come.SFSymbol" //have it
     case heel = "heel.SFSymbol" //have it
+    case lure = "lure.SFSymbol"
+    case nameRecognition = "nameRecognition.SFSymbol"
+    case crate = "crate.SFSymbol"
     case off = "off.SFSymbol"
     case leaveIt = "leaveIt.SFSymbol"
     case dropIt = "dropIt.SFSymbol" //
@@ -193,6 +210,7 @@ enum DogCommandIcon: String {
     case rollOver = "rollOver.SFSymbol"
     case fetch = "fetch.SFSymbol"
     case speak = "speak.SFSymbol"
+    case settleCrate = "settleCrate.SFSymbol"
     case tug = "tug.SFSymbol"
     case playDead = "playDead.SFSymbol"
     case stand = "stand.SFSymbol"

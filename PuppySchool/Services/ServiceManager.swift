@@ -63,9 +63,9 @@ class ServiceManager: ObservableObject {
             BetaService.sharedInstance.getEligibleUsers()
             
             CommandService.sharedInstance.loadCommands()
-//            CommandService.sharedInstance.saveCommands { error in
-//                print("Commands Saved")
-//            }
+            CommandService.sharedInstance.saveCommands { error in
+                print("Commands Saved")
+            }
 //                    LogService.sharedInstance.saveLogs { error in
 //                        print("Logs saved")
 //                    }

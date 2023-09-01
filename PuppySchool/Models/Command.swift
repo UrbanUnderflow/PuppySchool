@@ -8,6 +8,7 @@
 import Foundation
 
 enum CommandCategory: String {
+    case startHere = "Start With These Trainings"
     case foundational = "Foundational Training"
     case safety = "Safety Commands"
     case obedience = "Obedience Commands"
@@ -45,6 +46,7 @@ struct Command: Hashable {
     var environment: Environment
     var dogStage: DogStage
     var completionMax: Int
+    var priority: Int = 3
     var createdAt: Date
     var updatedAt: Date
 
@@ -58,6 +60,7 @@ struct Command: Hashable {
          environment: Environment,
          dogStage: DogStage,
          completionMax: Int,
+         priority: Int = 3,
          createdAt: Date,
          updatedAt: Date) {
         self.id = id
@@ -70,6 +73,7 @@ struct Command: Hashable {
         self.environment = environment
         self.dogStage = dogStage
         self.completionMax = completionMax
+        self.priority = priority
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }
@@ -86,6 +90,9 @@ struct Command: Hashable {
         self.environment = Environment(rawValue: dictionary["environment"] as? String ?? "") ?? .indoor
         self.dogStage = DogStage(rawValue: dictionary["dogStage"] as? String ?? "") ?? .puppy
         self.completionMax = dictionary["completionMax"] as? Int ?? 0
+        
+        self.priority = dictionary["priority"] as? Int ?? 0
+
         let createdAtTimestamp = dictionary["createdAt"] as? Double ?? 0
         let updatedAtTimestamp = dictionary["updatedAt"] as? Double ?? 0
 
@@ -114,6 +121,7 @@ struct Command: Hashable {
             "environment": environment.rawValue,
             "dogStage": dogStage.rawValue,
             "completionMax": completionMax,
+            "priority": priority,
             "createdAt": createdAt.timeIntervalSince1970,
             "updatedAt": updatedAt.timeIntervalSince1970
         ]

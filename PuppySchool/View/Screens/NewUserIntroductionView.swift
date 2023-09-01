@@ -8,9 +8,42 @@
 import Foundation
 import SwiftUI
 
+struct Feature: Identifiable {
+    var id = UUID()
+    var icon: Icon
+    var title: String
+    var description: String
+    var background: Color
+}
+
+struct FeatureView: View {
+    var feature: Feature
+    
+    var body: some View {
+            VStack {
+                VStack(spacing: 0) {
+                    IconImage(feature.icon)
+                        .padding()
+                    
+                    Text(feature.title)
+                        .font(.title)
+                        .foregroundColor(.secondaryWhite)
+                        .bold()
+                        .padding()
+                    
+                    Text(feature.description)
+                        .multilineTextAlignment(.center)
+                        .font(.headline)
+                        .foregroundColor(.secondaryWhite)
+                }
+                .padding(.horizontal)
+                Spacer()
+            }
+    }
+}
+
 class NewUserIntroductionViewModel: ObservableObject {
     @Published var appCoordinator: AppCoordinator
-    
     
     init(appCoordinator: AppCoordinator) {
         self.appCoordinator = appCoordinator
@@ -18,54 +51,70 @@ class NewUserIntroductionViewModel: ObservableObject {
 }
 
 struct NewUserIntroductionView: View {
-    @State private var continuePressed: Bool = false
+    @State var selection: Int = 0
     @ObservedObject var viewModel: NewUserIntroductionViewModel
+    @State private var background: Color =             randomShadeColor()
+
     
+    let features = [
+        Feature(icon: .custom(.commandPreview), title: "Training", description: "Train your puppy, through simple single commands.", background: Color.primaryPurple),
+        Feature(icon: .custom(.sitCommand), title: "Choose Command", description: "Choose the command you want to teach your puppy.", background: Color.primaryPurple),
+        Feature(icon: .custom(.clickerTraining), title: "Performing Commands", description: "Follow the steps, and tap the clicker button, and reward with a treat immediately after the puppy performs the command.", background: Color.primaryPurple),
+        Feature(icon: .custom(.logImage), title: "Doggy Journal", description: "Keep entries of important events throughout the day to start creating a puppy schedule.", background: Color.primaryPurple),
+        Feature(icon: .custom(.listImage), title: "Doggy Essentials", description: "Get a list of essentials items that is relevant to the age/ stage of your puppy.", background: Color.primaryPurple),
+        Feature(icon: .custom(.alertImage), title: "Time-Senative Alerts", description: "Know when it's time to teach your puppy new skills, take them to the vet, or introduce them to new experiences.", background: Color.primaryPurple)
+
+    ]
     var body: some View {
         ZStack {
-            Color.primaryBlue
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(alignment: .leading) {
+            self.background
+            VStack {
                 Spacer()
-                HStack {
-                    Text("Getting to know you.")
-                        .font(.system(size: 50, weight: .bold))
-                        .foregroundColor(.white)
-                        .padding()
-                        .multilineTextAlignment(.leading)
-                        .fixedSize(horizontal: false, vertical: true)
-
-                    Spacer()
+                    .frame(height: 80)
+                
+                CustomTabViewIndicator(selection: $selection, tabCount: features.count, dotColor: .white)
+                TabView(selection: $selection) {
+                    ForEach(Array(features.enumerated()), id: \.offset) { index, feature in
+                        FeatureView(feature: feature)
+                            .tag(index)
+                    }
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                .onChange(of: selection) { newValue in
+                    background = randomDarkerShadeColor()
                 }
                 
-                (Text("In the ") + Text("Identity phase").bold().foregroundColor(.blue) + Text(", we help you understand yourself better through a series of questions."))
-                    .foregroundColor(.white)
-                    .padding()
-                    .multilineTextAlignment(.leading)
-
-                (Text("Your answers create a ") + Text("personalized experience").foregroundColor(.blue).bold() + Text(", helping the AI learn your interests, goals, and preferences."))
-                    .foregroundColor(.white)
-                    .padding()
-                    .multilineTextAlignment(.leading)
-
-                (Text("Our goal: help you achieve ") + Text("personal growth").bold().foregroundColor(.blue) + Text(", make informed decisions, and discover tailored opportunities."))
-                    .foregroundColor(.white)
-                    .padding()
-                    .multilineTextAlignment(.leading)
-
-                (Text("As the AI learns more about you, it provides ") + Text("accurate and relevant recommendations").bold().foregroundColor(.blue) + Text(", guiding your self-discovery and improvement journey."))
-                    .foregroundColor(.white)
-                    .padding()
-                    .multilineTextAlignment(.leading)
-                
                 Spacer()
-                ConfirmationButton(title: "Continue", type: ButtonType.secondaryBlue) {
-                    //Show what ever we need to show for quicklifts
+                    .frame(height: 50)
+                
+                VStack {
+                    if selection == (features.count - 1) {
+                        ConfirmationButton(title: "Get Started", type: .secondaryLargeConfirmation) {
+                            viewModel.appCoordinator.showHomeScreen()
+                            UserService.sharedInstance.settings.hasIntroductionModalShown = true
+                        }
+                        .padding(.horizontal, 20)
+                    } else {
+                        ConfirmationButton(title: "Skip", type: .clearButtonBold) {
+                            viewModel.appCoordinator.showHomeScreen()
+                            UserService.sharedInstance.settings.hasIntroductionModalShown = true
+                        }
+                    }
                 }
-                .padding(.horizontal, 26)
-                .padding(.bottom, 20)
+                .padding(.bottom, 50)
+
+                
             }
         }
+        .ignoresSafeArea(.all)
     }
 }
+
+struct NewUserIntroductionView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewUserIntroductionView(viewModel: NewUserIntroductionViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager())))
+    }
+}
+
+

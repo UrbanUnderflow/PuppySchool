@@ -1,0 +1,12 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "symbols" : [
+    {
+      "filename" : "jump.SFSymbol.svg",
+      "idiom" : "universal"
+    }
+  ]
+}

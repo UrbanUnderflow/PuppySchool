@@ -109,7 +109,7 @@ struct LogView: View {
         ZStack {
             VStack {
                 HeaderView(viewModel: HeaderViewModel(headerTitle: "Puppy Logs",
-                theme: .dark,
+                                                      theme: .dark, type: .none,
                                                       actionIcon: viewModel.filteredLogs.count == 0 ? .custom(.calendar) : .sfSymbol(.minusCalendar, color: .white),
                 closeModal: {
                     //nothing

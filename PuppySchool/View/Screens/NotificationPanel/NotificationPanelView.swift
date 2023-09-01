@@ -33,11 +33,12 @@ struct NotificationPanelView: View {
               .padding(.bottom, 20)
           ScrollView {
               VStack(spacing: 12) {
-                  ForEach(viewModel.notifications) { notification in
+                  ForEach(viewModel.notifications.sorted(by: { $0.notification.deliverAtXWeeks < $1.notification.deliverAtXWeeks }), id: \.self) { notification in
                       NotificationCardView(viewModel: NotificationCardViewModel(notification: notification.notification))
                   }
               }
           }
+
          Spacer()
           
       }
@@ -60,6 +61,10 @@ struct NotificationPanelView: View {
 
 struct NotificationPanelView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationPanelView(viewModel: NotificationPanelViewModel(appCoordinator: AppCoordinator(serviceManager: ServiceManager()), notifications: [Fixtures.shared.UserNotification]))
+        NotificationPanelView(viewModel: NotificationPanelViewModel(
+            appCoordinator: AppCoordinator(serviceManager: ServiceManager()),
+            notifications: TimeSensativeNotificationData.shared.data.map { UserNotification(id: UUID().uuidString, notification: $0, wasDelivered: false, wasRead: false, createdAt: Date(), updatedAt: Date())
+                
+            }))
     }
 }

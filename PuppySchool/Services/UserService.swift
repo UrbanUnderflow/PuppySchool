@@ -31,6 +31,15 @@ class UserService: ObservableObject {
         
     struct Settings {
         // UserDefaults property
+        var hasRegistrationModalShown: Bool {
+            get {
+                return UserDefaults.standard.bool(forKey: "hasRegistrationModalShown")
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: "hasRegistrationModalShown")
+            }
+        }
+        
         var hasIntroductionModalShown: Bool {
             get {
                 return UserDefaults.standard.bool(forKey: "hasIntroductionModalShown")
@@ -47,6 +56,7 @@ class UserService: ObservableObject {
     }
     
     private func loadSettings() {
+        _ = settings.hasRegistrationModalShown
         _ = settings.hasIntroductionModalShown
     }
     

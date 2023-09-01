@@ -24,7 +24,7 @@ struct CheckListView: View {
     
     var body: some View  {
         VStack {
-            HeaderView(viewModel: HeaderViewModel(headerTitle: "Doggy Essentials", theme: .dark, actionIcon: nil, closeModal: {
+            HeaderView(viewModel: HeaderViewModel(headerTitle: "Doggy Essentials", theme: .dark, type:.none, actionIcon: nil, closeModal: {
                 //close
             }, actionCallBack: {
                 viewModel.appCoordinator.showLogAnEventModal()
