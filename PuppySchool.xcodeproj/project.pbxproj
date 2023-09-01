@@ -53,6 +53,7 @@
 		2185A0ED2A9BF28100B692CB /* BackgroundVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2185A0EC2A9BF28100B692CB /* BackgroundVideoView.swift */; };
 		219390072AA1268A006EF2A9 /* CustomTabViewIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219390062AA1268A006EF2A9 /* CustomTabViewIndicator.swift */; };
 		219390092AA17CC3006EF2A9 /* CommandData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219390082AA17CC3006EF2A9 /* CommandData.swift */; };
+		2193900B2AA2126F006EF2A9 /* CheckListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2193900A2AA2126F006EF2A9 /* CheckListData.swift */; };
 		219C1E5D2A8FB69D002A62FF /* PuppySchoolApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */; };
 		219C1E5F2A8FB69D002A62FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219C1E5E2A8FB69D002A62FF /* ContentView.swift */; };
 		219C1E612A8FB69D002A62FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 219C1E602A8FB69D002A62FF /* Assets.xcassets */; };
@@ -199,6 +200,7 @@
 		2185A0EC2A9BF28100B692CB /* BackgroundVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundVideoView.swift; sourceTree = "<group>"; };
 		219390062AA1268A006EF2A9 /* CustomTabViewIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewIndicator.swift; sourceTree = "<group>"; };
 		219390082AA17CC3006EF2A9 /* CommandData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandData.swift; sourceTree = "<group>"; };
+		2193900A2AA2126F006EF2A9 /* CheckListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListData.swift; sourceTree = "<group>"; };
 		219C1E592A8FB69D002A62FF /* PuppySchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PuppySchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		219C1E5C2A8FB69D002A62FF /* PuppySchoolApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuppySchoolApp.swift; sourceTree = "<group>"; };
 		219C1E5E2A8FB69D002A62FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -629,6 +631,7 @@
 				21624E572A96A28D00059F28 /* Array+PuppySchool.swift */,
 				2144D4242A990D2100D872EF /* ProgressViewStyle+PuppySchool.swift */,
 				219390082AA17CC3006EF2A9 /* CommandData.swift */,
+				2193900A2AA2126F006EF2A9 /* CheckListData.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1005,6 +1008,7 @@
 				219C1EFE2A901AB2002A62FF /* Command.swift in Sources */,
 				213BD6932A94165000628FED /* MasteredBadge.swift in Sources */,
 				210B5C572A97989800237515 /* OfferingViewModel.swift in Sources */,
+				2193900B2AA2126F006EF2A9 /* CheckListData.swift in Sources */,
 				219C1E5D2A8FB69D002A62FF /* PuppySchoolApp.swift in Sources */,
 				21EBE4762A925900005BE320 /* LogService.swift in Sources */,
 				219C1EE32A8FC365002A62FF /* ToastView.swift in Sources */,

@@ -63,12 +63,17 @@ class ServiceManager: ObservableObject {
             BetaService.sharedInstance.getEligibleUsers()
             
             CommandService.sharedInstance.loadCommands()
-            CommandService.sharedInstance.saveCommands { error in
-                print("Commands Saved")
-            }
+            CheckListService.sharedInstance.loadCheckListItems()
+
+//            CommandService.sharedInstance.saveCommands { error in
+//                print("Commands Saved")
+//            }
 //                    LogService.sharedInstance.saveLogs { error in
 //                        print("Logs saved")
 //                    }
+//            CheckListService.sharedInstance.saveChecklistItems { error in
+//                print(error)
+//            }
             
             NotificationService.sharedInstance.saveTimeSensitiveNotifications { error in
                 print(error)
