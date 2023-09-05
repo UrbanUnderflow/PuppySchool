@@ -53,7 +53,7 @@ struct IntroView: View {
                         TabView(selection: $selection) {
                             // Onboarding texts
                             OnboardingView(title: "Train", description: "Puppy training modules")
-                            OnboardingView(title: "Logs", description: "Log your puppies activities")
+                            OnboardingView(title: "Logs", description: "Log your puppy's activities")
                             OnboardingView(title: "Supplies", description: "Get everything you need for your new puppy.")
                         }
                         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
