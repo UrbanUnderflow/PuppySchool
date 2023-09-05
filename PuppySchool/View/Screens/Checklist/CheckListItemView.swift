@@ -44,6 +44,7 @@ struct CheckListItemView: View {
                         ConfirmationButton(title: "Purchase", type: .primaryLargeGradientConfirmation) {
                             if let url = URL(string: viewModel.checkListItem.productURL) {
                                 UIApplication.shared.open(url)
+                                FirebaseService.sharedInstance.logPurchaseItem(item: viewModel.checkListItem.title)
                             }
                         }
                     }

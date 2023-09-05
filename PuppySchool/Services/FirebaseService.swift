@@ -64,6 +64,7 @@ class FirebaseService: NSObject  {
                           return
                 }
                 
+                self.logLoginEvent(method: "email")
                 completion(.success(user))
             }
         }
@@ -74,6 +75,7 @@ class FirebaseService: NSObject  {
             if let error = error {
                 completion(.failure(error))
             } else if let authResult = authResult {
+                self.logSignUpEvent(method: "email")
                 completion(.success(authResult))
             } else {
                 // This case should never occur, but handle it anyway
@@ -88,6 +90,7 @@ class FirebaseService: NSObject  {
             if let error = error {
                 completion(.failure(error))
             } else if let authResult = authResult {
+                self.logLoginEvent(method: "apple")
                 completion(.success(authResult))
             } else {
                 completion(.failure(NSError(domain: "FirebaseService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unknown error occurred"])))
@@ -106,6 +109,7 @@ class FirebaseService: NSObject  {
             if let error = error {
                 completion(.failure(error))
             } else {
+                self.logDeleteAccountEvent()
                 completion(.success(true))
             }
         }
@@ -130,6 +134,7 @@ class FirebaseService: NSObject  {
                     completion(.failure(error))
                 } else if let url = url {
                     completion(.success(url.absoluteString))
+                    self.logImageUploadEvent()
                 }
             }
         }
@@ -239,5 +244,100 @@ class FirebaseService: NSObject  {
    func signOut() throws {
        try Auth.auth().signOut()
    }
+    
+    ///Analytics events
+    ///
+    // Log a custom event
+    func logCustomEvent(name: String, parameters: [String: Any]?) {
+        Analytics.logEvent(name, parameters: parameters)
+    }
+
+    // Log a sign-up event
+    func logSignUpEvent(method: String) {
+        Analytics.logEvent(AnalyticsEventSignUp, parameters: [
+            AnalyticsParameterMethod: method
+        ])
+    }
+
+    // Log a login event
+    func logLoginEvent(method: String) {
+        Analytics.logEvent(AnalyticsEventLogin, parameters: [
+            AnalyticsParameterMethod: method
+        ])
+    }
+
+    // Log an image upload event
+    func logImageUploadEvent() {
+        Analytics.logEvent("image_upload", parameters: nil)
+    }
+    
+    func logDeleteAccountEvent() {
+        Analytics.logEvent("delete_account", parameters: nil)
+    }
+    
+    func logPurchaseAttemptEvent(package: String) {
+        Analytics.logEvent("purchase_attempt", parameters: [
+            AnalyticsParameterMethod: package
+        ])
+    }
+    
+    func logSuccessfulPurchase(package: String) {
+        Analytics.logEvent("purchase_success", parameters: [
+            AnalyticsParameterMethod: package
+        ])
+    }
+    
+    func logFailedPurchase(package: String) {
+        Analytics.logEvent("purchase_failed", parameters: [
+            AnalyticsParameterMethod: package
+        ])
+    }
+    
+    func logTrainingTapped(module: String) {
+        Analytics.logEvent("training_tapped", parameters: [
+            AnalyticsParameterMethod: module
+        ])
+    }
+    
+    func logStartTrainingSession(module: String) {
+        Analytics.logEvent("training_started", parameters: [
+            AnalyticsParameterMethod: module
+        ])
+
+    }
+    
+    func logCompletedTraining(successRate: String) {
+        Analytics.logEvent("training_ended", parameters: [
+            AnalyticsParameterMethod: successRate
+        ])
+    }
+    
+    func logAddToLogEvent(event: String) {
+        Analytics.logEvent("add_log", parameters: [
+            AnalyticsParameterMethod: event
+        ])
+    }
+    
+    func logPurchaseItem(item: String) {
+        Analytics.logEvent("purchase_item", parameters: [
+            AnalyticsParameterMethod: item
+        ])
+    }
+    
+    func logAddToLogEventFailed(error: String) {
+        Analytics.logEvent("add_log_failed", parameters: [
+            AnalyticsParameterMethod: error
+        ])
+    }
+    
+    func logCompleteRegistration() {
+        Analytics.logEvent("registration_complete", parameters: nil)
+    }
+    
+    func logRegisterNextPage(page: Int) {
+        Analytics.logEvent("registration_page", parameters: [
+            AnalyticsParameterMethod: page
+        ])
+    }
     
 }

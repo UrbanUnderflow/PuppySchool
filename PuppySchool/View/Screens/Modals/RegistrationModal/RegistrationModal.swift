@@ -109,9 +109,12 @@ struct RegistrationModal: View {
         }
         
         if selectedPage <= 4 {
+            viewModel.appCoordinator.serviceManager.firebaseService.logRegisterNextPage(page: selectedPage)
+
             withAnimation {
                 selectedPage += 1
             }
+            
         }
         
         //Once complete we can set the modal so that it is no longer shown.
@@ -119,6 +122,7 @@ struct RegistrationModal: View {
             UserService.sharedInstance.settings.hasRegistrationModalShown = true
             viewModel.appCoordinator.closeModals()
             viewModel.appCoordinator.showAppIntro()
+            viewModel.appCoordinator.serviceManager.firebaseService.logCompleteRegistration()
         }
     }
 

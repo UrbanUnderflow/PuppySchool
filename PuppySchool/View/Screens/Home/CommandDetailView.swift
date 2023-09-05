@@ -272,8 +272,10 @@ struct CommandDetailView: View {
                         ConfirmationButton(title: viewModel.moduleStarted == true ? "End Session" : "Start" , type: .primaryLargeConfirmation) {
                             if viewModel.moduleStarted ?? false {
                                 viewModel.endSession()
+                                viewModel.appCoordinator.serviceManager.firebaseService.logCompletedTraining(successRate: "\(viewModel.command.name) - \(viewModel.clickCounter)")
                             } else {
                                 viewModel.startSession()
+                                viewModel.appCoordinator.serviceManager.firebaseService.logStartTrainingSession(module: viewModel.command.name)
                             }
                         }
                         .padding(.bottom, 30)
@@ -284,6 +286,9 @@ struct CommandDetailView: View {
             }
         }
         .ignoresSafeArea(.all)
+        .onAppear {
+            viewModel.appCoordinator.serviceManager.firebaseService.logTrainingTapped(module: viewModel.command.name)
+        }
     }
 }
 

@@ -116,26 +116,38 @@ struct PayWallView: View {
                                  
                                         PackageCardView(badgeLabel: "Best Value", title: "Annual Pro Plan", subtitle: "The best trainig app for your new puppy with all our pro features.", breakDownPrice: "\(viewModel.annualPackage?.price ?? "") /year", billPrice: "Start with a free 7 day trial", bottomLabel: "Most popular plan", buttonTitle: "Continue", package: viewModel.annualPackage, offeringViewModel: viewModel.offeringViewModel) {
                                             
+                                            //analytics event
+                                            viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: "annual")
+                                            
                                             viewModel.offeringViewModel.purchase(viewModel.annualPackage!) { result in
                                                 switch result {
                                                 case .success:
                                                     print("Success")
+                                                    //analytics event
+                                                    viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: "annual")
+                                                    
                                                     viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
                                                     viewModel.appCoordinator.showHomeScreen()
                                                 case .failure(let error):
+                                                    viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "annual")
                                                     print("There was an error while purchasing \(error)")
                                                 }
                                             }
                                         }
                                         PackageCardView(badgeLabel: "Most Flexible", title: "Monthly Pro Plan", subtitle: "Flexible, great for dogs that just need a bit of extra training.", breakDownPrice: "\(viewModel.monthPackage?.price ?? "") /month", billPrice: "Billed monthly", bottomLabel: "Great for limited training", buttonTitle: "Get Monthly", package: viewModel.monthPackage, offeringViewModel: viewModel.offeringViewModel) {
                                             
+                                            //analytics event
+                                            viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: "monthly")
+                                            
                                             viewModel.offeringViewModel.purchase(viewModel.monthPackage!) { result in
                                                 switch result {
                                                 case .success:
                                                     print("Success")
+                                                    viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: "monthly")
                                                     viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
                                                     viewModel.appCoordinator.showHomeScreen()
                                                 case .failure(let error):
+                                                    viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "annual")
                                                     print("There was an error while purchasing \(error)")
                                                 }
                                             }
@@ -147,13 +159,19 @@ struct PayWallView: View {
                                                 if isPermitted == true {
                                                     self.viewModel.appCoordinator.hideNotification()
                                                     
+                                                    //analytics event
+                                                    viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: "lifetime")
+                                                    
                                                     viewModel.offeringViewModel.purchase(viewModel.lifeTimePackage!) { result in
                                                         switch result {
                                                         case .success:
                                                             print("Success")
+                                                            viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: "lifetime")
+                                                            
                                                             viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
                                                             viewModel.appCoordinator.showHomeScreen()
                                                         case .failure(let error):
+                                                            viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "annual")
                                                             print("There was an error while purchasing \(error)")
                                                         }
                                                     }

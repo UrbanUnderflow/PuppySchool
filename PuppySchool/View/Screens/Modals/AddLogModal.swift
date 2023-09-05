@@ -30,9 +30,12 @@ class AddLogModalViewModel: ObservableObject {
         LogService.sharedInstance.logEvent(log: LogService.sharedInstance.getLocalLog(byType: selectedLogType ?? .walk)) { puppyLog, error in
             if let log = puppyLog {
                 LogService.sharedInstance.puppyLogs.append(log)
+                FirebaseService.sharedInstance.logAddToLogEvent(event: log.type.rawValue)
                 self.action()
             } else {
                 self.subtitle = "There was an error logging your event. Try again."
+                FirebaseService.sharedInstance.logAddToLogEventFailed(error: "\(self.selectedLogType?.rawValue ?? "unknown log type") failed with: \(error?.localizedDescription ?? "unknown error")")
+
             }
         }
     }
