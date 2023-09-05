@@ -114,7 +114,7 @@ struct PayWallView: View {
                                 ScrollView(.horizontal, showsIndicators: false) {
                                     HStack(spacing: 10) {
                                  
-                                        PackageCardView(badgeLabel: "Best Value", title: "Annual Pro Plan", subtitle: "The best trainig app for your new puppy with all our pro features.", breakDownPrice: "$79.99 /year", billPrice: "Start with a free 7 day trial", bottomLabel: "Most popular plan", buttonTitle: "Continue", package: viewModel.annualPackage, offeringViewModel: viewModel.offeringViewModel) {
+                                        PackageCardView(badgeLabel: "Best Value", title: "Annual Pro Plan", subtitle: "The best trainig app for your new puppy with all our pro features.", breakDownPrice: "\(viewModel.annualPackage?.price ?? "") /year", billPrice: "Start with a free 7 day trial", bottomLabel: "Most popular plan", buttonTitle: "Continue", package: viewModel.annualPackage, offeringViewModel: viewModel.offeringViewModel) {
                                             
                                             viewModel.offeringViewModel.purchase(viewModel.annualPackage!) { result in
                                                 switch result {
@@ -127,7 +127,7 @@ struct PayWallView: View {
                                                 }
                                             }
                                         }
-                                        PackageCardView(badgeLabel: "Most Flexible", title: "Monthly Pro Plan", subtitle: "Flexible, great for dogs that just need a bit of extra training.", breakDownPrice: "12.99 /month", billPrice: "Billed monthly", bottomLabel: "Great for limited training", buttonTitle: "Get Monthly", package: viewModel.monthPackage, offeringViewModel: viewModel.offeringViewModel) {
+                                        PackageCardView(badgeLabel: "Most Flexible", title: "Monthly Pro Plan", subtitle: "Flexible, great for dogs that just need a bit of extra training.", breakDownPrice: "\(viewModel.monthPackage?.price ?? "") /month", billPrice: "Billed monthly", bottomLabel: "Great for limited training", buttonTitle: "Get Monthly", package: viewModel.monthPackage, offeringViewModel: viewModel.offeringViewModel) {
                                             
                                             viewModel.offeringViewModel.purchase(viewModel.monthPackage!) { result in
                                                 switch result {
@@ -140,7 +140,7 @@ struct PayWallView: View {
                                                 }
                                             }
                                         }
-                                        PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "$249", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: viewModel.lifeTimePackage, offeringViewModel: viewModel.offeringViewModel) {
+                                        PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "\(viewModel.lifeTimePackage?.price ?? "")", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: viewModel.lifeTimePackage, offeringViewModel: viewModel.offeringViewModel) {
                                             
                                             //check the status of subscription before moving forwad with this purchase
                                             viewModel.checkSubscriptionStatus { isPermitted in

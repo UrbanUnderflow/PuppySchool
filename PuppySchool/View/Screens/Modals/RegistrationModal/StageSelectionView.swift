@@ -77,7 +77,7 @@ class StageSelectionViewModel: ObservableObject {
                                 DogStageTips(id: UUID(), title: "Grooming", description: "Regular grooming is essential, even if your dog was accustomed to it as a puppy. It helps you monitor for health issues and ensures your dog is comfortable."),
                                 DogStageTips(id: UUID(), title: "Patience and Understanding", description: "As dogs age, they might not be as quick or eager as they once were. Be patient, understanding, and adapt training sessions to their pace.")
                             ],
-                            ageRange: "2-3 years")
+                            ageRange: "2+ years")
     ]
 }
 
