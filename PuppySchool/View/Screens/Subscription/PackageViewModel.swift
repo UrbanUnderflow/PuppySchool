@@ -18,14 +18,14 @@ struct PackageViewModel: Identifiable {
     
     var title: String? {
         guard let subscriptionPeriod = package.storeProduct.subscriptionPeriod else {
-            return nil
+            return "Lifetime"
         }
         
         switch subscriptionPeriod.unit {
         case .month:
             return "Monthly"
         case .year:
-            return "Yearly"
+            return "Free Trial"
         default:
             return "Lifetime"
         }

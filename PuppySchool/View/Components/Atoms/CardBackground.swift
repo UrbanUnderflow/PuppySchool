@@ -10,6 +10,7 @@ import SwiftUI
 struct CardBackground: View {
     var color: Color
     var border: CGFloat = 1
+    var borderColor: Color = Color.gray
     
     var body: some View {
         Rectangle()
@@ -17,7 +18,7 @@ struct CardBackground: View {
             .cornerRadius(12)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.gray, lineWidth: border) // Gray border
+                        .stroke(borderColor, lineWidth: border) // Gray border
                 )
             
     }

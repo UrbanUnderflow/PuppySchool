@@ -340,4 +340,12 @@ class FirebaseService: NSObject  {
         ])
     }
     
+    func logBackToPlansEvent() {
+        Analytics.logEvent("back_to_plans", parameters: nil)
+
+    }
+    
+    func logScrollToBottomOfPayWallEvent() {
+        Analytics.logEvent("paywall_scrolled", parameters: nil)
+    }
 }

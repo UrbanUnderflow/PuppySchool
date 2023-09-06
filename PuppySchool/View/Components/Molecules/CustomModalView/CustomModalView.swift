@@ -17,7 +17,8 @@ enum ModalType: Equatable {
         switch (lhs, rhs) {
         case (.confirmation, .confirmation),
              (.notification, .notification),
-             (.field, .field):
+             (.field, .field),
+             (.log, .log):
             return true
         default:
             return false
@@ -78,13 +79,13 @@ struct CustomModalView: View {
         VStack {
             // Modal Title
             Text(viewModel.title)
-                .foregroundColor(.secondaryWhite)
+                .foregroundColor(.secondaryCharcoal)
                 .font(.title)
                 .padding()
             
             // Modal message
             Text(viewModel.message)
-                .foregroundColor(.secondaryWhite)
+                .foregroundColor(.secondaryCharcoal)
                 .font(.body)
                 .multilineTextAlignment(.center)
                 .padding()
@@ -97,7 +98,7 @@ struct CustomModalView: View {
                     
                 }, label: {
                     Text(viewModel.primaryButtonTitle)
-                        .foregroundColor(.secondaryCharcoal)
+                        .foregroundColor(.white)
                         .bold()
                         .padding()
                         .background(Color.primaryPurple)
@@ -122,7 +123,7 @@ struct CustomModalView: View {
     
     var body: some View {
         VStack {
-            if viewModel.modalType != .log {
+            if viewModel.modalType == .log {
                 logModal
             } else {
                 modernModals
@@ -147,10 +148,6 @@ struct CustomModalView_Previews: PreviewProvider {
             },
             secondaryAction: { print("Secondary button tapped") }
         )
-        
-//        CustomModalView(viewModel: viewModel)
-//            .previewLayout(.sizeThatFits)
-//            .padding()
         
         CustomModalView(viewModel: CustomModalViewModel(type: .log, title: "Choose and Event", message: "", primaryButtonTitle: "Log", fieldSubtitle:"What time did you complete the event?"))
     }

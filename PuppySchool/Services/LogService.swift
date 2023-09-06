@@ -17,7 +17,7 @@ class LogService: ObservableObject {
     
     @Published var logs: [PuppyLog] = [
         PuppyLog(id: "Walk", text: "Went for a walk", type: .walk, createdAt: Date(), updatedAt: Date()),
-        PuppyLog(id: "Poop", text: "Took a poop", type: .poop, createdAt: Date(), updatedAt: Date()),
+        PuppyLog(id: "Poop", text: "Went potty", type: .poop, createdAt: Date(), updatedAt: Date()),
         PuppyLog(id: "Water", text: "Drank some water", type: .water, createdAt: Date(), updatedAt: Date()),
         PuppyLog(id: "Ate", text: "Ate one of the meals for the day", type: .ate, createdAt: Date(), updatedAt: Date()),
         PuppyLog(id: "training", text: "Practiced some training", type: .training, createdAt: Date(), updatedAt: Date()),

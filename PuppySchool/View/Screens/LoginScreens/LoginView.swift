@@ -68,18 +68,6 @@ struct LoginView: View {
     var body: some View {
         ZStack {
             VStack {
-                HStack {
-                    Text("Puppy School")
-                        .font(.title2)
-                        .bold()
-                        .foregroundColor(.white)
-                        .padding()
-                        .padding(.top, 40)
-
-                }
-                Spacer()
-            }
-            VStack {
                 VStack(spacing: 8) {
                     Text(viewModel.isSignUp ? "Let's Sign You Up" : "Let's Sign You In")
                         .font(.title3)

@@ -22,12 +22,10 @@
   ],
   "settings" : {
     "_applicationInternalID" : "6463200946",
-    "_compatibilityTimeRate" : {
-      "3" : 6
-    },
+    "_askToBuyEnabled" : false,
     "_developerTeamID" : "ZG887P86D5",
     "_lastSynchronizedDate" : 714587752.14466095,
-    "_timeRate" : 1001
+    "_timeRate" : 0
   },
   "subscriptionGroups" : [
     {

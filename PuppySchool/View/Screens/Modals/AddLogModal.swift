@@ -50,7 +50,7 @@ struct AddLogModal: View {
                 .fill(viewModel.selectedLogType == type ? Color.secondaryPink : Color.secondaryWhite)
                 .frame(width: 64, height: 64)
                 .overlay(Circle().stroke(Color.gray, lineWidth: 1))
-            IconImage(.logs(LogIcon(rawValue: type.rawValue) ?? .walk, color: .primaryPurple))
+            IconImage(.logs(LogIcon(rawValue: type.rawValue) ?? .walk, color: viewModel.selectedLogType == type ? Color.secondaryWhite : Color.primaryPurple))
                 .frame(width:24, height: 24)
                 .padding()
         }

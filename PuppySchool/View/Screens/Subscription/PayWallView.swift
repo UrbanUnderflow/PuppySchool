@@ -7,12 +7,17 @@
 
 import SwiftUI
 import RevenueCat
+import Combine
 
 class PayWallViewModel: ObservableObject {
     @Published var appCoordinator: AppCoordinator
     @Published var monthPackage: PackageViewModel? = nil
     @Published var annualPackage: PackageViewModel? = nil
     @Published var lifeTimePackage: PackageViewModel? = nil
+    
+    @Published var selectedPackage: PackageViewModel?
+
+    
     var offeringViewModel = PurchaseService.sharedInstance.offering
     var showErrorScreen: Bool = false
     var isTesting: Bool = false
@@ -27,6 +32,7 @@ class PayWallViewModel: ObservableObject {
         
         if let package = offeringViewModel.yearlyPackage {
             self.annualPackage = package
+            self.selectedPackage = package
         } else {
             showErrorScreen = true
         }
@@ -41,8 +47,14 @@ class PayWallViewModel: ObservableObject {
             showErrorScreen = false
         }
     }
-          
+    
     func checkSubscriptionStatus(completion: @escaping (Bool) -> Void) {
+        
+        if selectedPackage?.title != self.lifeTimePackage?.title {
+            completion(true)
+            return
+        }
+        
         PurchaseService.sharedInstance.checkSubscriptionStatus { [weak self] (result) in
             switch result {
             case .success(let isSubscribed):
@@ -76,117 +88,95 @@ class PayWallViewModel: ObservableObject {
 
 struct PayWallView: View {
     @ObservedObject var viewModel: PayWallViewModel
+
+    var selections: some View {
+        VStack(spacing: 10) {
+            PackageCardView(badgeLabel: "Most Flexible", title: "Monthly", subtitle: "Flexible, great for dogs that just need a bit of extra training.", breakDownPrice: "\(viewModel.monthPackage?.price ?? "") /month", billPrice: "Billed monthly", bottomLabel: "Great for limited training", buttonTitle: "Get Monthly", package: viewModel.monthPackage, offeringViewModel: viewModel.offeringViewModel, selectedPackage: $viewModel.selectedPackage) { package in
+                viewModel.selectedPackage = package
+            }
+
+            PackageCardView(badgeLabel: "Best Value", title: "Yearly", subtitle: "The best training app for your new puppy with all our pro features.", breakDownPrice: "Free 7 day trial, \nthen \(viewModel.annualPackage?.price ?? "") /year", billPrice: "Start with a free 7 day trial", bottomLabel: "Most popular plan", buttonTitle: "Continue", package: viewModel.annualPackage, offeringViewModel: viewModel.offeringViewModel, selectedPackage: $viewModel.selectedPackage) { package in
+                viewModel.selectedPackage = package
+            }
+
+            PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "\(viewModel.lifeTimePackage?.price ?? "")", billPrice: "One-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: viewModel.lifeTimePackage, offeringViewModel: viewModel.offeringViewModel, selectedPackage: $viewModel.selectedPackage) { package in
+                viewModel.selectedPackage = package
+            }
+            
+            ConfirmationButton(title: "Get \(viewModel.selectedPackage?.title ?? "")", type: .primaryLargeGradientConfirmation) {
+                
+                //analytics event
+                viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: viewModel.selectedPackage?.title ?? "")
+                
+                //check the status of subscription before moving forwad with this purchase
+                viewModel.checkSubscriptionStatus { isPermitted in
+                    if isPermitted == true {
+                        self.viewModel.appCoordinator.hideNotification()
+                        
+                        //analytics event
+                        viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: viewModel.selectedPackage?.title ?? "")
+                        
+                        viewModel.offeringViewModel.purchase(viewModel.selectedPackage!) { result in
+                            switch result {
+                            case .success:
+                                print("Success")
+                                print(viewModel.selectedPackage)
+                                
+                                viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: "lifetime")
+                                
+                                viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
+                                viewModel.appCoordinator.showHomeScreen()
+                            case .failure(let error):
+                                viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "lifetime")
+                                print("There was an error while purchasing \(error)")
+                            }
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal, 40)
+            .padding(.top, 12)
+            Text("After 7 days you're charged \(viewModel.selectedPackage?.price ?? "7.99")/ yearly")
+                .font(.subheadline)
+                .multilineTextAlignment(.leading)
+                .foregroundColor(.white)
+                .padding(.horizontal, 20)
+        }
+    }
     
     var payWall: some View {
         ZStack {
             VStack {
                 ScrollView {
                     ScrollViewReader { scrollProxy in
-                        
                         VStack(spacing: 0) {
-                            Rectangle()
-                                .frame(height: 70)
-                                .foregroundColor(.primaryPurple)
-                                .tag(0)
-                            ZStack {
-                                VStack(spacing: 0) {
-                                    ZStack {
-                                        Rectangle()
-                                            .fill(Color.primaryPurple)
-                                            .ignoresSafeArea(.all)
-                                        VStack {
-                                            Text("Nurture Your Furry Friend: Gentle Guidance from Pup to Skilled Companion")
-                                                .foregroundColor(.secondaryWhite)
-                                                .font(.title2)
-                                                .bold()
-                                                .padding()
-                                            IconImage(.custom(.award))
-                                                .padding()
-                                                .padding(.bottom, 20)
-                                            Spacer()
-                                        }
-                                    }
-                                    Rectangle()
-                                        .fill(Color.white)
-                                        .ignoresSafeArea(.all)
-                                }
+                            VStack {
+                                Text("Lead the Pack!")
+                                    .foregroundColor(.secondaryWhite)
+                                    .font(.title2)
+                                    .bold()
+                                    .padding(.top, 70)
+                                    .id(0)
                                 
-                                ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack(spacing: 10) {
-                                 
-                                        PackageCardView(badgeLabel: "Best Value", title: "Annual Pro Plan", subtitle: "The best trainig app for your new puppy with all our pro features.", breakDownPrice: "\(viewModel.annualPackage?.price ?? "") /year", billPrice: "Start with a free 7 day trial", bottomLabel: "Most popular plan", buttonTitle: "Continue", package: viewModel.annualPackage, offeringViewModel: viewModel.offeringViewModel) {
-                                            
-                                            //analytics event
-                                            viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: "annual")
-                                            
-                                            viewModel.offeringViewModel.purchase(viewModel.annualPackage!) { result in
-                                                switch result {
-                                                case .success:
-                                                    print("Success")
-                                                    //analytics event
-                                                    viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: "annual")
-                                                    
-                                                    viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
-                                                    viewModel.appCoordinator.showHomeScreen()
-                                                case .failure(let error):
-                                                    viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "annual")
-                                                    print("There was an error while purchasing \(error)")
-                                                }
-                                            }
-                                        }
-                                        PackageCardView(badgeLabel: "Most Flexible", title: "Monthly Pro Plan", subtitle: "Flexible, great for dogs that just need a bit of extra training.", breakDownPrice: "\(viewModel.monthPackage?.price ?? "") /month", billPrice: "Billed monthly", bottomLabel: "Great for limited training", buttonTitle: "Get Monthly", package: viewModel.monthPackage, offeringViewModel: viewModel.offeringViewModel) {
-                                            
-                                            //analytics event
-                                            viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: "monthly")
-                                            
-                                            viewModel.offeringViewModel.purchase(viewModel.monthPackage!) { result in
-                                                switch result {
-                                                case .success:
-                                                    print("Success")
-                                                    viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: "monthly")
-                                                    viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
-                                                    viewModel.appCoordinator.showHomeScreen()
-                                                case .failure(let error):
-                                                    viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "annual")
-                                                    print("There was an error while purchasing \(error)")
-                                                }
-                                            }
-                                        }
-                                        PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "\(viewModel.lifeTimePackage?.price ?? "")", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: viewModel.lifeTimePackage, offeringViewModel: viewModel.offeringViewModel) {
-                                            
-                                            //check the status of subscription before moving forwad with this purchase
-                                            viewModel.checkSubscriptionStatus { isPermitted in
-                                                if isPermitted == true {
-                                                    self.viewModel.appCoordinator.hideNotification()
-                                                    
-                                                    //analytics event
-                                                    viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: "lifetime")
-                                                    
-                                                    viewModel.offeringViewModel.purchase(viewModel.lifeTimePackage!) { result in
-                                                        switch result {
-                                                        case .success:
-                                                            print("Success")
-                                                            viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: "lifetime")
-                                                            
-                                                            viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
-                                                            viewModel.appCoordinator.showHomeScreen()
-                                                        case .failure(let error):
-                                                            viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "annual")
-                                                            print("There was an error while purchasing \(error)")
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                    .padding(.horizontal, 8) // Add padding to the HStack to center the cards
-                                }
-                                .frame(height: 400) // Set a fixed height for the ScrollView
-                                .padding(.top, 230)
-
+                                IconImage(.custom(.trophy))
+                                    .frame(width: 120)
+                                    .padding(.top, 10)
+                                    
+                                selections
+                                 .padding(.horizontal, 8) // Add padding to the HStack to center the cards
+                                 .padding(.top, 20)
+                                 .padding(.bottom, 50)
                             }
-                            .padding(.bottom, 10)
+                            .background(Color.primaryPurple)
                             
+                            ZStack {
+                                Circle()
+                                    .fill(Color.lightGray)
+                                    .frame(width: 50, height: 50)
+                                IconImage(.sfSymbol(.downArrow, color: .darkPurple))
+                            }
+                            .offset(y: -25)
+
                             PreviewCardView()
                             
                             Spacer()
@@ -194,16 +184,18 @@ struct PayWallView: View {
                             
                             HStack {
                                 VStack(alignment: .leading, spacing: 10) {
-//                                    HStack {
-//                                        IconImage(.sfSymbol(.upArrow, color: .primaryPurple))
-//                                        Text("Back to plans")
-//                                            .foregroundColor(.primaryPurple)
-//                                    }
-//                                    .onTapGesture {
-//                                        withAnimation {
-//                                            scrollProxy.scrollTo(0, anchor: .top)
-//                                        }
-//                                    }
+                                    HStack {
+                                        IconImage(.sfSymbol(.upArrow, color: .primaryPurple))
+                                        Text("Back to plans")
+                                            .foregroundColor(.primaryPurple)
+                                    }
+                                    .onTapGesture {
+                                        withAnimation {
+                                            scrollProxy.scrollTo(0, anchor: .top)
+                                        }
+                                        
+                                        viewModel.appCoordinator.serviceManager.firebaseService.logBackToPlansEvent()
+                                    }
                                     HStack {
                                         IconImage(.sfSymbol(.reload, color: .gray))
                                         Text("Restore Purchases")
@@ -258,7 +250,16 @@ struct PayWallView: View {
                                 }
                                 .padding(.leading, 20)
                                 .padding(.bottom, 50)
-                                Spacer()
+                                GeometryReader { geometry in
+                                    Spacer()
+                                        .frame(height: 100)
+                                        .background(Color.clear) // Just to ensure it's transparent
+                                        .onReceive(Just(geometry.frame(in: .global).minY)) { minY in
+                                            if minY < UIScreen.main.bounds.height {
+                                                viewModel.appCoordinator.serviceManager.firebaseService.logScrollToBottomOfPayWallEvent()
+                                            }
+                                        }
+                                }
                             }
                             
                         }
@@ -276,6 +277,7 @@ struct PayWallView: View {
                             .onTapGesture {
                                 viewModel.appCoordinator.showHomeScreen()
                             }
+                            .padding(.leading, 20)
                     }
                     Spacer()
                 }
@@ -290,7 +292,7 @@ struct PayWallView: View {
         } else {
             payWall
         }
-
+        
     }
 }
 

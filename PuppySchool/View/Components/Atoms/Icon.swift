@@ -62,6 +62,7 @@ enum SFSymbols: String {
 
 enum CustomImages: String {
     case award = "award"
+    case trophy = "trophy"
     case oval = "oval"
     case play = "play"
     case miniChevLeft = "miniChevLeft"

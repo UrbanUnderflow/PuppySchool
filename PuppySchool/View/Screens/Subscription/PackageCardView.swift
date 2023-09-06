@@ -18,38 +18,37 @@ struct PackageCardView: View {
     var buttonTitle: String
     
     var package: PackageViewModel?
-    @ObservedObject var offeringViewModel: OfferingViewModel
     
-    var onPurchase: () -> Void
+    @ObservedObject var offeringViewModel: OfferingViewModel
+    @Binding var selectedPackage: PackageViewModel?
+
+    var onSelected: (PackageViewModel) -> Void
     
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
+        Button {
+            if let pack = package {
+                onSelected(pack)
+            }
+        } label: {
+            ZStack {
+                Color.darkPurple
+
                 VStack {
                     HStack {
-                        VStack {
-                            Text(badgeLabel)
-                                .padding(.horizontal, 20)
-                                .padding(.vertical, 8)
-                        }
-                        .background(BadgeBackground(color: .blueGray, cornerRadius: 40))
-                        .padding(.top)
-                        .padding(.leading)
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, 10)
-                    .padding(.top, 10)
-
-                    Spacer()
-                    HStack {
                         VStack(alignment: .leading) {
-                            Text(title)
-                                .font(.title)
-                                .bold()
-                                .padding(.leading, 20)
-                                .padding(.bottom, 5)
+                            HStack {
+                                Text(title)
+                                    .font(.title3)
+                                    .bold()
+                                Spacer()
+                                Text(breakDownPrice)
+                                    .font(.headline)
+                                    .bold()
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding(.horizontal, 20)
+                            .padding(.bottom, 5)
+                            
                             Text(subtitle)
                                 .padding(.horizontal)
                                 .multilineTextAlignment(.leading)
@@ -57,38 +56,26 @@ struct PackageCardView: View {
                         }
                         Spacer()
                     }
-                    .padding(.horizontal, 10)
-                    .padding(.bottom, 10)
-                    
-                    Text(breakDownPrice)
-                        .font(.title2)
-                        .bold()
-                    Text(billPrice)
-                        .font(.title2)
-                        .bold()
-                    
-                    Spacer()
-                    ConfirmationButton(title: buttonTitle, type: .primaryLargeConfirmation) {
-                        onPurchase()
-                    }
-                    .padding(.horizontal)
-                    Text(bottomLabel)
-                        .padding(.bottom)
-                    
-                    Spacer()
+                    .padding([.horizontal, .top], 10)
+                    .padding(.bottom, 20)
                 }
-                .background(CardBackground(color: .secondaryWhite))
-                .frame(width: 360, height: 400)
-                .padding(.horizontal, 1)
+                .foregroundColor(selectedPackage?.package == package?.package ? Color.secondaryPink : Color.secondaryWhite)
             }
+            .cornerRadius(12)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(selectedPackage?.package == package?.package ? Color.secondaryPink : Color.gray, lineWidth: 1) // Conditional border color
+            )
+            .padding(.horizontal, 10)
         }
+
     }
 }
 
 struct PackageCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "$249", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: nil, offeringViewModel: OfferingViewModel()) {
-            
+        PackageCardView(badgeLabel: "Pay Once", title: "Lifetime", subtitle: "Pay once and get access to top notch dog training, forever!", breakDownPrice: "Free 7 day trial, \nthen $79.99", billPrice: "Ont-Time Purchase", bottomLabel: "No subscription", buttonTitle: "Get Lifetime", package: nil, offeringViewModel: OfferingViewModel(), selectedPackage: .constant(nil)) { package in
+            print(package)
             //check the status of subscription before moving forwad with this purchase
             
             
