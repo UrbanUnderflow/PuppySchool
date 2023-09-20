@@ -287,9 +287,9 @@ class FirebaseService: NSObject  {
         ])
     }
     
-    func logFailedPurchase(package: String) {
+    func logFailedPurchase(package: String, error: String) {
         Analytics.logEvent("purchase_failed", parameters: [
-            AnalyticsParameterMethod: package
+            AnalyticsParameterMethod: "\(package) + error: \(error)"
         ])
     }
     

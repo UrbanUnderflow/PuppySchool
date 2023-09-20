@@ -15,7 +15,7 @@ class HomeViewModel: ObservableObject {
     @Published var titles: [String] = []
     @Published var filterBy = FilterByType.category
     @Published var currentProgress: CGFloat = 0.0
-    
+        
     init(appCoordinator: AppCoordinator, serviceManager: ServiceManager) {
         self.appCoordinator = appCoordinator
         self.serviceManager = serviceManager
@@ -109,15 +109,17 @@ class HomeViewModel: ObservableObject {
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
+    @State var userNotification = [UserNotification]()
+
     
     var notificationBell: some View {
         ZStack {
             Circle()
                 .fill(Color.secondaryWhite)
                 .frame(width: 50, height:50)
-            IconImage(.customIcon(.notification, color: .black))
+            IconImage(.sfSymbol(.bell, color: .black))
             
-            if NotificationService.sharedInstance.userNotifications.filter({$0.wasDelivered == false }).count != 0 {
+            if userNotification.filter({$0.wasDelivered == false }).count != 0 {
                 Circle()
                     .fill(Color.red)
                     .frame(width: 10, height: 10)
@@ -137,7 +139,7 @@ struct HomeView: View {
                     .foregroundColor(.secondaryWhite)
                     .font(.headline)
                     .bold()
-                Text("\(UserService.sharedInstance.user?.dogName.capitalized ?? "Hendrix") is ready for \ntraining.")
+                Text("\(UserService.sharedInstance.user?.dogName.capitalized ?? "Your puppy") is ready for \ntraining.")
                     .foregroundColor(.secondaryWhite)
                     .font(.subheadline)
             }
@@ -171,9 +173,9 @@ struct HomeView: View {
                             .font(.headline)
                             .bold()
                         Spacer()
-                        Text("View All")
-                            .foregroundColor(.secondaryWhite)
-                            .font(.subheadline)
+//                        Text("View All")
+//                            .foregroundColor(.secondaryWhite)
+//                            .font(.subheadline)
                     }
                     .padding(.bottom, 20)
                     HStack(alignment: .center, spacing: 20) {
@@ -279,6 +281,11 @@ struct HomeView: View {
             delay(1) {
                 if !userService.settings.hasIntroductionModalShown {
                     viewModel.appCoordinator.showRegisterModal()
+                }
+                
+                NotificationService.sharedInstance.fetchUserNotifications { userNotifications, error in
+                    userNotification = userNotifications ?? [UserNotification]()
+                    print("There was an error: \(error?.localizedDescription)")
                 }
             }
         }

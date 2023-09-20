@@ -113,21 +113,25 @@ struct PayWallView: View {
                     if isPermitted == true {
                         self.viewModel.appCoordinator.hideNotification()
                         
-                        //analytics event
-                        viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: viewModel.selectedPackage?.title ?? "")
+                        guard let package = viewModel.selectedPackage else {
+                            viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "No Package", error: "")
+                            return
+                        }
                         
-                        viewModel.offeringViewModel.purchase(viewModel.selectedPackage!) { result in
+                        //analytics event
+                        viewModel.appCoordinator.serviceManager.firebaseService.logPurchaseAttemptEvent(package: package.title ?? "")
+                        
+                        viewModel.offeringViewModel.purchase(package) { result in
                             switch result {
                             case .success:
                                 print("Success")
-                                print(viewModel.selectedPackage)
                                 
-                                viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: "lifetime")
+                                viewModel.appCoordinator.serviceManager.firebaseService.logSuccessfulPurchase(package: package.title ?? "unknown")
                                 
                                 viewModel.updateSubscriptionPlan(SubscriptionType.lifetime)
                                 viewModel.appCoordinator.showHomeScreen()
                             case .failure(let error):
-                                viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: "lifetime")
+                                viewModel.appCoordinator.serviceManager.firebaseService.logFailedPurchase(package: package.title ?? "unknown", error: error.localizedDescription)
                                 print("There was an error while purchasing \(error)")
                             }
                         }

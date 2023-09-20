@@ -58,6 +58,7 @@ enum SFSymbols: String {
     case birthday = "birthday.cake"
     case appleLogo = "apple.logo"
     case signOut = "door.right.hand.open"
+    case bell = "bell"
 }
 
 enum CustomImages: String {
